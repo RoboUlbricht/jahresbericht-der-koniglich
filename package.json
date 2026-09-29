@@ -1,0 +1,33 @@
+{
+  "name": "jahresbericht-der-koniglich",
+  "version": "1.0.0",
+  "description": "Indexovanie a spracovanie archívu časopisu Jahresbericht der Königlich ungarischen Geologischen Reichsanstalt",
+  "type": "module",
+  "author": "Róbert Ulbricht",
+  "license": "ISC",
+  "scripts": {
+    "prepare-text": "node src/prepare-text.js",
+    "prepare-thumbnails": "node src/prepare-thumbnails.js",
+    "prepare-images": "node src/prepare-images.js",
+    "normalize-authors": "node src/normalize-authors.js",
+    "normalize-de-text": "node src/normalize-de-text.js",
+    "de-sk-translator": "node src/de-sk-translator.js",
+    "fetch-bsb-text": "node src/fetch-bsb-text.js",
+    "md-index": "node src/md-index.js",
+    "viewer": "node viewer/server.js"
+  },
+  "bin": {
+    "prepare-text": "./src/prepare-text.js",
+    "prepare-thumbnails": "./src/prepare-thumbnails.js",
+    "prepare-images": "./src/prepare-images.js",
+    "normalize-authors": "./src/normalize-authors.js",
+    "normalize-de-text": "./src/normalize-de-text.js",
+    "de-sk-translator": "./src/de-sk-translator.js",
+    "md-index": "./src/md-index.js"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.9",
+    "express": "^5.2.1",
+    "pdfjs-dist": "^6.3.289"
+  }
+}

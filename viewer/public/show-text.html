@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="sk" ng-app="showTextApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prehliadač skenov a textu - Archív geologických periodík</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link href="/style.css?v=3" rel="stylesheet">
+</head>
+<body ng-controller="ShowTextCtrl" class="app-layout-body">
+
+  <!-- Navbar -->
+  <header class="app-navbar d-flex align-items-center px-3 justify-content-between">
+    <div class="d-flex align-items-center gap-2">
+      <a href="/" class="btn btn-sm btn-outline-secondary py-1 px-2 d-flex align-items-center gap-1 nav-back-btn" title="Späť na zoznam funkcií">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+        <span class="d-none d-sm-inline">Funkcie</span>
+      </a>
+      <div class="vr bg-secondary opacity-50 my-1 mx-1"></div>
+      <div class="brand-icon" style="background: linear-gradient(135deg, #0ea5e9, #6366f1);">
+        <i class="bi bi-file-earmark-richtext-fill"></i>
+      </div>
+      <h1 class="h6 mb-0 text-white fw-bold">Prehliadač skenov a textu</h1>
+      <span class="badge bg-secondary ms-2 text-truncate" style="max-width: 280px;" ng-if="selectedMagazine" title="{{selectedMagazine.title}}">
+        {{selectedMagazine.title}}
+      </span>
+      <span class="badge bg-primary" ng-if="selectedYear">Ročník {{selectedYear}}</span>
+    </div>
+
+    <!-- Pager & Quick Actions -->
+    <div class="d-flex align-items-center gap-2">
+      <!-- Notifikácia -->
+      <div ng-if="notification" class="alert alert-{{notification.type}} py-1 px-3 mb-0 small animate-fade">
+        <i class="bi bi-info-circle me-1"></i> {{notification.message}}
+      </div>
+
+      <!-- Pager -->
+      <div class="btn-group btn-group-sm" role="group" aria-label="Pager" ng-if="thumbnails.length > 0">
+        <button type="button" class="btn btn-outline-secondary" ng-click="prevPage()" title="Predchádzajúca strana (šípka vľavo)" ng-disabled="currentPage === thumbnails[0]">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <span class="btn btn-outline-secondary disabled text-white fw-semibold px-2">
+          Strana {{currentPage || '-'}} / {{thumbnails.length}}
+        </span>
+        <button type="button" class="btn btn-outline-secondary" ng-click="nextPage()" title="Nasledujúca strana (šípka vpravo)" ng-disabled="currentPage === thumbnails[thumbnails.length - 1]">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Odkaz na katalogizáciu -->
+      <a href="/create-index" class="btn btn-sm btn-outline-primary px-2" title="Prejsť na Katalogizáciu článkov">
+        <i class="bi bi-journal-bookmark-fill me-1"></i>
+        <span class="d-none d-md-inline">Katalogizácia</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 3-Stĺpcový Hlavný Layout -->
+  <div class="container-fluid app-content">
+    <div class="row h-100 g-0">
+      
+      <!-- ========================================================
+           1. STĹPEC (Vľavo): Výber časopisu, roku a miniatúry stránok
+           ======================================================== -->
+      <aside class="col-md-3 col-xl-2 showtext-col-sidebar p-3 d-flex flex-column h-100">
+        
+        <!-- Výber časopisu -->
+        <div class="mb-2">
+          <label class="form-label small text-muted mb-1" for="stSelectMagazine">Časopis</label>
+          <select id="stSelectMagazine" class="form-select form-select-sm" ng-model="selectedMagazine" 
+                  ng-options="mag.title for mag in magazines" ng-change="onMagazineChange()">
+          </select>
+        </div>
+
+        <!-- Výber ročníka -->
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <label class="form-label small text-muted mb-0" for="stSelectYear">Ročník</label>
+            <span class="badge bg-dark border border-secondary text-muted" ng-if="thumbnails.length > 0">
+              {{thumbnails.length}} strán
+            </span>
+          </div>
+          <select id="stSelectYear" class="form-select form-select-sm" ng-model="selectedYear" 
+                  ng-options="yr for yr in availableYears" ng-change="onYearChange()">
+          </select>
+        </div>
+
+        <!-- Rýchly skok na stranu -->
+        <div class="mb-2" ng-if="thumbnails.length > 0">
+          <div class="input-group input-group-sm">
+            <span class="input-group-text bg-dark border-secondary text-muted"><i class="bi bi-hash"></i></span>
+            <input type="number" class="form-control" placeholder="Číslo strany..." 
+                   ng-model="jumpPageNumber" min="1" max="{{thumbnails.length}}"
+                   ng-keydown="$event.keyCode === 13 && jumpToPage()">
+            <button class="btn btn-outline-secondary" type="button" ng-click="jumpToPage()" title="Skočiť na stranu">
+              <i class="bi bi-arrow-return-left"></i>
+            </button>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-2">
+
+        <!-- Hlavička zoznamu miniatúr -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="fw-bold small text-uppercase text-muted">
+            <i class="bi bi-grid-fill me-1"></i> Strany ročníka
+          </span>
+          <span class="small text-muted" ng-if="currentPage">
+            Aktívna: <strong>s. {{currentPage}}</strong>
+          </span>
+        </div>
+
+        <!-- Zoznam miniatúr stránok (Scrollable) -->
+        <div class="showtext-thumbs-scroll flex-grow-1 overflow-y-auto pe-1">
+          <div ng-if="thumbnails.length === 0" class="text-center py-5 text-muted small">
+            <i class="bi bi-file-earmark-image fs-1 d-block mb-2 opacity-50"></i>
+            Žiadne miniatúry pre vybraný ročník.<br>
+            <small>Pripravte ich príkazom:<br><code>npm run prepare-thumbnails</code></small>
+          </div>
+
+          <div class="showtext-thumb-grid" ng-if="thumbnails.length > 0">
+            <div class="showtext-thumb-item" 
+                 ng-repeat="pageNum in thumbnails"
+                 id="thumb-item-{{pageNum}}"
+                 ng-class="{'active': pageNum === currentPage}"
+                 ng-click="selectPage(pageNum)"
+                 title="Strana {{pageNum}}">
+              
+              <div class="thumb-mini-box">
+                <img ng-src="/api/magazines/{{selectedMagazine.directory}}/{{activePdfId || selectedYear}}/thumbnails/{{pageNum}}.png" 
+                     alt="Strana {{pageNum}}" loading="lazy">
+                <span class="thumb-mini-badge">{{pageNum}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ========================================================
+           2. STĹPEC (V strede): Sken strany
+           ======================================================== -->
+      <section class="col-md-5 col-xl-5 showtext-col-scan p-2 d-flex flex-column h-100">
+        <div class="custom-card h-100 d-flex flex-column overflow-hidden">
+          
+          <!-- Hlavička skenu s nástrojmi zoomu -->
+          <div class="custom-card-header d-flex justify-content-between align-items-center flex-shrink-0">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-image text-info"></i>
+              <span class="fw-bold" ng-if="currentPage">
+                Sken strany {{currentPage}}
+              </span>
+              <span class="fw-bold text-muted" ng-if="!currentPage">
+                Vyberte stranu
+              </span>
+              <span class="badge bg-dark border border-secondary text-muted small" ng-if="currentPage">
+                {{zoomLevel}}%
+              </span>
+            </div>
+
+            <!-- Zoom & Viewport Toolbar -->
+            <div class="d-flex align-items-center gap-1" ng-if="currentPage">
+              <div class="btn-group btn-group-sm" role="group" aria-label="Zoom controls">
+                <button type="button" class="btn btn-outline-secondary py-0 px-2" ng-click="zoomOut()" title="Zmenšiť (-)">
+                  <i class="bi bi-zoom-out"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary py-0 px-2" ng-click="resetZoom()" title="Pôvodná veľkosť (100%)">
+                  100%
+                </button>
+                <button type="button" class="btn btn-outline-secondary py-0 px-2" ng-click="zoomIn()" title="Zväčšiť (+)">
+                  <i class="bi bi-zoom-in"></i>
+                </button>
+              </div>
+
+              <div class="btn-group btn-group-sm ms-1" role="group">
+                <button type="button" class="btn btn-outline-secondary py-0 px-2" 
+                        ng-class="{'active': fitMode === 'width'}" 
+                        ng-click="setFitMode('width')" title="Prispôsobiť šírke panelu">
+                  <i class="bi bi-arrows-expand-vertical" style="transform: rotate(90deg);"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary py-0 px-2" 
+                        ng-class="{'active': fitMode === 'height'}" 
+                        ng-click="setFitMode('height')" title="Prispôsobiť výške panelu">
+                  <i class="bi bi-arrows-expand-vertical"></i>
+                </button>
+              </div>
+
+              <a ng-href="/api/magazines/{{selectedMagazine.directory}}/{{activePdfId || selectedYear}}/images/{{currentPage}}.jpg" 
+                 target="_blank" class="btn btn-sm btn-outline-light py-0 px-2 ms-1" title="Otvoriť obrázok v novom tabe">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Telo skenu: Scrollable viewport -->
+          <div class="showtext-scan-viewport flex-grow-1 overflow-auto d-flex align-items-center justify-content-center p-2 position-relative bg-black" id="scanViewport">
+            
+            <div ng-if="!currentPage" class="text-center text-muted m-auto py-5">
+              <i class="bi bi-image fs-1 d-block mb-2 opacity-50"></i>
+              Vyberte stranu v zozname vľavo.
+            </div>
+
+            <!-- Samotný obrázok strany -->
+            <div class="scan-img-wrapper" ng-if="currentPage">
+              <img ng-src="/api/magazines/{{selectedMagazine.directory}}/{{activePdfId || selectedYear}}/images/{{currentPage}}.jpg" 
+                   alt="Sken strany {{currentPage}}"
+                   class="scan-display-img shadow-lg"
+                   ng-class="{
+                     'fit-width': fitMode === 'width',
+                     'fit-height': fitMode === 'height',
+                     'fit-custom': fitMode === 'custom' || fitMode === 'actual'
+                   }"
+                   ng-style="{'transform': (fitMode === 'custom' || fitMode === 'actual') ? 'scale(' + (zoomLevel / 100) + ')' : 'none'}"
+                   id="scanImage">
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================
+           3. STĹPEC (Vpravo): Editor textu strany
+           ======================================================== -->
+      <section class="col-md-4 col-xl-5 showtext-col-text p-2 d-flex flex-column h-100">
+        <div class="custom-card h-100 d-flex flex-column overflow-hidden">
+          
+          <!-- Hlavička textu / editora -->
+          <div class="custom-card-header d-flex justify-content-between align-items-center flex-shrink-0">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-pencil-square text-success"></i>
+              <span class="fw-bold" ng-if="currentPage">
+                Editor textu s. {{currentPage}}
+              </span>
+              <span class="fw-bold text-muted" ng-if="!currentPage">
+                Editor textu
+              </span>
+              <span class="badge" ng-if="currentPage"
+                    ng-class="{
+                      'bg-secondary': activeTextType === 'original',
+                      'bg-info text-dark': activeTextType === 'normalized',
+                      'bg-primary': activeTextType === 'sk'
+                    }">
+                {{getActiveLabel()}}
+              </span>
+              <span class="badge bg-warning text-dark small" ng-if="isTextDirty">
+                <i class="bi bi-pencil me-1"></i> Neuložené
+              </span>
+            </div>
+
+            <!-- Akcie s textom -->
+            <div class="d-flex align-items-center gap-1" ng-if="currentPage">
+              <!-- Tlačidlo Uložiť -->
+              <button class="btn btn-sm btn-success py-1 px-3 fw-semibold shadow-sm" 
+                      ng-click="savePageText()" 
+                      ng-disabled="!isTextDirty || isSavingText" 
+                      title="Uložiť zmeny v {{getActiveLabel()}} (Ctrl+S)">
+                <span ng-if="!isSavingText"><i class="bi bi-floppy me-1"></i> Uložiť</span>
+                <span ng-if="isSavingText"><span class="spinner-border spinner-border-sm me-1"></span> Ukladám...</span>
+              </button>
+
+              <!-- Vrátiť zmeny -->
+              <button class="btn btn-sm btn-outline-secondary py-1 px-2" 
+                      ng-click="resetText()" 
+                      ng-disabled="!isTextDirty" 
+                      title="Vrátiť zmeny v aktuálnej záložke">
+                <i class="bi bi-arrow-counterclockwise"></i>
+              </button>
+
+              <!-- Čistenie OCR textu -->
+              <button class="btn btn-sm btn-outline-secondary py-1 px-2" 
+                      ng-click="cleanPageText()" 
+                      ng-disabled="!pageText" 
+                      title="Vyčistiť text (spojiť rozdelené slová na koncoch riadkov)">
+                <i class="bi bi-brush"></i>
+              </button>
+
+              <!-- Oprava typografie (medzery pred bodkami, dvojbodkami, zdvojené medzery) -->
+              <button class="btn btn-sm btn-outline-info py-1 px-2" 
+                      ng-click="fixSelectedText()" 
+                      onmousedown="event.preventDefault()" 
+                      ng-disabled="!pageText" 
+                      title="Opraviť medzery pred bodkami, dvojbodkami a zdvojené medzery (v označenom alebo celom texte)" 
+                      id="btnFixText">
+                <i class="bi bi-spellcheck me-1"></i> Opraviť medzery
+              </button>
+
+              <!-- Spojenie označeného textu do jedného riadku -->
+              <button class="btn btn-sm btn-outline-warning py-1 px-2" 
+                      ng-click="joinSelectedLines()" 
+                      onmousedown="event.preventDefault()" 
+                      ng-disabled="!pageText" 
+                      title="Spojiť označený text do jedného riadku (odstráni zalomenia každého slova na nový riadok)" 
+                      id="btnJoinLines">
+                <i class="bi bi-text-wrap me-1"></i> Spojiť do riadku
+              </button>
+
+              <!-- Veľkosť písma -->
+              <div class="btn-group btn-group-sm ms-1" role="group" aria-label="Font size">
+                <button type="button" class="btn btn-outline-secondary py-0 px-2" ng-click="decreaseFontSize()" title="Zmenšiť písmo" ng-disabled="textFontSize <= 11">
+                  A-
+                </button>
+                <button type="button" class="btn btn-outline-secondary py-0 px-2" ng-click="increaseFontSize()" title="Zväčšiť písmo" ng-disabled="textFontSize >= 24">
+                  A+
+                </button>
+              </div>
+
+              <!-- Kopírovať -->
+              <button class="btn btn-sm btn-outline-light py-0 px-2 ms-1" ng-click="copyText()" ng-disabled="!pageText" title="Skopírovať celý text do schránky">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Panel prepínania verzií textu: Pôvodný OCR | Normalizovaný DE | Slovenský preklad -->
+          <div class="showtext-editor-tabs-bar d-flex justify-content-between align-items-center flex-shrink-0" ng-if="currentPage">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Výber verzie textu">
+              <!-- 1. Pôvodný text -->
+              <button type="button" class="btn text-type-tab-btn d-flex align-items-center gap-2"
+                      ng-class="{'active-original': activeTextType === 'original'}"
+                      ng-click="switchTextType('original')"
+                      title="Pôvodný OCR text ({{textFiles.original || 'pôvodný .txt'}})">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Pôvodný (OCR)</span>
+                <span class="badge rounded-pill" 
+                      ng-class="texts.original.isDirty ? 'bg-warning text-dark' : (hasContent.original ? 'bg-secondary' : 'bg-transparent text-secondary border border-secondary')"
+                      style="font-size: 0.65rem;"
+                      title="{{texts.original.isDirty ? 'Neuložené zmeny' : (hasContent.original ? 'Text existuje' : 'Prázdny text')}}">
+                  <span ng-if="texts.original.isDirty">●</span>
+                  <span ng-if="!texts.original.isDirty && hasContent.original">✓</span>
+                  <span ng-if="!texts.original.isDirty && !hasContent.original">∅</span>
+                </span>
+              </button>
+
+              <!-- 2. Normalizovaný DE text -->
+              <button type="button" class="btn text-type-tab-btn d-flex align-items-center gap-2"
+                      ng-class="{'active-normalized': activeTextType === 'normalized'}"
+                      ng-click="switchTextType('normalized')"
+                      title="Normalizovaný a opravený nemecký text ({{textFiles.normalized || 'normalized-*.txt'}})">
+                <i class="bi bi-check2-circle"></i>
+                <span>Normalizovaný (DE)</span>
+                <span class="badge rounded-pill" 
+                      ng-class="texts.normalized.isDirty ? 'bg-warning text-dark' : (hasContent.normalized ? 'bg-info text-dark' : 'bg-transparent text-secondary border border-secondary')"
+                      style="font-size: 0.65rem;"
+                      title="{{texts.normalized.isDirty ? 'Neuložené zmeny' : (hasContent.normalized ? 'Text existuje' : 'Prázdny text')}}">
+                  <span ng-if="texts.normalized.isDirty">●</span>
+                  <span ng-if="!texts.normalized.isDirty && hasContent.normalized">✓</span>
+                  <span ng-if="!texts.normalized.isDirty && !hasContent.normalized">∅</span>
+                </span>
+              </button>
+
+              <!-- 3. Slovenský preklad -->
+              <button type="button" class="btn text-type-tab-btn d-flex align-items-center gap-2"
+                      ng-class="{'active-sk': activeTextType === 'sk'}"
+                      ng-click="switchTextType('sk')"
+                      title="Slovenský preklad textu ({{textFiles.sk || 'sk-*.txt'}})">
+                <i class="bi bi-translate"></i>
+                <span>Slovenský preklad</span>
+                <span class="badge rounded-pill" 
+                      ng-class="texts.sk.isDirty ? 'bg-warning text-dark' : (hasContent.sk ? 'bg-primary' : 'bg-transparent text-secondary border border-secondary')"
+                      style="font-size: 0.65rem;"
+                      title="{{texts.sk.isDirty ? 'Neuložené zmeny' : (hasContent.sk ? 'Text existuje' : 'Prázdny text')}}">
+                  <span ng-if="texts.sk.isDirty">●</span>
+                  <span ng-if="!texts.sk.isDirty && hasContent.sk">✓</span>
+                  <span ng-if="!texts.sk.isDirty && !hasContent.sk">∅</span>
+                </span>
+              </button>
+            </div>
+
+            <!-- Názov aktívneho súboru -->
+            <div class="small text-muted d-none d-xl-flex align-items-center gap-1" ng-if="currentTxtFile">
+              <i class="bi bi-file-earmark-code text-secondary"></i>
+              <span class="text-secondary font-monospace" style="font-size: 0.75rem;">{{currentTxtFile}}</span>
+            </div>
+          </div>
+
+          <!-- Telo editora -->
+          <div class="p-2 flex-grow-1 overflow-hidden d-flex flex-column position-relative">
+            
+            <!-- Stav načítavania textu -->
+            <div ng-if="textLoading" class="text-center py-5 text-muted m-auto">
+              <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+              <span class="ms-2">Načítavam text strany...</span>
+            </div>
+
+            <!-- Stav keď nie je vybraná strana -->
+            <div ng-if="!currentPage && !textLoading" class="text-center py-5 text-muted m-auto">
+              <i class="bi bi-cursor fs-1 d-block mb-2 opacity-50"></i>
+              Vyberte stranu na úpravu textu.
+            </div>
+
+            <!-- Upozornenie keď pre stranu zatiaľ nebol vytvorený text v aktívnej záložke -->
+            <div ng-if="currentPage && !textLoading && !pageText" class="p-2 mb-2 rounded bg-dark border border-secondary text-muted small flex-shrink-0">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-info-circle text-info"></i>
+                <div ng-if="activeTextType === 'normalized'">
+                  Pre stranu {{currentPage}} zatiaľ nebol vytvorený <strong>normalizovaný text</strong>. Môžete ho sem priamo vložiť alebo spustiť <code>npm run normalize-de-text</code>.
+                </div>
+                <div ng-if="activeTextType === 'sk'">
+                  Pre stranu {{currentPage}} zatiaľ nebol vytvorený <strong>slovenský preklad</strong>. Môžete ho sem priamo napísať alebo spustiť <code>npm run de-sk-translator</code>.
+                </div>
+                <div ng-if="activeTextType === 'original'">
+                  Pre stranu {{currentPage}} zatiaľ nie je k dispozícii <strong>pôvodný OCR text</strong>.
+                </div>
+              </div>
+            </div>
+
+            <!-- Samotný editor textu -->
+            <textarea ng-show="currentPage && !textLoading" 
+                      class="form-control showtext-editor flex-grow-1 h-100" 
+                      ng-model="pageText" 
+                      ng-change="onTextChange()" 
+                      ng-input="onTextChange()" 
+                      ng-mouseup="onTextSelect()" 
+                      ng-keyup="onTextSelect(); onTextChange()" 
+                      ng-select="onTextSelect()" 
+                      ng-style="{'font-size': textFontSize + 'px'}" 
+                      placeholder="{{getActivePlaceholder()}}" 
+                      spellcheck="false" 
+                      id="pageTextEditor"></textarea>
+
+          </div>
+
+          <!-- Päta textového stĺpca -->
+          <div class="custom-card-header border-top border-secondary py-1 px-3 d-flex justify-content-between align-items-center small text-muted flex-shrink-0">
+            <div class="d-flex gap-3">
+              <span><i class="bi bi-file-text me-1"></i> Riadkov: <strong>{{textStats.lines}}</strong></span>
+              <span><i class="bi bi-fonts me-1"></i> Slov: <strong>{{textStats.words}}</strong></span>
+              <span><i class="bi bi-textarea-t me-1"></i> Znakov: <strong>{{textStats.chars}}</strong></span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-dark border border-secondary text-muted" ng-if="currentTxtFile" title="Cieľový súbor">
+                <i class="bi bi-file-earmark-code me-1"></i>{{currentTxtFile}}
+              </span>
+              <span class="badge bg-success-subtle text-success" ng-if="!isTextDirty && pageText">
+                <i class="bi bi-check2"></i> Uložené
+              </span>
+              <span class="badge bg-warning-subtle text-warning" ng-if="isTextDirty">
+                <i class="bi bi-circle-fill" style="font-size: 7px;"></i> Neuložené (Ctrl+S)
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="/show-text.js?v=2"></script>
+</body>
+</html>

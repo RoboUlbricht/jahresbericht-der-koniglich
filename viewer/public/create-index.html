@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="sk" ng-app="viewerApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalogizácia článkov - Prehliadač</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link href="/style.css?v=2" rel="stylesheet">
+</head>
+<body ng-controller="MainCtrl" class="app-layout-body">
+
+  <!-- Navbar -->
+  <header class="app-navbar d-flex align-items-center px-3 justify-content-between">
+    <div class="d-flex align-items-center gap-2">
+      <a href="/" class="btn btn-sm btn-outline-secondary py-1 px-2 d-flex align-items-center gap-1 nav-back-btn" title="Späť na zoznam funkcií">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+        <span class="d-none d-sm-inline">Funkcie</span>
+      </a>
+      <div class="vr bg-secondary opacity-50 my-1 mx-1"></div>
+      <div class="brand-icon">
+        <i class="bi bi-journal-bookmark-fill"></i>
+      </div>
+      <h1 class="h6 mb-0 text-white fw-bold">Katalogizácia článkov</h1>
+      <span class="badge bg-secondary ms-2" ng-if="selectedMagazine">{{selectedMagazine.title}}</span>
+      <span class="badge bg-primary" ng-if="selectedYear">Ročník {{selectedYear}}</span>
+    </div>
+
+    <!-- Notifications & Actions -->
+    <div class="d-flex align-items-center gap-2">
+      <div ng-if="notification" class="alert alert-{{notification.type}} py-1 px-3 mb-0 small animate-fade">
+        <i class="bi bi-info-circle me-1"></i> {{notification.message}}
+      </div>
+      <a href="/show-text" class="btn btn-sm btn-outline-info px-2 fw-semibold" title="Prejsť na Prehliadač skenov a textu">
+        <i class="bi bi-file-earmark-richtext me-1"></i> Prehliadač textu
+      </a>
+      <button class="btn btn-sm btn-success px-3 fw-semibold" ng-click="saveArticles()" ng-disabled="!isDirty">
+        <i class="bi bi-floppy me-1"></i> Uložiť zmeny
+        <span ng-if="isDirty" class="badge bg-danger ms-1">•</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Split Layout -->
+  <div class="container-fluid app-content">
+    <div class="row h-100 g-0">
+      
+      <!-- 1. Stĺpec (Vľavo): Výbery a zoznam článkov -->
+      <aside class="col-md-3 col-xl-2 sidebar-col p-3">
+        <!-- Výber časopisu -->
+        <div class="mb-3">
+          <label class="form-label" for="selectMagazine">Časopis</label>
+          <select id="selectMagazine" class="form-select" ng-model="selectedMagazine" 
+                  ng-options="mag.title for mag in magazines" ng-change="onMagazineChange()">
+          </select>
+        </div>
+
+        <!-- Výber ročníka -->
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <label class="form-label mb-0" for="selectYear">Ročník</label>
+            <button class="btn btn-xs py-0 px-1" 
+                    ng-class="showNewVolumeInput ? 'btn-outline-warning' : 'btn-outline-secondary'"
+                    ng-click="toggleNewVolumeInput()" 
+                    title="{{ showNewVolumeInput ? 'Zavrieť zadávanie ročníka' : 'Pridať nový ročník do zoznamu článkov' }}"
+                    id="btnAddVolumeToggle">
+              <i class="bi" ng-class="showNewVolumeInput ? 'bi-x-lg' : 'bi-plus-lg'"></i> {{ showNewVolumeInput ? 'Zavrieť' : '+ Ročník' }}
+            </button>
+          </div>
+
+          <!-- Inline zadanie nového ročníka -->
+          <div class="mb-2 p-2 bg-dark rounded border border-secondary" ng-if="showNewVolumeInput" id="newVolumeBox">
+            <label class="form-label small text-muted mb-1" for="inputNewVolume">Rok nového ročníka:</label>
+            <div class="input-group input-group-sm">
+              <input type="number" class="form-control" id="inputNewVolume" 
+                     placeholder="Napr. 1883" 
+                     ng-model="newVolumeYear" 
+                     ng-keydown="$event.keyCode === 13 && confirmAddVolume()">
+              <button class="btn btn-success" type="button" ng-click="confirmAddVolume()" id="btnConfirmAddVolume" title="Pridať ročník">
+                <i class="bi bi-check-lg"></i> Pridať
+              </button>
+            </div>
+          </div>
+
+          <select id="selectYear" class="form-select" ng-model="selectedYear" 
+                  ng-options="yr for yr in availableYears" ng-change="onYearChange()">
+          </select>
+        </div>
+
+        <hr class="border-secondary my-2">
+
+        <!-- Hlavička zoznamu článkov -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="fw-bold small text-uppercase text-muted">
+            Články ({{currentArticles.length}})
+          </span>
+          <button class="btn btn-sm btn-outline-primary py-1 px-2" ng-click="newArticle()" id="btnNewArticle">
+            <i class="bi bi-plus-circle me-1"></i> Nový článok
+          </button>
+        </div>
+
+        <!-- Vyhľadávanie v článkoch -->
+        <div class="mb-2">
+          <div class="input-group input-group-sm">
+            <span class="input-group-text bg-dark border-secondary text-muted"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" placeholder="Filtrovať články..." ng-model="searchQuery">
+          </div>
+        </div>
+
+        <!-- Zoznam článkov -->
+        <div class="articles-scrollable">
+          <div ng-if="currentArticles.length === 0" class="text-center py-4 text-muted small">
+            <i class="bi bi-file-earmark-text fs-2 d-block mb-2 opacity-50"></i>
+            Žiadne články v tomto ročníku.<br>Kliknite na „Nový článok“.
+          </div>
+
+          <div class="article-list-item" 
+               ng-repeat="art in currentArticles | filter:searchQuery"
+               ng-class="{'active': currentArticles.indexOf(art) === selectedArticleIndex}"
+               ng-click="selectArticle(currentArticles.indexOf(art))"
+               id="article-item-{{$index}}">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="article-author text-truncate me-2">{{art.author || '(Bez autora)'}}</span>
+              <div class="d-flex gap-1 flex-shrink-0">
+                <span class="badge badge-page" title="Strana v časopise">s. {{art.page}}</span>
+                <span class="badge badge-pdf-page" title="Strana v PDF">PDF: {{art.pdf_page}}</span>
+              </div>
+            </div>
+            <div class="article-title" title="{{art.title_de || art.title_hu || art.title_sk || art.title_en}}">
+              {{art.title_de || art.title_hu || art.title_sk || art.title_en || '(Bez názvu)'}}
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 2. Stĺpec (V strede): Editácia položky -->
+      <section class="col-md-4 col-xl-5 editor-col p-2">
+        <div class="custom-card h-100 d-flex flex-column overflow-hidden">
+          <div class="custom-card-header d-flex justify-content-between align-items-center flex-shrink-0">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-pencil-square text-primary"></i>
+              <span class="fw-bold" ng-if="editedArticle">
+                Úprava článku #{{selectedArticleIndex + 1}}
+              </span>
+              <span class="fw-bold text-muted" ng-if="!editedArticle">
+                Vyberte článok na úpravu
+              </span>
+              <span ng-if="isDirty" class="badge bg-warning text-dark small">Neuložené</span>
+            </div>
+
+            <div class="d-flex gap-1" ng-if="editedArticle">
+              <button class="btn btn-sm btn-outline-info py-1 px-2" ng-click="scrollToThumbnail(editedArticle.pdf_page)" 
+                      title="Skočiť na miniatúru strany v PDF" id="btnScrollToThumb">
+                <i class="bi bi-image me-1"></i> PDF: {{editedArticle.pdf_page}}
+              </button>
+              <button class="btn btn-sm btn-outline-secondary py-1 px-2" ng-click="resetArticle()" ng-disabled="!isDirty" title="Vrátiť zmeny">
+                <i class="bi bi-arrow-counterclockwise"></i>
+              </button>
+              <button class="btn btn-sm btn-outline-danger py-1 px-2" ng-click="deleteArticle(selectedArticleIndex)" id="btnDeleteArticle" title="Odstrániť článok">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-body p-3 overflow-y-auto flex-grow-1" ng-if="editedArticle">
+            <div class="row g-2">
+              <!-- Autor -->
+              <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <label class="form-label mb-0" for="inputAuthor">Autor</label>
+                  <button class="btn btn-xs btn-outline-secondary py-0 px-2" type="button" 
+                          ng-click="normalizeCurrentAuthor()" 
+                          ng-disabled="!editedArticle.author"
+                          title="Znormalizovať meno autora (Prvé veľké, ostatné malé)" 
+                          id="btnNormalizeAuthor">
+                    <i class="bi bi-magic me-1"></i> Normalizovať
+                  </button>
+                </div>
+                <input id="inputAuthor" type="text" class="form-control" ng-model="editedArticle.author" 
+                       ng-change="onFieldChange()" placeholder="napr. Johann Böckh">
+              </div>
+
+              <!-- Jazyk článku -->
+              <div class="col-6">
+                <label class="form-label" for="selectLanguage">Jazyk</label>
+                <select id="selectLanguage" class="form-select" ng-model="editedArticle.language" ng-change="onFieldChange()">
+                  <option value="de">Nemecký (de)</option>
+                  <option value="hu">Maďarský (hu)</option>
+                  <option value="sk">Slovenský (sk)</option>
+                  <option value="en">Anglický (en)</option>
+                </select>
+              </div>
+
+              <!-- Číslo strany v časopise -->
+              <div class="col-6">
+                <label class="form-label" for="inputPage">Strana v časopise</label>
+                <input id="inputPage" type="number" class="form-control" ng-model="editedArticle.page" 
+                       ng-change="onFieldChange()" min="1">
+              </div>
+
+              <!-- Číslo strany v PDF -->
+              <div class="col-6">
+                <label class="form-label" for="inputPdfPage">Strana v PDF (pdf_page)</label>
+                <div class="input-group">
+                  <input id="inputPdfPage" type="number" class="form-control" ng-model="editedArticle.pdf_page" 
+                         ng-change="onFieldChange()" min="1">
+                  <button class="btn btn-outline-info" type="button" ng-click="scrollToThumbnail(editedArticle.pdf_page)" title="Ukázať v miniatúrach">
+                    <i class="bi bi-crosshair"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- PDF ID -->
+              <div class="col-6">
+                <label class="form-label" for="inputPdfId">PDF ID</label>
+                <input id="inputPdfId" type="text" class="form-control" ng-model="editedArticle.pdf_id" 
+                       ng-change="onFieldChange()" placeholder="napr. V05aAAAAYAAJ">
+              </div>
+
+              <div class="col-12"><hr class="border-secondary my-1"></div>
+
+              <!-- Hlavička názvov s akčnými tlačidlami pre čistenie a AI preklad -->
+              <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="small fw-semibold text-muted text-uppercase">Názvy a preklady článku</span>
+                  <div class="d-flex gap-1">
+                    <button class="btn btn-xs btn-outline-secondary py-0 px-2" type="button" 
+                            ng-click="cleanCurrentTitles()" 
+                            title="Základné vyčistenie textu (spojenie rozdelených slov AUS- GEFÜHRTE, medzery, OCR)" 
+                            id="btnCleanTitles">
+                      <i class="bi bi-brush me-1"></i> Vyčistiť text
+                    </button>
+                    <button class="btn btn-xs btn-outline-primary py-0 px-2" type="button" 
+                            ng-click="aiNormalizeAndTranslate()" 
+                            ng-disabled="isAiTranslating || (!editedArticle.title_de && !editedArticle.title_hu)" 
+                            title="Normalizovať gramatiku a doplniť preklady cez Gemini AI (19. stor. geológia, baníctvo, paleobotanika)" 
+                            id="btnAiTranslate">
+                      <span ng-if="!isAiTranslating"><i class="bi bi-stars me-1 text-warning"></i> Gemini AI Preklad</span>
+                      <span ng-if="isAiTranslating"><span class="spinner-border spinner-border-sm me-1"></span> Spracovávam...</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Názov Nemecký -->
+              <div class="col-12">
+                <label class="form-label" for="inputTitleDe">Názov Nemecký (title_de)</label>
+                <textarea id="inputTitleDe" class="form-control" rows="2" ng-model="editedArticle.title_de" 
+                          ng-change="onFieldChange()" placeholder="Nemecký názov článku..."></textarea>
+              </div>
+
+              <!-- Názov Maďarský -->
+              <div class="col-12">
+                <label class="form-label" for="inputTitleHu">Názov Maďarský (title_hu)</label>
+                <textarea id="inputTitleHu" class="form-control" rows="2" ng-model="editedArticle.title_hu" 
+                          ng-change="onFieldChange()" placeholder="Maďarský názov článku..."></textarea>
+              </div>
+
+              <!-- Názov Slovenský -->
+              <div class="col-12">
+                <label class="form-label" for="inputTitleSk">Názov Slovenský (title_sk)</label>
+                <textarea id="inputTitleSk" class="form-control" rows="2" ng-model="editedArticle.title_sk" 
+                          ng-change="onFieldChange()" placeholder="Slovenský preklad názvu..."></textarea>
+              </div>
+
+              <!-- Názov Anglický -->
+              <div class="col-12">
+                <label class="form-label" for="inputTitleEn">Názov Anglický (title_en)</label>
+                <textarea id="inputTitleEn" class="form-control" rows="2" ng-model="editedArticle.title_en" 
+                          ng-change="onFieldChange()" placeholder="Anglický preklad názvu..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body p-4 text-center text-muted m-auto" ng-if="!editedArticle">
+            <i class="bi bi-cursor fs-1 d-block mb-2 opacity-50"></i>
+            Vyberte článok zo zoznamu vľavo alebo vytvorte nový článok.
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Stĺpec (Vpravo): Miniatúry flow do celého panela -->
+      <section class="col-md-5 col-xl-5 thumbnails-col p-2">
+        <div class="custom-card h-100 d-flex flex-column overflow-hidden">
+          <div class="custom-card-header d-flex justify-content-between align-items-center flex-shrink-0">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-images text-success"></i>
+              <span class="fw-bold">Miniatúry</span>
+              <span class="badge bg-secondary" ng-if="thumbnails.length > 0">{{thumbnails.length}}</span>
+            </div>
+
+            <!-- Ovládacie prvky: PDF výber, Veľkosť a rýchly skok -->
+            <div class="d-flex align-items-center gap-2">
+              <!-- Výber PDF súboru -->
+              <div class="d-flex align-items-center gap-1" ng-if="publishedPdfs.length > 0">
+                <span class="small text-muted">PDF:</span>
+                <select class="form-select form-select-sm py-0" style="width: auto; max-width: 140px; font-size: 0.8rem;" 
+                        ng-model="activePdfId" ng-change="onPdfChange()" 
+                        ng-options="p.id as (p.year ? (p.year + ' (' + p.id + ')') : p.id) for p in publishedPdfs"
+                        title="Aktívne PDF pre miniatúry a text">
+                </select>
+              </div>
+
+              <div class="d-flex align-items-center gap-2" ng-if="thumbnails.length > 0">
+                <!-- Prepínač veľkosti miniatúr S/M/L -->
+                <div class="btn-group btn-group-sm" role="group" aria-label="Veľkosť">
+                  <button type="button" class="btn btn-outline-secondary py-0 px-2" 
+                          ng-class="{'active': thumbSize === 's'}" ng-click="setThumbSize('s')" title="Menšie miniatúry (160px)">S</button>
+                  <button type="button" class="btn btn-outline-secondary py-0 px-2" 
+                          ng-class="{'active': thumbSize === 'm'}" ng-click="setThumbSize('m')" title="Stredné miniatúry (220px)">M</button>
+                  <button type="button" class="btn btn-outline-secondary py-0 px-2" 
+                          ng-class="{'active': thumbSize === 'l'}" ng-click="setThumbSize('l')" title="Väčšie miniatúry (290px)">L</button>
+                </div>
+
+                <!-- Rýchly skok na stranu -->
+                <div class="input-group input-group-sm" style="width: 110px;">
+                  <input type="number" class="form-control" ng-model="jumpPageNumber" min="1" max="{{thumbnails.length}}" placeholder="Strana">
+                  <button class="btn btn-outline-secondary" type="button" ng-click="jumpToPage()" id="btnJumpPage" title="Skočiť na stranu">
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flow miniatúr do celého panela -->
+          <div class="p-1 overflow-hidden flex-grow-1 d-flex flex-column">
+            <div ng-if="thumbnails.length === 0" class="text-center py-5 text-muted m-auto">
+              <i class="bi bi-file-earmark-image fs-1 d-block mb-2 opacity-50"></i>
+              Pre tento ročník zatiaľ neboli vygenerované miniatúry.<br>
+              <small>Môžete ich pripraviť príkazom <code>node src/prepare-thumbnails.js &lt;cesta-k-pdf&gt;</code>.</small>
+            </div>
+
+            <div class="thumbnails-flow-grid thumb-size-{{thumbSize}}" ng-if="thumbnails.length > 0">
+              <div class="thumbnail-flow-item" 
+                   ng-repeat="pageNum in thumbnails"
+                   id="thumb-page-{{pageNum}}"
+                   ng-class="{
+                     'target-pdf-page': editedArticle && pageNum === editedArticle.pdf_page,
+                     'active': pageNum === selectedThumbPage
+                   }"
+                   ng-click="openPageText(pageNum)"
+                   title="Strana {{pageNum}} - Kliknite pre zobrazenie textu">
+                
+                <div class="thumb-img-box">
+                  <img ng-src="/api/magazines/{{selectedMagazine.directory}}/{{activePdfId || selectedYear}}/thumbnails/{{pageNum}}.png" 
+                       alt="Strana {{pageNum}}">
+                  <span class="thumb-page-badge">{{pageNum}}</span>
+                </div>
+
+                <div class="thumb-flow-actions">
+                  <button class="btn btn-xs btn-outline-primary w-100 py-0" 
+                          ng-click="$event.stopPropagation(); setAsPdfPage(pageNum)" 
+                          title="Nastaviť ako PDF stranu článku"
+                          id="btnSetPdfPage-{{pageNum}}">
+                    <i class="bi bi-check2"></i> PDF
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- MODAL: Zobrazenie textu a obrázku strany -->
+  <div class="modal fade" id="pageTextModal" tabindex="-1" aria-labelledby="pageTextModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content custom-card border-secondary">
+        <div class="modal-header custom-card-header">
+          <h5 class="modal-title h6 fw-bold" id="pageTextModalLabel">
+            <i class="bi bi-file-earmark-text text-info me-2"></i> Detail strany {{pageTextData.page}}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body p-0">
+          <div class="row g-0 h-100">
+            <!-- Vľavo: Náhľad obrázku strany (High-res alebo miniatúra) -->
+            <div class="col-md-6 border-end border-secondary p-3 text-center bg-black d-flex flex-column align-items-center justify-content-center" style="min-height: 480px;">
+              <div class="position-relative w-100 d-flex justify-content-center align-items-center" style="max-height: 75vh; overflow: auto;">
+                <img ng-if="pageTextData.page" 
+                     ng-src="/api/magazines/{{selectedMagazine.directory}}/{{activePdfId || selectedYear}}/images/{{pageTextData.page}}.jpg" 
+                     class="img-fluid rounded border border-secondary shadow" 
+                     style="max-height: 70vh; object-fit: contain;"
+                     alt="Sken strany {{pageTextData.page}}">
+              </div>
+              <div class="mt-2 text-muted small">
+                Strana {{pageTextData.page}} (originálny sken z PDF)
+              </div>
+            </div>
+
+            <!-- Vpravo: Extrahovaný text z OCR -->
+            <div class="col-md-6 p-3 d-flex flex-column" style="min-height: 480px; max-height: 75vh;">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="small fw-bold text-uppercase text-muted">Extrahovaný text (OCR)</span>
+                <button class="btn btn-xs btn-outline-light py-0 px-2" ng-click="copyToClipboard(pageTextData.text)" title="Skopírovať extrahovaný text">
+                  <i class="bi bi-clipboard me-1"></i> Kopírovať
+                </button>
+              </div>
+
+              <div ng-if="pageTextData.loading" class="text-center py-5 text-muted m-auto">
+                <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+                <span class="ms-2">Načítavam text strany...</span>
+              </div>
+
+              <div ng-if="!pageTextData.loading" class="page-text-preview flex-grow-1" id="pageTextContent">
+                {{pageTextData.text}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer custom-card-header d-flex justify-content-between">
+          <div class="d-flex gap-2 align-items-center">
+            <span class="small text-muted">Časopis: <strong>{{selectedMagazine.title}}</strong></span>
+            <span class="badge bg-dark border border-secondary" ng-if="activePdfId">PDF: {{activePdfId}}</span>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Zavrieť</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="/app.js?v=2"></script>
+</body>
+</html>

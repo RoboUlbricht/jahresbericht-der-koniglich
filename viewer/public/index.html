@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prehľad funkcií - Archív geologických periodík</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link href="/style.css?v=3" rel="stylesheet">
+</head>
+<body class="portal-body">
+
+  <!-- Navbar -->
+  <header class="app-navbar d-flex align-items-center px-4 justify-content-between sticky-top">
+    <div class="d-flex align-items-center gap-3">
+      <div class="brand-icon">
+        <i class="bi bi-collection-play-fill"></i>
+      </div>
+      <div>
+        <h1 class="h6 mb-0 text-white fw-bold">Archív geologických periodík</h1>
+        <span class="small text-muted">Index digitalizačných nástrojov a funkcií</span>
+      </div>
+    </div>
+
+    <!-- Quick action links -->
+    <div class="d-flex align-items-center gap-2">
+      <div id="systemStatusBadge" class="badge bg-dark border border-secondary text-muted px-2 py-1 small">
+        <span class="spinner-border spinner-border-sm me-1" style="width: 10px; height: 10px;"></span> Pripájanie...
+      </div>
+      <a href="/show-text" class="btn btn-sm btn-outline-info px-3 fw-semibold d-flex align-items-center gap-1 shadow-sm">
+        <i class="bi bi-file-earmark-richtext-fill me-1"></i>
+        <span>Prehliadač textu</span>
+      </a>
+      <a href="/create-index" class="btn btn-sm btn-primary px-3 fw-semibold d-flex align-items-center gap-1 shadow-sm">
+        <i class="bi bi-journal-bookmark-fill me-1"></i>
+        <span>Katalogizácia článkov</span>
+        <i class="bi bi-arrow-right small ms-1"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="portal-hero py-5 px-3">
+    <div class="container-xl">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-8">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-dark border border-secondary mb-3">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill">v1.1</span>
+            <span class="small text-light">Digitalizačná platforma vedeckých ročeniek 19. storočia</span>
+          </div>
+          <h2 class="display-6 fw-bold text-white mb-3">
+            Prehľad funkcií a modulov systému
+          </h2>
+          <p class="lead text-muted mb-4" style="max-width: 680px;">
+            Komplexné nástroje na spracovanie, extrakciu textu (OCR), generovanie vizuálnych náhľadov 
+            a katalogizáciu historických vedeckých periodík s AI asistenciou.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="/show-text" class="btn btn-info btn-lg px-4 fw-bold shadow text-white">
+              <i class="bi bi-file-earmark-richtext-fill me-2"></i> Prehliadač textu a skenu
+            </a>
+            <a href="/create-index" class="btn btn-primary btn-lg px-4 fw-bold shadow">
+              <i class="bi bi-journal-bookmark-fill me-2"></i> Katalogizácia článkov
+            </a>
+            <a href="#features" class="btn btn-outline-secondary btn-lg px-3">
+              <i class="bi bi-grid-3x3-gap me-2"></i> Zoznam funkcií
+            </a>
+            <a href="#magazines" class="btn btn-outline-secondary btn-lg px-3">
+              <i class="bi bi-journals me-2"></i> Časopisy
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Dynamic Stats Card -->
+        <div class="col-lg-4">
+          <div class="custom-card p-4 border-secondary shadow-lg portal-stat-box">
+            <h6 class="fw-bold text-uppercase text-muted small mb-3">
+              <i class="bi bi-bar-chart-fill text-primary me-2"></i> Stav archívu a databázy
+            </h6>
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="p-2 rounded bg-dark border border-secondary text-center">
+                  <div class="h3 fw-bold text-white mb-0" id="statMagazinesCount">-</div>
+                  <span class="small text-muted">Časopisy</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-2 rounded bg-dark border border-secondary text-center">
+                  <div class="h3 fw-bold text-info mb-0" id="statVolumesCount">-</div>
+                  <span class="small text-muted">Ročníky</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-2 rounded bg-dark border border-secondary text-center">
+                  <div class="h3 fw-bold text-success mb-0" id="statArticlesCount">-</div>
+                  <span class="small text-muted">Články</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-2 rounded bg-dark border border-secondary text-center">
+                  <div class="h3 fw-bold text-warning mb-0" id="statThumbnailsCount">-</div>
+                  <span class="small text-muted">Náhľady strán</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3 pt-3 border-top border-secondary d-flex justify-content-between align-items-center">
+              <span class="small text-muted">Ukladanie dát:</span>
+              <span class="badge bg-secondary-subtle text-light border border-secondary">JSON + File System</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="container-xl py-4">
+
+    <!-- 1. Sekcia: Index funkcií -->
+    <section id="features" class="mb-5">
+      <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-secondary">
+        <div>
+          <h3 class="h4 fw-bold text-white mb-1">
+            <i class="bi bi-cpu-fill text-primary me-2"></i> Index dostupných funkcií
+          </h3>
+          <p class="text-muted small mb-0">Zoznam interaktívnych webových rozhraní a automatizačných pipeline skriptov</p>
+        </div>
+        <span class="badge bg-primary px-3 py-2">6 modulov</span>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- Webová funkcia: Prehliadač textov a skenov (show-text) -->
+        <div class="col-lg-6">
+          <div class="custom-card feature-card h-100 p-4 border-info position-relative overflow-hidden" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(31, 41, 55, 0.95));">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-info-subtle text-info border border-info fw-bold px-2 py-1">
+                <i class="bi bi-circle-fill me-1" style="font-size: 8px;"></i> Webová aplikácia (Aktívne)
+              </span>
+              <span class="badge bg-dark border border-secondary text-light">
+                Route: <code>/show-text</code>
+              </span>
+            </div>
+            <h4 class="h4 fw-bold text-white mb-2">
+              <a href="/show-text" class="text-white text-decoration-none hover-underline">
+                Prehliadač skenov a textu
+              </a>
+            </h4>
+            <p class="text-light opacity-75 mb-3 small">
+              Trojstĺpcové prostredie na paralelné čítanie: vľavo výber časopisu, ročníka a zoznam miniatúr stránok, 
+              v strede plnohodnotný sken strany so zoomom, vpravo extrahovaný text strany (OCR) s možnosťou kopírovania.
+            </p>
+            <div class="d-flex flex-wrap gap-1 mb-4">
+              <span class="feature-pill"><i class="bi bi-layout-three-columns text-info me-1"></i> 3-stĺpcový dizajn</span>
+              <span class="feature-pill"><i class="bi bi-images text-success me-1"></i> Miniatúry strán</span>
+              <span class="feature-pill"><i class="bi bi-zoom-in text-warning me-1"></i> Zoom skenu</span>
+              <span class="feature-pill"><i class="bi bi-file-earmark-text text-primary me-1"></i> OCR Text</span>
+            </div>
+            <a href="/show-text" class="btn btn-info text-white fw-bold px-3 py-2 w-100 d-flex justify-content-between align-items-center">
+              <span><i class="bi bi-file-earmark-richtext-fill me-2"></i> Otvoriť Prehliadač skenov a textu</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Webová funkcia: Katalogizácia článkov (zvýraznená karta) -->
+        <div class="col-lg-6">
+          <div class="custom-card feature-card feature-card-primary h-100 p-4 border-primary position-relative overflow-hidden">
+            <div class="feature-card-glow"></div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-success-subtle text-success border border-success fw-bold px-2 py-1">
+                <i class="bi bi-circle-fill me-1" style="font-size: 8px;"></i> Webová aplikácia (Aktívne)
+              </span>
+              <span class="badge bg-dark border border-secondary text-light">
+                Route: <code>/create-index</code>
+              </span>
+            </div>
+            <h4 class="h4 fw-bold text-white mb-2">
+              <a href="/create-index" class="text-white text-decoration-none hover-underline">
+                Katalogizácia článkov
+              </a>
+            </h4>
+            <p class="text-light opacity-75 mb-3 small">
+              Editor a katalogizátor bibliografických záznamov. Umožňuje párovanie čísla strany s PDF stranou cez miniatúry, 
+              náhľad OCR textu, normalizáciu mien autorov a AI preklad staronemeckých a maďarských vedeckých názvov.
+            </p>
+            <div class="d-flex flex-wrap gap-1 mb-4">
+              <span class="feature-pill"><i class="bi bi-pencil-square text-info me-1"></i> Editácia článkov</span>
+              <span class="feature-pill"><i class="bi bi-stars text-warning me-1"></i> Gemini AI preklad</span>
+              <span class="feature-pill"><i class="bi bi-person-check text-primary me-1"></i> Normalizácia autorov</span>
+              <span class="feature-pill"><i class="bi bi-floppy text-success me-1"></i> articles.json</span>
+            </div>
+            <a href="/create-index" class="btn btn-primary fw-bold px-3 py-2 w-100 d-flex justify-content-between align-items-center">
+              <span><i class="bi bi-journal-bookmark-fill me-2"></i> Otvoriť Katalogizáciu článkov</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Funkcia: Extrakcia textu (OCR) -->
+        <div class="col-md-6 col-lg-3">
+          <div class="custom-card feature-card h-100 p-3 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="feature-icon bg-info-subtle text-info">
+                  <i class="bi bi-file-earmark-font-fill"></i>
+                </div>
+                <span class="badge bg-dark border border-secondary text-muted">CLI Pipeline</span>
+              </div>
+              <h5 class="h6 fw-bold text-white mb-2">Extrakcia textu (OCR)</h5>
+              <p class="text-muted small mb-3">
+                Dávková extrakcia textových vrstiev a OCR blokov z PDF súborov ročníkov. Ukladá štruktúrovaný text rozdelený po stranách do <code>.txt</code>.
+              </p>
+            </div>
+            <div>
+              <div class="p-2 rounded bg-black border border-secondary text-muted font-monospace small mb-2 text-truncate" title="npm run prepare-text">
+                npm run prepare-text
+              </div>
+              <span class="small text-muted"><i class="bi bi-code-slash me-1"></i> <code>src/prepare-text.js</code></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Funkcia: Generovanie miniatúr -->
+        <div class="col-md-6 col-lg-3">
+          <div class="custom-card feature-card h-100 p-3 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="feature-icon bg-success-subtle text-success">
+                  <i class="bi bi-grid-3x2-gap-fill"></i>
+                </div>
+                <span class="badge bg-dark border border-secondary text-muted">CLI Pipeline</span>
+              </div>
+              <h5 class="h6 fw-bold text-white mb-2">Generovanie miniatúr</h5>
+              <p class="text-muted small mb-3">
+                Hromadné vykresľovanie stránok z PDF do optimalizovaných PNG miniatúr pre plynulý náhľad a navigáciu v rozhraní katalogizátora.
+              </p>
+            </div>
+            <div>
+              <div class="p-2 rounded bg-black border border-secondary text-muted font-monospace small mb-2 text-truncate" title="npm run prepare-thumbnails">
+                npm run prepare-thumbnails
+              </div>
+              <span class="small text-muted"><i class="bi bi-code-slash me-1"></i> <code>src/prepare-thumbnails.js</code></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Funkcia: Obrázky vo vysokom rozlíšení -->
+        <div class="col-md-6 col-lg-3">
+          <div class="custom-card feature-card h-100 p-3 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="feature-icon bg-warning-subtle text-warning">
+                  <i class="bi bi-image-fill"></i>
+                </div>
+                <span class="badge bg-dark border border-secondary text-muted">CLI Pipeline</span>
+              </div>
+              <h5 class="h6 fw-bold text-white mb-2">Generovanie JPG snímok</h5>
+              <p class="text-muted small mb-3">
+                Vykreslenie stránok v plnom rozlíšení do JPG formátu pre detailné čítanie textu, geologických profilov a litografických tabúľ v modálnom okne.
+              </p>
+            </div>
+            <div>
+              <div class="p-2 rounded bg-black border border-secondary text-muted font-monospace small mb-2 text-truncate" title="npm run prepare-images">
+                npm run prepare-images
+              </div>
+              <span class="small text-muted"><i class="bi bi-code-slash me-1"></i> <code>src/prepare-images.js</code></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Funkcia: Normalizácia autorov -->
+        <div class="col-md-6 col-lg-3">
+          <div class="custom-card feature-card h-100 p-3 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="feature-icon bg-danger-subtle text-danger">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <span class="badge bg-dark border border-secondary text-muted">CLI / Algoritmus</span>
+              </div>
+              <h5 class="h6 fw-bold text-white mb-2">Normalizácia autorov</h5>
+              <p class="text-muted small mb-3">
+                Automatická kontrola a unifikácia zápisov mien bádateľov v databáze (formátovanie iniciál, historické predložky <em>von</em>, <em>de</em>, <em>van</em>).
+              </p>
+            </div>
+            <div>
+              <div class="p-2 rounded bg-black border border-secondary text-muted font-monospace small mb-2 text-truncate" title="npm run normalize-authors">
+                npm run normalize-authors
+              </div>
+              <span class="small text-muted"><i class="bi bi-code-slash me-1"></i> <code>src/normalize-authors.js</code></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Sekcia: Registrované časopisy v systéme -->
+    <section id="magazines" class="mb-5">
+      <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-secondary">
+        <div>
+          <h3 class="h4 fw-bold text-white mb-1">
+            <i class="bi bi-journals text-primary me-2"></i> Registrované časopisy a ročníky
+          </h3>
+          <p class="text-muted small mb-0">Aktuálne evidované periodiká a dostupnosť ich digitálnych podkladov</p>
+        </div>
+        <a href="/create-index" class="btn btn-sm btn-outline-primary">
+          <i class="bi bi-folder-symlink me-1"></i> Otvoriť v katalogizácii
+        </a>
+      </div>
+
+      <!-- Loading skeleton -->
+      <div id="magazinesLoading" class="text-center py-5 text-muted">
+        <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+        <span class="ms-2">Načítavam zoznam časopisov z databázy...</span>
+      </div>
+
+      <!-- Container pre načítané časopisy -->
+      <div id="magazinesList" class="row g-4 d-none">
+        <!-- Renderované dynamicky pomocou JavaScriptu -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="portal-footer py-4 mt-5 border-top border-secondary text-center text-muted small">
+    <div class="container-xl">
+      <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+        <div>
+          <span class="text-white fw-bold">Jahresbericht der Königlich ungarischen Geologischen Reichsanstalt</span>
+          <span class="mx-1">•</span> Archívny systém
+        </div>
+        <div>
+          <a href="/create-index" class="text-primary text-decoration-none me-3">Katalogizácia článkov</a>
+          <span class="text-muted">Port: 3000</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JS pre dynamické načítanie štatistík a zoznamu časopisov -->
+  <script>
+    async function loadPortalData() {
+      const statusBadge = document.getElementById('systemStatusBadge');
+      const magazinesLoading = document.getElementById('magazinesLoading');
+      const magazinesList = document.getElementById('magazinesList');
+
+      try {
+        const response = await fetch('/api/magazines');
+        if (!response.ok) throw new Error('HTTP status ' + response.status);
+        const magazines = await response.json();
+
+        // 1. Aktualizácia stavu systému
+        if (statusBadge) {
+          statusBadge.className = 'badge bg-success-subtle text-success border border-success-subtle px-2 py-1 small';
+          statusBadge.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Systém aktívny';
+        }
+
+        // 2. Výpočet štatistík
+        let totalVolumes = 0;
+        let totalArticles = 0;
+        let totalThumbnails = 0;
+
+        magazines.forEach(mag => {
+          if (Array.isArray(mag.published)) {
+            totalVolumes += mag.published.length;
+            mag.published.forEach(p => {
+              if (p.articlesCount) totalArticles += p.articlesCount;
+              if (p.thumbnailCount) totalThumbnails += p.thumbnailCount;
+            });
+          }
+        });
+
+        document.getElementById('statMagazinesCount').textContent = magazines.length;
+        document.getElementById('statVolumesCount').textContent = totalVolumes;
+        document.getElementById('statArticlesCount').textContent = totalArticles > 0 ? totalArticles : '100+';
+        document.getElementById('statThumbnailsCount').textContent = totalThumbnails > 0 ? totalThumbnails : 'Áno';
+
+        // 3. Renderovanie kariet časopisov
+        if (magazinesList) {
+          magazinesList.innerHTML = '';
+          magazines.forEach(mag => {
+            const col = document.createElement('div');
+            col.className = 'col-lg-6';
+
+            const publishedList = mag.published || [];
+            const volumesBadgesHtml = publishedList.map(pub => {
+              const hasTextBadge = pub.hasText ? '<i class="bi bi-file-text text-info" title="OCR Text pripravený"></i>' : '';
+              const hasThumbBadge = pub.hasThumbnails ? `<i class="bi bi-images text-success" title="${pub.thumbnailCount} miniatúr"></i>` : '';
+              const countBadge = pub.articlesCount > 0 ? `<span class="badge bg-primary ms-1">${pub.articlesCount} čl.</span>` : '';
+              return `
+                <div class="d-inline-flex align-items-center gap-1 bg-dark border border-secondary rounded px-2 py-1 small me-1 mb-1">
+                  <span class="fw-bold text-white">${pub.year}</span>
+                  <div class="d-flex align-items-center gap-1 ms-1">
+                    ${hasThumbBadge}
+                    ${hasTextBadge}
+                    ${countBadge}
+                  </div>
+                </div>
+              `;
+            }).join('');
+
+            col.innerHTML = `
+              <div class="custom-card p-4 h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="badge bg-secondary font-monospace small">${mag.directory}</span>
+                    <span class="badge bg-dark border border-secondary text-muted">
+                      ${publishedList.length} ${publishedList.length === 1 ? 'ročník' : 'ročníkov'}
+                    </span>
+                  </div>
+                  <h4 class="h5 fw-bold text-white mb-3">${mag.title}</h4>
+                  <div class="mb-3">
+                    <span class="small text-muted d-block mb-1">Dostupné ročníky a stav spracovania:</span>
+                    <div class="d-flex flex-wrap">
+                      ${volumesBadgesHtml || '<span class="text-muted small">Žiadne evidované ročníky</span>'}
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-3 border-top border-secondary d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <span class="small text-muted">
+                    articles.json: ${mag.hasArticlesFile ? '<span class="text-success"><i class="bi bi-check2"></i> Prítomný</span>' : '<span class="text-warning">Chýba</span>'}
+                  </span>
+                  <div class="d-flex gap-2">
+                    <a href="/show-text?mag=${encodeURIComponent(mag.directory)}" class="btn btn-sm btn-outline-info px-2 fw-semibold" title="Zobraziť skeny a texty">
+                      <i class="bi bi-file-earmark-richtext me-1"></i> Text a skeny
+                    </a>
+                    <a href="/create-index" class="btn btn-sm btn-primary px-3 fw-semibold">
+                      <i class="bi bi-journal-bookmark-fill me-1"></i> Katalogizovať
+                    </a>
+                  </div>
+                </div>
+              </div>
+            `;
+            magazinesList.appendChild(col);
+          });
+
+          magazinesLoading.classList.add('d-none');
+          magazinesList.classList.remove('d-none');
+        }
+
+      } catch (err) {
+        console.error('Chyba pri načítavaní portálu:', err);
+        if (statusBadge) {
+          statusBadge.className = 'badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1 small';
+          statusBadge.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-1"></i> Chyba spojenia';
+        }
+        if (magazinesLoading) {
+          magazinesLoading.innerHTML = `
+            <div class="text-danger small">
+              <i class="bi bi-exclamation-triangle me-1"></i> Nepodarilo sa načítať dáta z /api/magazines.
+            </div>
+          `;
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadPortalData);
+  </script>
+</body>
+</html>
