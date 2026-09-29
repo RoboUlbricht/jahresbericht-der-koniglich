@@ -1,0 +1,103 @@
+﻿{
+  "magazines": [
+    {
+      "title": "Jahresbericht der Königlich ungarischen Geologischen Reichsanstalt",
+      "directory": "jahresbericht",
+      "published": [
+        {
+          "year": 1883,
+          "id": "V05aAAAAYAAJ",
+          "origin": "https://www.google.sk/books/edition/_/V05aAAAAYAAJ"
+        },
+        {
+          "year": 1886,
+          "id": "jb1886",
+          "origin": "https://epa.oszk.hu/03700/03743/00005/pdf/EPA03743_mafi_jb_1886.pdf"
+        },
+        {
+          "year": 1887,
+          "id": "jb1887",
+          "origin": "https://epa.oszk.hu/03700/03743/00006/pdf/EPA03743_mafi_jb_1887.pdf"
+        },
+        {
+          "year": 1888,
+          "id": "iKpCAQAAMAAJ",
+          "origin": "https://www.google.sk/books/edition/_/iKpCAQAAMAAJ"
+        }
+      ]
+    },
+    {
+      "title": "A Magyar Királyi Földtani Intézet évi jelentései",
+      "directory": "evi-jelentesei",
+      "published": [
+        {
+          "year": 1886,
+          "id": "i5xCAQAAMAAJ",
+          "origin": "https://www.google.sk/books/edition/_/i5xCAQAAMAAJ"
+        },
+        {
+          "year": 1893,
+          "id": "35xCAQAAMAAJ",
+          "origin": "https://www.google.sk/books/edition/_/35xCAQAAMAAJ"
+        }
+      ]
+    },
+    {
+      "title": "Jahrbuch der Geologischen Reichsanstalt",
+      "directory": "geologische-reichsanstalt",
+      "published": [
+        {
+          "year": 1867,
+          "bsb": true,
+          "id": "bsb10226096",
+          "origin": "https://www.digitale-sammlungen.de/en/view/bsb10226096"
+        }
+      ]
+    },
+    {
+      "title": "Mittheilungen aus dem Jahrbuch der Königlich Ungarischen Geologischen Anstalt",
+      "directory": "mkf-jahrbuch-konig",
+      "published": [
+        {
+          "year": 1884,
+          "bsb": true,
+          "id": "bsb11647945",
+          "origin": "https://www.digitale-sammlungen.de/en/view/bsb11647945"
+        }
+      ]
+    },
+    {
+      "title": "Reise nach den ungarischen Bergstädten Schemnitz, Neusol, Schmölnitz, dem Karpathengebirg und Pesth im Jahre 1807",
+      "directory": "reise",
+      "published": [
+        {
+          "year": 1808,
+          "id": "4_FhAAAAcAAJ",
+          "origin": "https://www.google.sk/books/edition/_/4_FhAAAAcAAJ"
+        }
+      ]
+    },
+    {
+      "title": "Die geologischen Verhältnisse des Kremnitzer Bergbaugebietes von montangeologischem",
+      "directory": "gesell-kremnitzer",
+      "published": [
+        {
+          "year": 1897,
+          "id": "EPA03681",
+          "origin": "https://epa.oszk.hu/03600/03681/00059/pdf/EPA03681_mittheilungen_1897_04_201-257.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Geologische Verhältnisse des Steinsalzbergbaugebietes von Sovár mit Rücksicht auf die Erbohrung von Soole",
+      "directory": "gesell-salz",
+      "published": [
+        {
+          "year": 1886,
+          "id": "EPA03681",
+          "origin": "https://epa.oszk.hu/03600/03681/00031/pdf/EPA03681_mittheilungen_1886_1_196-220.pdf"
+        }
+      ]
+    }
+  ]
+}

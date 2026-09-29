@@ -1,0 +1,695 @@
+{
+  "title": "Jahresbericht der Königlich ungarischen Geologischen Reichsanstalt",
+  "volumes": [
+    {
+      "year": 1882,
+      "articles": [
+        {
+          "author": "",
+          "title_de": "Jahresbericht",
+          "title_hu": "Évi jelentés",
+          "title_sk": "Výročná správa",
+          "title_en": "Annual Report",
+          "language": "de",
+          "page": 1,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 6
+        },
+        {
+          "author": "Johann Böckh",
+          "title_de": "Direktions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 3,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 8
+        },
+        {
+          "author": "Dr. Carl Hofmann",
+          "title_de": "Bericht über die im Sommer 1882 im südöstlichen Theile des Szathmárer Comitates ausgeführten geologischen Specialaufnahmen",
+          "title_hu": "Jelentés a Szatmár vármegye délkeleti részében 1882 nyarán végzett részletes földtani felvételekről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v lete roku 1882 v juhovýchodnej časti Satmárskej župy",
+          "title_en": "Report on the Detailed Geological Survey Carried out in the Southeastern Part of Szatmár County in the Summer of 1882",
+          "language": "de",
+          "page": 18,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 23
+        },
+        {
+          "author": "Jacob v. Matysovszky",
+          "title_de": "Bericht über die geologische Aufnahme im Bükk- und Rézgebirge im Sommer 1882",
+          "title_hu": "Jelentés a Bükk- és Réz-hegységben 1882 nyarán végzett földtani felvételről",
+          "title_sk": "Správa o geologickom mapovaní v pohoriach Bükk a Réz v lete 1882",
+          "title_en": "Report on the Geological Survey in the Bükk and Réz Mountains in the Summer of 1882",
+          "language": "de",
+          "page": 28,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 33
+        },
+        {
+          "author": "Dr. A. Koch",
+          "title_de": "Bericht über die im Klausenburger Randgebirge und in dessen Nachbarschaft im Sommer 1882 ausgeführte geologische Specialaufnahme",
+          "title_hu": "Jelentés a kolozsvári határhegységben és annak szomszédságában az 1882 nyarán végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v Klužských okrajových vrchoch a v ich susedstve v lete 1882",
+          "title_en": "Report on the Detailed Geological Survey Carried Out in the Cluj Border Mountains and Their Vicinity in the Summer of 1882",
+          "language": "de",
+          "page": 32,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 37
+        },
+        {
+          "author": "L. v. Roth",
+          "title_de": "Geologische Aufnahme im Leitha- und im Banater Gebirge",
+          "title_hu": "Földtani felvétel a Lajta- és a Bánsági-hegységben",
+          "title_sk": "Geologické mapovanie v Litavských a Banátskych vrchoch",
+          "title_en": "Geological Survey in the Leitha and Banat Mountains",
+          "language": "de",
+          "page": 56,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 61
+        },
+        {
+          "author": "Julius Halaváts",
+          "title_de": "Bericht über die im Jahre 1882 in der Umgebung von Versecz durchgeführten geologischen Aufnahmen",
+          "title_hu": "Jelentés az 1882. évben Versecz környékén végzett földtani felvételekről",
+          "title_sk": "Správa o geologickom mapovaní vykonanom v roku 1882 v okolí Vršca",
+          "title_en": "Report on the Geological Survey Carried out in the Surroundings of Vršac in the Year 1882",
+          "language": "de",
+          "page": 63,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 68
+        },
+        {
+          "author": "Johann Böckh",
+          "title_de": "Geologische Notizen von der Aufnahme des Jahres 1882 im Komitate Krassó-Szörény",
+          "title_hu": "Földtani jegyzetek az 1882. évi felvételről Krassó-Szörény vármegyében",
+          "title_sk": "Geologické poznámky z mapovania v roku 1882 v Krašovsko-severínskej župe",
+          "title_en": "Geological notes from the survey of the year 1882 in Krassó-Szörény County",
+          "language": "de",
+          "page": 69,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 74
+        }
+      ]
+    },
+    {
+      "year": 1883,
+      "articles": [
+        {
+          "author": "",
+          "title_de": "Jahresbericht",
+          "title_hu": "Évi jelentés",
+          "title_sk": "Výročná správa",
+          "title_en": "Annual Report",
+          "language": "de",
+          "page": 1,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 94
+        },
+        {
+          "author": "Johann Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Report of the Directorate",
+          "language": "de",
+          "page": 3,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 96
+        },
+        {
+          "author": "Dr. Karl Hofmann",
+          "title_de": "Bericht über die auf der rechten Seite der Donau zwischen Ó-Szőny und Piszke im Sommer 1883 ausgeführten geologischen Specialaufnahmen",
+          "title_hu": "Jelentés a Duna jobb partján Ó-Szőny és Piszke között az 1883 nyarán végzett részletes földtani felvételekről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom na pravom brehu Dunaja medzi Starým Szőnym a Piszkou v lete 1883",
+          "title_en": "Report on the Detailed Geological Survey Carried Out on the Right Bank of the Danube Between Ó-Szőny and Piszke in the Summer of 1883",
+          "language": "de",
+          "page": 19,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 112
+        },
+        {
+          "author": "J. von Matyasovszky",
+          "title_de": "Der Királyhágó und das Thal des Sebes-Körös-Flusses von Bucsa bis Rév. Geologischer Jahresbericht vom Jahre 1883",
+          "title_hu": "A Királyhágó és a Sebes-Körös völgye Bucsától Révig. Földtani évi jelentés az 1883. évről",
+          "title_sk": "Királyhágó a údolie rieky Rýchly Kriš od Bucse po Rév. Geologická výročná správa za rok 1883",
+          "title_en": "The Királyhágó and the Valley of the Sebes-Körös River from Bucsa to Rév. Geological Annual Report for the Year 1883",
+          "language": "de",
+          "page": 38,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 131
+        },
+        {
+          "author": "Ludwig von Lóczy",
+          "title_de": "Bericht über die geologische Detailaufnahme während des Sommers 1883 im Gebirge zwischen der Maros und der Weissen Körös und in der Aradhegyalja",
+          "title_hu": "Jelentés az 1883 nyarán a Maros és a Fehér-Körös közötti hegységben és az Arad-Hegyalján végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní počas leta 1883 v pohorí medzi Marušou a Bielim Krišom a v Aradskom podhorí (Aradhegyalja)",
+          "title_en": "Report on the Detailed Geological Survey during the Summer of 1883 in the Mountains between the Maros and White Körös Rivers and in Arad-Hegyalja",
+          "language": "de",
+          "page": 45,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 138
+        },
+        {
+          "author": "Prof. Dr. Anton Koch",
+          "title_de": "Bericht über die im Klausenburger Randgebirge im Sommer 1883 ausgeführte geologische Specialaufnahme",
+          "title_hu": "Jelentés a Kolozsvári határhegységben 1883 nyarán végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v Klužských okrajových vrchoch v lete roku 1883",
+          "title_en": "Report on the Detailed Geological Survey Carried Out in the Cluj Border Mountains in the Summer of 1883",
+          "language": "de",
+          "page": 64,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 159
+        },
+        {
+          "author": "Julius Halaváts",
+          "title_de": "Bericht über die geologische Detailaufnahme im Jahre 1883 in der Umgebung von Alibunár, Moravicza, Móriczföld und Kákova",
+          "title_hu": "Jelentés az 1883. évben Alibunár, Moravicza, Móriczföld és Kákova környékén végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní v roku 1883 v okolí obcí Alibunár, Moravica, Móriczföld a Kákova",
+          "title_en": "Report on the Detailed Geological Survey in the Year 1883 in the Vicinity of Alibunár, Moravicza, Móriczföld, and Kákova",
+          "language": "de",
+          "page": 99,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 194
+        },
+        {
+          "author": "Dr. Franz Schafarzik",
+          "title_de": "Geologische Aufnahme des Pilis-Gebirges und der beiden Wachtberge bei Gran",
+          "title_hu": "A Pilis-hegység és az Esztergom melletti két Strázsa-hegy földtani felvétele",
+          "title_sk": "Geologické mapovanie Pilišských vrchov a oboch Strážnych vrchov pri Ostrihome",
+          "title_en": "Geological Survey of the Pilis Mountains and the Two Strázsa Hills near Esztergom",
+          "language": "de",
+          "page": 105,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 200
+        },
+        {
+          "author": "Alexander Gesell",
+          "title_de": "Bericht über die montangeologische Detailaufnahme von Schemnitz und Umgebung in den Jahren 1882 und 1883",
+          "title_hu": "Jelentés Selmecbánya és környékének az 1882 és 1883. években végzett bányaföldtani részletes felvételéről",
+          "title_sk": "Správa o banskogeologickom podrobnom mapovaní Banskej Štiavnice a okolia v rokoch 1882 a 1883",
+          "title_en": "Report on the Detailed Mining-Geological Survey of Schemnitz and Surroundings in the Years 1882 and 1883",
+          "language": "de",
+          "page": 132,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 227
+        }
+      ]
+    },
+    {
+      "year": 1884,
+      "articles": [
+        {
+          "author": "",
+          "title_de": "Jahresbericht",
+          "title_hu": "Évi jelentés",
+          "title_sk": "Výročná správa",
+          "title_en": "Annual Report",
+          "language": "de",
+          "page": 1,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 240
+        },
+        {
+          "author": "Johann Böckh",
+          "title_de": "Direktions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 1,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 242
+        },
+        {
+          "author": "J. von Matyasovszky",
+          "title_de": "Bericht über die geologische Detailaufnahme am Nordwest-Ende des Rézgebirges, in der Gegend zwischen Nagy-Báród und Felső-Darna (1884)",
+          "title_hu": "Jelentés a Réz-hegység északnyugati végén, a Nagy-Báród és Felső-Darna közötti vidéken végzett részletes földtani felvételről (1884)",
+          "title_sk": "Správa o podrobnom geologickom mapovaní na severozápadnom zakončení Medzihorských vrchov (Réz) v oblasti medzi obcami Nagy-Báród a Felső-Darna (1884)",
+          "title_en": "Report on the Detailed Geological Survey at the Northwestern End of the Réz Mountains, in the Area between Nagy-Báród and Felső-Darna (1884)",
+          "language": "de",
+          "page": 31,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 274
+        },
+        {
+          "author": "Ludwig v. Lóczy",
+          "title_de": "Bericht über die im Sommer des Jahres 1884 in der Gebirgsgegend zwischen der Maros und Fehérkőrös ausgeführten geologischen Detail-Aufnahmen",
+          "title_hu": "Jelentés a Maros és Fehér-Körös közötti hegyvidéken az 1884. év nyarán végzett részletes földtani felvételekről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v lete roku 1884 v horskej oblasti medzi Murešom a Bielym Krišom",
+          "title_en": "Report on the Detailed Geological Survey Carried Out in the Summer of 1884 in the Mountain Region between the Maros and Fehér-Körös Rivers",
+          "language": "de",
+          "page": 35,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 278
+        },
+        {
+          "author": "Dr. J. Pethő",
+          "title_de": "Über das Kreidegebiet von Lippa, Odvos und Konop",
+          "title_hu": "Lippa, Odvos és Konop kréta-területéről",
+          "title_sk": "O kriedovej oblasti Lippy, Odvosu a Konopu",
+          "title_en": "On the Cretaceous Region of Lippa, Odvos and Konop",
+          "language": "de",
+          "page": 54,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 297
+        },
+        {
+          "author": "Dr. J. Pethő",
+          "title_de": "Über die fossilen Säugethier-Überreste von Baltavár",
+          "title_hu": "A baltavári fosszilis emlősmaradványokról",
+          "title_sk": "O fosílnych zvyškoch cicavcov z Baltaváru",
+          "title_en": "On the Fossil Mammalian Remains of Baltavár",
+          "language": "de",
+          "page": 63,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 306
+        },
+        {
+          "author": "Dr. Anton Koch",
+          "title_de": "Bericht über die am Rande des Gyaluer Hochgebirges in der Kalotaszeg und im Vlegyásza-Gebirge im Sommer 1884 ausgeführte geologische Detailaufnahme",
+          "title_hu": "Jelentés a Gyalui-havasok szélén a Kalotaszegben és a Vlegyásza-hegységben 1884 nyarán eszközölt részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v lete roku 1884 na okraji pohoria Gilău v oblasti Kalotaszeg a v pohorí Vlădeasa",
+          "title_en": "Report on the Detailed Geological Survey Carried Out in the Summer of 1884 on the Margin of the Gilău Mountains, in Kalotaszeg, and in the Vlădeasa Mountains",
+          "language": "de",
+          "page": 73,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 316
+        },
+        {
+          "author": "L. Roth v. Telegd",
+          "title_de": "Der Gebirgstheil nördlich von Bozovics im Comitate Krassó-Szörény",
+          "title_hu": "A Bozovicstól északra fekvő hegységrész Krassó-Szörény vármegyében",
+          "title_sk": "Časť pohoria severne od Bozovics v Krašovsko-severínskej župe",
+          "title_en": "The Mountainous Part North of Bozovics in Krassó-Szörény County",
+          "language": "de",
+          "page": 87,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 332
+        },
+        {
+          "author": "Julius Halaváts",
+          "title_de": "Bericht über die im Jahre 1884 in der Umgebung von Oravicza-Románbogsán durchgeführte geologische Detail-Aufnahme",
+          "title_hu": "Jelentés az 1884. évben Oravicza–Románbogsán környékén végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v roku 1884 v okolí Oravice a Rumunskej Bocše",
+          "title_en": "Report on the Detailed Geological Survey Conducted in 1884 in the Vicinity of Oravicza and Románbogsán",
+          "language": "de",
+          "page": 108,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 353
+        },
+        {
+          "author": "Dr. Franz Schafarzik",
+          "title_de": "Das Gebirge zwischen Mehadia und Herkulesbad im Comitate Krassó-Szörény",
+          "title_hu": "A Mehádia és Herkulesfürdő közötti hegység Krassó-Szörény vármegyében",
+          "title_sk": "Pohorie medzi Mehadiou a Herkulovými Kúpeľmi v Krašovsko-severínskej župe",
+          "title_en": "The Mountains Between Mehadia and Herkulesbad in Krassó-Szörény County",
+          "language": "de",
+          "page": 120,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 365
+        },
+        {
+          "author": "Alexander Gesell",
+          "title_de": "Bericht über die geologische Detailaufnahme in der Umgebung von Schemnitz und Windschacht",
+          "title_hu": "Jelentés a Selmecbánya és Szélakna környékén végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní v okolí Banskej Štiavnice a Vindšachty",
+          "title_en": "Report on the Detailed Geological Survey in the Vicinity of Schemnitz and Windschacht",
+          "language": "de",
+          "page": 133,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 378
+        }
+      ]
+    },
+    {
+      "year": 1885,
+      "articles": [
+        {
+          "author": "Johann Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Directorate Report",
+          "language": "de",
+          "page": 3,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 398
+        },
+        {
+          "author": "Dr. Karl Hofmann",
+          "title_de": "Geologische Notizen über die krystallinische Schieferinsel von Preluka und über das nördlich und südlich anschliessende Tertiärland",
+          "title_hu": "Földtani jegyzetek a prelukai kristályos palaszigetről és az ahhoz északról s délről csatlakozó harmadkori területről",
+          "title_sk": "Geologické poznámky o ostrove kryštalických bridlíc Preluka a o severne a južne nadväzujúcom terciérnom území",
+          "title_en": "Geological Notes on the Crystalline Schist Island of Preluka and the Adjacent Tertiary Area to the North and South",
+          "language": "de",
+          "page": 31,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 426
+        },
+        {
+          "author": "Dr. Anton Koch",
+          "title_de": "Bericht über die im Gebiete der Komitate Kolos und Szolnok-Doboka im Sommer 1885 durchgeführte geologische Detailaufnahme",
+          "title_hu": "Jelentés a Kolozs és Szolnok-Doboka vármegyék területén 1885 nyarán végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom na území Klužskej a Solnocko-dobockej župy v lete 1885",
+          "title_en": "Report on the Detailed Geological Survey Carried out in the Territory of Kolozs and Szolnok-Doboka Counties in the Summer of 1885",
+          "language": "de",
+          "page": 62,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 459
+        },
+        {
+          "author": "Ludwig v. Lóczy",
+          "title_de": "Bericht über die geologische Detailaufnahme im Maros-Thale und im nördlichen Theile des Temeser Comitates im Sommer des Jahres 1885",
+          "title_hu": "Jelentés a Maros völgyében és Temes vármegye északi részében az 1885. év nyarán végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní v údolí Maruše a v severnej časti Temešskej župy v lete roku 1885",
+          "title_en": "Report on the Detailed Geological Survey in the Maros Valley and in the Northern Part of Temes County in the Summer of 1885",
+          "language": "de",
+          "page": 80,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 477
+        },
+        {
+          "author": "Dr. Julius Pethő",
+          "title_de": "Die Tertiärbildungen des Fehér-Körös-Thales zwischen dem Hegyes-Drócsa- und Pless-Kodru-Gebirge",
+          "title_hu": "A Fehér-Körös völgyének harmadkori képződményei a Hegyes-Drócsa és Pless-Kodru hegység között",
+          "title_sk": "Treťohorné útvary údolia Bieleho Kriša medzi pohoriami Hegyes-Drócsa a Pless-Kodru",
+          "title_en": "The Tertiary Formations of the Fehér-Körös Valley between the Hegyes-Drócsa and Pless-Kodru Mountains",
+          "language": "de",
+          "page": 108,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 505
+        },
+        {
+          "author": "L. Roth v. Telegd",
+          "title_de": "Das Ponyászka-Thal und Umgebung im Comitate Krassó-Szörény",
+          "title_hu": "A Ponyászka-völgy és környéke Krassó-Szörény vármegyében",
+          "title_sk": "Dolina Ponyászka a okolie v Krašovsko-severínskej župe",
+          "title_en": "The Ponyászka Valley and Surroundings in Krassó-Szörény County",
+          "language": "de",
+          "page": 149,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 546
+        },
+        {
+          "author": "Julius Halaváts",
+          "title_de": "Bericht über die geologische Detail-Aufnahme im Torontaler, Temeser und Krassó-Szörényer Comitate im Jahre 1885",
+          "title_hu": "Jelentés a Torontál, Temes és Krassó-Szörény vármegyékben az 1885. évben végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní v Torontálskej, Temešskej a Krašovsko-severínskej župe v roku 1885",
+          "title_en": "Report on the Detailed Geological Survey in the Counties of Torontal, Temes, and Krassó-Szörény in 1885",
+          "language": "de",
+          "page": 169,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 566
+        },
+        {
+          "author": "Dr. Franz Schafarzik",
+          "title_de": "Die geologischen Verhältnisse des Sverdin-Baches westlich, und des Bergrückens Poiana Časapului-Frasen südlich von Mehadia",
+          "title_hu": "A Mehádiától nyugatra fekvő Sverdin-patak és a délre elterülő Poiana Časapului-Frasen hegyhát földtani viszonyai",
+          "title_sk": "Geologické pomery Sverdinovho potoka západne a horského chrbta Poiana Časapului – Frasen južne od Mehadie",
+          "title_en": "Geological Conditions of the Sverdin Brook to the West and the Poiana Časapului–Frasen Ridge to the South of Mehadia",
+          "language": "de",
+          "page": 174,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 571
+        },
+        {
+          "author": "Alex. Gesell",
+          "title_de": "Montangeologische Aufnahme des Kremnitzer Erzbergbaugebietes",
+          "title_hu": "A körmöcbányai ércbányavidék bányaföldtani felvétele",
+          "title_sk": "Montánnogeologické mapovanie kremnického rudného banského revíru",
+          "title_en": "Mining-geological survey of the Kremnica ore mining district",
+          "language": "de",
+          "page": 181,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 578
+        },
+        {
+          "author": "Alexander Kalecsinszky",
+          "title_de": "Bericht über die Wirksamkeit des chemischen Laboratoriums der königl. ungar. geologischen Anstalt bis Ende d. J. 1885",
+          "title_hu": "Jelentés a m. kir. földtani intézet vegytani laboratóriumának működéséről az 1885. év végéig",
+          "title_sk": "Správa o činnosti chemického laboratória Kráľovského uhorského geologického ústavu do konca roka 1885",
+          "title_en": "Report on the Activity of the Chemical Laboratory of the Royal Hungarian Geological Institute up to the End of the Year 1885",
+          "language": "de",
+          "page": 192,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 589
+        },
+        {
+          "author": "Dr. M. Staub",
+          "title_de": "Stand der phytopaläontologischen Sammlung der königl. ung. Geologischen Anstalt am Ende des Jahres 1885",
+          "title_hu": "A Magyar Királyi Földtani Intézet növényőslénytani gyűjteményének állapota az 1885. év végén",
+          "title_sk": "Stav fytopaleontologickej zbierky Kráľovského uhorského geologického ústavu na konci roka 1885",
+          "title_en": "State of the Phytopalaeontological Collection of the Royal Hungarian Geological Institute at the End of the Year 1885",
+          "language": "de",
+          "page": 205,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 602
+        },
+        {
+          "author": "",
+          "title_de": "Inhalt",
+          "title_hu": "Tartalom",
+          "title_sk": "Obsah",
+          "title_en": "Contents",
+          "language": "de",
+          "page": 247,
+          "pdf_id": "V05aAAAAYAAJ",
+          "pdf_page": 644
+        }
+      ]
+    },
+    {
+      "year": 1886,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1886",
+          "pdf_page": 7
+        },
+        {
+          "author": "Károly Hofmann",
+          "title_de": "Bericht über die im Sommer d. J. 1886 im nordwestlichen Theile des Szolnok-Dobokaer Comitates ausgeführten geologischen Detail-Aufnahme",
+          "title_hu": "Jelentés az 1886. év nyarán Szolnok-Doboka vármegye északnyugati részében végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v lete r. 1886 v severozápadnej časti Solnocko-dobockej župy",
+          "title_en": "Report on the Detailed Geological Survey Carried out in the Summer of 1886 in the Northwestern Part of Szolnok-Doboka County",
+          "language": "de",
+          "page": 45,
+          "pdf_id": "jb1886",
+          "pdf_page": 47
+        },
+        {
+          "author": "Antal Koch",
+          "title_de": "Bericht über die in dem südlich von Klausenburg gelegenen Gebiete im Sommer d. J. 1886 durchgeführte geologische Detailaufnahme",
+          "title_hu": "Jelentés a Kolozsvártól délre fekvő területen az 1886. év nyarán végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v oblasti južne od Kluža v lete r. 1886",
+          "title_en": "Report on the Detailed Geological Survey Carried Out in the Area South of Klausenburg in the Summer of 1886",
+          "language": "de",
+          "page": 55,
+          "pdf_id": "jb1886",
+          "pdf_page": 57
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Die geologischen Verhältnisse der Umgebungen von Boros-Jenő, Apatelek, Buttyin und Beél im Fehér-Körös-Thale",
+          "title_hu": "Borosjenő, Apatelek, Buttyin és Beél környékének földtani viszonyai a Fehér-Körös völgyében",
+          "title_sk": "Geologické pomery okolia obcí Borosjenő, Apatelek, Buttyin a Beél v doline Bieleho Kriša",
+          "title_en": "Geological Conditions of the Surroundings of Borosjenő, Apatelek, Buttyin, and Beél in the Fehér-Körös Valley",
+          "language": "de",
+          "page": 91,
+          "pdf_id": "jb1886",
+          "pdf_page": 93
+        },
+        {
+          "author": "Lajos Lóczy",
+          "title_de": "Bericht über die geologischen Detailaufnahmen im Arader, Csanáder und Temeser Comitate im Sommer des Jahres 1886",
+          "title_hu": "Jelentés az 1886. év nyarán Arad, Csanád és Temes vármegyékben végzett részletes földtani felvételekről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní v Aradskej, Čanádskej a Temešskej župe v lete roku 1886",
+          "title_en": "Report on the Detailed Geological Surveys in the Counties of Arad, Csanád, and Temes in the Summer of 1886",
+          "language": "de",
+          "page": 114,
+          "pdf_id": "jb1886",
+          "pdf_page": 116
+        },
+        {
+          "author": "János Böckh",
+          "title_de": "Daten zur geologischen Kenntniss des nordwestlich von Bozovics sich erhebenden Gebirges",
+          "title_hu": "Adatok a Bozovicstól északnyugatra emelkedő hegység földtani ismeretéhez",
+          "title_sk": "Údaje ku geologickému poznaniu pohoria dvíhajúceho sa severozápadne od Bozovici",
+          "title_en": "Data on the Geological Knowledge of the Mountains Rising Northwest of Bozovics",
+          "language": "de",
+          "page": 135,
+          "pdf_id": "jb1886",
+          "pdf_page": 137
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Die Gegend SO-lich u. z. Th. O-lich von Steierdorf",
+          "title_hu": "A Stájerlaktól délkeletre és részben keletre fekvő vidék",
+          "title_sk": "Oblasť juhovýchodne a sčasti východne od Steierdorfu",
+          "title_en": "The Area Southeast and Partly East of Steierdorf",
+          "language": "de",
+          "page": 169,
+          "pdf_id": "jb1886",
+          "pdf_page": 171
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Montangeologische Aufnahme des Kremnitzer Erzbergbaugebietes",
+          "title_hu": "A körmöcbányai ércbányaterület bányaföldtani felvétele",
+          "title_sk": "Banskogeologické mapovanie kremnického rudného revíru",
+          "title_en": "Mining-geological survey of the Kremnica ore mining district",
+          "language": "de",
+          "page": 191,
+          "pdf_id": "jb1886",
+          "pdf_page": 193
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Reise-Notizen aus dem Kaukasus",
+          "title_hu": "Utazási jegyzetek a Kaukázusból",
+          "title_sk": "Cestovné poznámky z Kaukazu",
+          "title_en": "Travel Notes from the Caucasus",
+          "language": "de",
+          "page": 201,
+          "pdf_id": "jb1886",
+          "pdf_page": 203
+        },
+        {
+          "author": "Móricz Staub",
+          "title_de": "Stand der phytopaläontologischen Sammlung der königl. ungarischen Geologischen Anstalt am Ende des Jahres 1886",
+          "title_hu": "A Magyar Királyi Földtani Intézet növényőslénytani gyűjteményének állapota az 1886. év végén",
+          "title_sk": "Stav fytopaleontologickej zbierky Kráľovského uhorského geologického ústavu na konci roka 1886",
+          "title_en": "State of the Phytopalaeontological Collection of the Royal Hungarian Geological Institute at the End of the Year 1886",
+          "language": "de",
+          "page": 230,
+          "pdf_id": "jb1886",
+          "pdf_page": 232
+        }
+      ]
+    },
+    {
+      "year": 1887,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľa",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1887",
+          "pdf_page": 7
+        },
+        {
+          "author": "Antal Koch",
+          "title_de": "Bericht über die im Sommer 1887 durchgeführte geologische Specialaufnahme des westlich von Torda gelegenen Gebietes im Torda-Aranyoser Comitate",
+          "title_hu": "Jelentés a Torda-Aranyos vármegyében, Tordától nyugatra fekvő területen 1887 nyarán foganatosított részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní územia ležiaceho západne od Tordy v župe Torda-Aranyos, vykonanom v lete 1887",
+          "title_en": "Report on the Detailed Geological Survey of the Area Situated West of Torda in Torda-Aranyos County, Carried Out in the Summer of 1887",
+          "language": "de",
+          "page": 29,
+          "pdf_id": "jb1887",
+          "pdf_page": 31
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Geologische Studien in den nördlichen Ausläufern des Hegyes-Drócsa-Gebirges, an dem linken Ufer der Weissen Körös",
+          "title_hu": "Földtani tanulmányok a Hegyes-Drócsa-hegység északi nyúlványaiban, a Fehér-Körös bal partján",
+          "title_sk": "Geologické štúdie v severných výbežkoch pohoria Hegyes-Drócsa na ľavom brehu Bieleho Kriša",
+          "title_en": "Geological Studies in the Northern Foothills of the Hegyes-Drócsa Mountains, on the Left Bank of the White Körös",
+          "language": "de",
+          "page": 67,
+          "pdf_id": "jb1887",
+          "pdf_page": 69
+        },
+        {
+          "author": "Lajos Lóczy",
+          "title_de": "Bericht über die geologischen Detailaufnahmen im Arader Comitate im Sommer des Jahres 1887",
+          "title_hu": "Jelentés az 1887. év nyarán Arad vármegyében végzett részletes földtani felvételekről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní v Aradskej župe v lete roku 1887",
+          "title_en": "Report on the Detailed Geological Surveys in Arad County in the Summer of 1887",
+          "language": "de",
+          "page": 101,
+          "pdf_id": "jb1887",
+          "pdf_page": 103
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "Bericht über die geologische Detailaufnahme im Jahre 1887",
+          "title_hu": "Jelentés az 1887. évi részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní v roku 1887",
+          "title_en": "Report on the Detailed Geological Survey in the Year 1887",
+          "language": "de",
+          "page": 114,
+          "pdf_id": "jb1887",
+          "pdf_page": 116
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Die Gegend südlich von Steierdorf und östlich von Steierdorf-Anina",
+          "title_hu": "A Stájerlaktól délre és Stájerlak-Aninától keletre eső vidék",
+          "title_sk": "Oblasť južne od Steierdorfu a východne od Steierdorfu-Aniny",
+          "title_en": "The Area South of Steierdorf and East of Steierdorf-Anina",
+          "language": "de",
+          "page": 124,
+          "pdf_id": "jb1887",
+          "pdf_page": 126
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Bericht über die im Jahre 1887 in der Umgebung von Dognácska ausgeführte geologische Detail-Aufnahme",
+          "title_hu": "Jelentés az 1887. évben Dognácska környékén végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v roku 1887 v okolí Dognácsky",
+          "title_en": "Report on the Detailed Geological Survey Conducted in the Vicinity of Dognácska in 1887",
+          "language": "de",
+          "page": 149,
+          "pdf_id": "jb1887",
+          "pdf_page": 151
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Ueber die geologischen Verhältnisse des Jardastitza- und Sekastitza-Gebietes NW-lich und W-lich von Topletz im Krassó-Szörényer Comitate",
+          "title_hu": "A Krassó-Szörény vármegyei Toplectől ÉNy-ra és Ny-ra fekvő Jardasticza- és Szekasticza-vidék földtani viszonyairól",
+          "title_sk": "O geologických pomeroch oblasti Jardastice a Sekastice severozápadne a západne od Toplețu v Krašovsko-severínskej župe",
+          "title_en": "On the Geological Conditions of the Jardastitza and Sekastitza Area NW and W of Topletz in Krassó-Szörény County",
+          "language": "de",
+          "page": 162,
+          "pdf_id": "jb1887",
+          "pdf_page": 164
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Montangeologische Aufnahme des Kremnitzer Erzbergbau-Gebietes",
+          "title_hu": "A körmöcbányai ércbányavidék bányaföldtani felvétele",
+          "title_sk": "Banskogeologické mapovanie kremnickej rudnej banskej oblasti",
+          "title_en": "Mining-Geological Survey of the Kremnica Ore Mining District",
+          "language": "de",
+          "page": 176,
+          "pdf_id": "jb1887",
+          "pdf_page": 178
+        },
+        {
+          "author": "Sándor Kalecsinszky",
+          "title_de": "Mittheilungen aus dem chemischen Laboratorium der kgl. ung. geologischen Anstalt",
+          "title_hu": "Közlemények a m. kir. földtani intézet vegytani laboratóriumából",
+          "title_sk": "Správy z chemického laboratória Kráľovského uhorského geologického ústavu",
+          "title_en": "Communications from the Chemical Laboratory of the Royal Hungarian Geological Institute",
+          "language": "de",
+          "page": 189,
+          "pdf_id": "jb1887",
+          "pdf_page": 191
+        }
+      ]
+    }
+  ]
+}
