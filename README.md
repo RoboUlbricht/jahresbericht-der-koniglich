@@ -91,6 +91,9 @@ jahresbericht-der-koniglich/
     └── public/                        # Web frontend (cataloger and scan viewer)
 ```
 
+> **External UI Integration**: For detailed specifications on consuming and indexing these datasets via external frontends and APIs, see [DATA.md](DATA.md).
+
+
 ---
 
 <br>
@@ -187,3 +190,6 @@ jahresbericht-der-koniglich/
     ├── server.js                      # Express backend a API endpointy
     └── public/                        # Webový frontend (katalogizácia a prehliadač)
 ```
+
+> **Integrácia pre externé UI**: Podrobnú špecifikáciu dátových formátov a inštrukcie pre indexáciu externými aplikáciami nájdete v [DATA.md](DATA.md).
+
