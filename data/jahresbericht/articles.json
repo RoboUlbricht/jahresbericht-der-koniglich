@@ -816,6 +816,121 @@
           "pdf_page": 175
         }
       ]
+    },
+    {
+      "year": 1889,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1889",
+          "pdf_page": 7
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Einige Beiträge zur Geologie des Kodru-Gebirges",
+          "title_hu": "Néhány adat a Kodru-hegység földtanához",
+          "title_sk": "Niekoľko príspevkov ku geológii pohoria Codru",
+          "title_en": "Some Contributions to the Geology of the Codru Mountains",
+          "language": "de",
+          "page": 28,
+          "pdf_id": "jb1889",
+          "pdf_page": 30
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Geologische Studien in der Umgebung von Grosswardein, Püspök- und Felixbad, sowie in dem Gebirge und Hügellande am linken Ufer der Schnellen-Körös von Krajnikfalva bis Grosswardein",
+          "title_hu": "Földtani tanulmányok Nagyvárad, Püspök- és Félixfürdő környékén, valamint a Sebes-Körös bal partján fekvő hegy- és dombvidéken Krajnikfalvától Nagyváradig",
+          "title_sk": "Geologické štúdie v okolí Veľkého Varadína, Biskupských a Félixových kúpeľov, ako aj v pohorí a pahorkatine na ľavom brehu Rýchleho Kriša od Krajnikfalvy po Veľký Varadín",
+          "title_en": "Geological Studies in the Vicinity of Grosswardein, Püspök- and Felixbad, as Well as in the Mountain and Hilly Country on the Left Bank of the Sebes-Körös River from Krajnikfalva to Grosswardein",
+          "language": "de",
+          "page": 52,
+          "pdf_id": "jb1889",
+          "pdf_page": 54
+        },
+        {
+          "author": "György Primics",
+          "title_de": "Bericht über die geologische Detailaufnahme im Vlegyásza-Gebirgszuge des Kolozs-Biharer Gebirges 1889",
+          "title_hu": "Jelentés a Kolozs-bihari hegység Vlegyásza-hegyláncában 1889-ben végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní v horskom pásme Vlădeasy v Klužsko-biharskom pohorí v roku 1889",
+          "title_en": "Report on the Detailed Geological Survey in the Vlegyásza (Vlădeasa) Mountain Range of the Kolozs-Bihar Mountains in 1889",
+          "language": "de",
+          "page": 66,
+          "pdf_id": "jb1889",
+          "pdf_page": 68
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "Das Gebiet der Weissen Theiss",
+          "title_hu": "A Fehér-Tisza vidéke",
+          "title_sk": "Oblasť Bielej Tisy",
+          "title_en": "The Region of the White Tisza",
+          "language": "de",
+          "page": 80,
+          "pdf_id": "jb1889",
+          "pdf_page": 82
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Der westliche Theil des Krassó-Szörényer (Banater) Gebirges in der Umgebung von Majdan, Lisava und Steierdorf",
+          "title_hu": "A Krassó-Szörényi (bánsági) hegység nyugati része Majdán, Liszava és Stájerlak környékén",
+          "title_sk": "Západná časť Krašovsko-severínskeho (banátskeho) pohoria v okolí obcí Majdan, Lisava a Steierdorf",
+          "title_en": "The Western Part of the Krassó-Szörény (Banat) Mountains in the Vicinity of Majdan, Lisava, and Steierdorf",
+          "language": "de",
+          "page": 101,
+          "pdf_id": "jb1889",
+          "pdf_page": 103
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Bericht über die im Jahre 1889 in der Umgebung von Bogsán bewerkstelligte geologische Detailaufnahme",
+          "title_hu": "Jelentés az 1889. évben Bogsán környékén végzett részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v roku 1889 v okolí Bocše",
+          "title_en": "Report on the Detailed Geological Survey Carried out in the Surroundings of Bogsán in the Year 1889",
+          "language": "de",
+          "page": 129,
+          "pdf_id": "jb1889",
+          "pdf_page": 131
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Daten zur Geologie des Cserna-Thales",
+          "title_hu": "Adatok a Cserna-völgy földtanához",
+          "title_sk": "Údaje ku geológii údolia Černej",
+          "title_en": "Data on the Geology of the Cserna Valley",
+          "language": "de",
+          "page": 142,
+          "pdf_id": "jb1889",
+          "pdf_page": 144
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Montangeologische Aufnahme des Erzdistrictes von Nagybánya",
+          "title_hu": "A nagybányai érczkerület bányaföldtani felvétele",
+          "title_sk": "Banskogeologické mapovanie rudného revíru Baia Mare (Veľká Baňa)",
+          "title_en": "Mining Geological Survey of the Nagybánya (Baia Mare) Ore District",
+          "language": "de",
+          "page": 156,
+          "pdf_id": "jb1889",
+          "pdf_page": 158
+        },
+        {
+          "author": "Sándor Kalecsinszky",
+          "title_de": "Mittheilungen aus dem chemischen Laboratorium der kgl. ung. geologischen Anstalt",
+          "title_hu": "Közlemények a m. kir. földtani intézet chemiai laboratóriumából",
+          "title_sk": "Správy z chemického laboratória Kráľovského uhorského geologického ústavu",
+          "title_en": "Communications from the Chemical Laboratory of the Royal Hungarian Geological Institute",
+          "language": "de",
+          "page": 180,
+          "pdf_id": "jb1889",
+          "pdf_page": 182
+        }
+      ]
     }
   ]
 }
