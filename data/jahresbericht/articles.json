@@ -690,6 +690,132 @@
           "pdf_page": 191
         }
       ]
+    },
+    {
+      "year": 1888,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1888",
+          "pdf_page": 7
+        },
+        {
+          "author": "Lajos Lóczy",
+          "title_de": "Das Kreidegebiet zwischen der Maros und der Fehér (Weissen)-Körös im Arader Comitate",
+          "title_hu": "A Maros és a Fehér-Körös közötti kréta-terület Arad vármegyében",
+          "title_sk": "Kriedová oblasť medzi Marošou a Bielym Krišom v Aradskej župe",
+          "title_en": "The Cretaceous Region Between the Maros and Fehér (White) Körös in Arad County",
+          "language": "de",
+          "page": 35,
+          "pdf_id": "jb1888",
+          "pdf_page": 37
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Ergänzungs-Aufnahmen in den rechts- und linksuferigen Theilen des Fehér-Körös-Thales",
+          "title_hu": "Pótfelvételek a Fehér-Körös völgyének jobb- és balparti részeiben",
+          "title_sk": "Doplňujúce mapovanie v pravobrežných a ľavobrežných častiach údolia Bieleho Kriša",
+          "title_en": "Supplementary Surveys in the Right- and Left-Bank Parts of the Fehér-Körös Valley",
+          "language": "de",
+          "page": 47,
+          "pdf_id": "jb1888",
+          "pdf_page": 49
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Geologische Studien in der Umgebung von Nagy-Károly, Ér-Endréd, Margitta und Szalárd",
+          "title_hu": "Földtani tanulmányok Nagy-Károly, Ér-Endréd, Margitta és Szalárd környékén",
+          "title_sk": "Geologické štúdie v okolí obcí Nagy-Károly, Ér-Endréd, Margitta a Szalárd",
+          "title_en": "Geological Studies in the Vicinity of Nagy-Károly, Ér-Endréd, Margitta and Szalárd",
+          "language": "de",
+          "page": 62,
+          "pdf_id": "jb1888",
+          "pdf_page": 64
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "Das Gebiet der Schwarzen Theiss",
+          "title_hu": "A Fekete-Tisza vidéke",
+          "title_sk": "Oblasť Čiernej Tisy",
+          "title_en": "The Region of the Black Tisza",
+          "language": "de",
+          "page": 72,
+          "pdf_id": "jb1888",
+          "pdf_page": 74
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Der Westrand des Krassó-Szörényer (Banater) Gebirges in der Umgebung von Illadia, Csiklova und Oravicza",
+          "title_hu": "A Krassó-Szörényi (bánsági) hegyvidék nyugati széle Illadia, Csiklova és Oravicza környékén",
+          "title_sk": "Západný okraj Krašovsko-severínskeho (banátskeho) pohoria v okolí Ilidie, Čiklovej a Oravice",
+          "title_en": "The Western Margin of the Krassó-Szörény (Banat) Mountains in the Vicinity of Illadia, Csiklova and Oravicza",
+          "language": "de",
+          "page": 86,
+          "pdf_id": "jb1888",
+          "pdf_page": 88
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Bericht über die im Jahre 1888 in der Umgebung von Dognácska und Vaskő bewerkstelligte geologische Detail-Aufnahme",
+          "title_hu": "Jelentés az 1888. évben Dognácska és Vaskő vidékén eszközölt részletes földtani felvételről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní uskutočnenom v roku 1888 v okolí Dognácsky a Vaskő",
+          "title_en": "Report on the Detailed Geological Survey Conducted in the Vicinity of Dognácska and Vaskő in 1888",
+          "language": "de",
+          "page": 110,
+          "pdf_id": "jb1888",
+          "pdf_page": 112
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Geologische Notizen aus dem Mehádiaer Zuge des Krassó-Szörényer Gebirges",
+          "title_hu": "Földtani jegyzetek a Krassó-Szörényi-hegység mehádiai vonulatából",
+          "title_sk": "Geologické poznámky z mehadijského pásma Krašovsko-severínskeho pohoria",
+          "title_en": "Geological Notes from the Mehadia Range of the Krassó-Szörény Mountains",
+          "language": "de",
+          "page": 122,
+          "pdf_id": "jb1888",
+          "pdf_page": 124
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Montangeologische Aufnahme des Kremnitzer Erzbergbau-Gebietes",
+          "title_hu": "A körmöcbányai ércbányavidék bányaföldtani felvétele",
+          "title_sk": "Banskogeologické mapovanie kremnického rudného banského revíru",
+          "title_en": "Mining-geological survey of the Kremnica ore mining district",
+          "language": "de",
+          "page": 133,
+          "pdf_id": "jb1888",
+          "pdf_page": 135
+        },
+        {
+          "author": "Sándor Kalecsinszky",
+          "title_de": "Mittheilungen aus dem chemischen Laboratorium der kgl. ung. geologischen Anstalt",
+          "title_hu": "Közlemények a m. kir. földtani intézet vegytani laboratóriumából",
+          "title_sk": "Správy z chemického laboratória Kráľovského uhorského geologického ústavu",
+          "title_en": "Communications from the Chemical Laboratory of the Royal Hungarian Geological Institute",
+          "language": "de",
+          "page": 149,
+          "pdf_id": "jb1888",
+          "pdf_page": 151
+        },
+        {
+          "author": "Móricz Staub",
+          "title_de": "Zuwachs der phytopaläontologischen Sammlung der kgl. ung. geol. Anstalt während der Jahre 1887 und 1888",
+          "title_hu": "A m. kir. földtani intézet növényőslénytani gyűjteményének gyarapodása az 1887. és 1888. években",
+          "title_sk": "Prírastok fytopaleontologickej zbierky Kráľovského uhorského geologického ústavu v rokoch 1887 a 1888",
+          "title_en": "Additions to the phytopalaeontological collection of the Royal Hungarian Geological Institute during the years 1887 and 1888",
+          "language": "de",
+          "page": 173,
+          "pdf_id": "jb1888",
+          "pdf_page": 175
+        }
+      ]
     }
   ]
 }
