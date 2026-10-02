@@ -13,6 +13,7 @@
     "normalize-de-text": "node src/normalize-de-text.js",
     "de-sk-translator": "node src/de-sk-translator.js",
     "fetch-bsb-text": "node src/fetch-bsb-text.js",
+    "search-toponyms": "node src/search-toponyms.js",
     "md-index": "node src/md-index.js",
     "viewer": "node viewer/server.js"
   },
@@ -23,6 +24,7 @@
     "normalize-authors": "./src/normalize-authors.js",
     "normalize-de-text": "./src/normalize-de-text.js",
     "de-sk-translator": "./src/de-sk-translator.js",
+    "search-toponyms": "./src/search-toponyms.js",
     "md-index": "./src/md-index.js"
   },
   "dependencies": {

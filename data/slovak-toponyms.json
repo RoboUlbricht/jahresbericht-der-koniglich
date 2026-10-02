@@ -1,0 +1,751 @@
+{
+  "title": "Index toponým, historických názvov a montánnych výrazov pre územie Slovenska (SK / DE / HU)",
+  "version": "1.0.0",
+  "description": "Štruktúrovaný tematický slovník slovenských, nemeckých a maďarských geografických a montánnych termínov pre analýzu historických geologických textov.",
+  "categories": {
+    "counties": {
+      "name_sk": "Historické župy a stolice",
+      "description_sk": "Historické župy na území dnešného Slovenska",
+      "terms": [
+        {
+          "id": "zolyom",
+          "sk": ["Zvolenská župa", "Zvolen"],
+          "de": ["Sohl", "Sohler Comitat", "Komitat Sohl", "Altsohl"],
+          "hu": ["Zólyom", "Zólyom vármegye", "Zólyom vm.", "Zolyom"]
+        },
+        {
+          "id": "bars",
+          "sk": ["Tekovská župa", "Tekov"],
+          "de": ["Barsch", "Barscher Comitat", "Bars", "Comitat Bars"],
+          "hu": ["Bars", "Bars vármegye", "Bars vm."]
+        },
+        {
+          "id": "hont",
+          "sk": ["Hontianska župa", "Hont"],
+          "de": ["Hont", "Honter Comitat", "Comitat Hont"],
+          "hu": ["Hont", "Hont vármegye", "Hont vm."]
+        },
+        {
+          "id": "szepes",
+          "sk": ["Spišská župa", "Spiš"],
+          "de": ["Zips", "Zipser Comitat", "Comitat Zips"],
+          "hu": ["Szepes", "Szepes vármegye", "Szepes vm."]
+        },
+        {
+          "id": "saros",
+          "sk": ["Šarišská župa", "Šariš"],
+          "de": ["Scharosch", "Scharoscher Comitat", "Comitat Sáros"],
+          "hu": ["Sáros", "Sáros vármegye", "Sáros vm.", "Saros"]
+        },
+        {
+          "id": "gomor",
+          "sk": ["Gemersko-malohontská župa", "Gemer"],
+          "de": ["Gömör", "Gemer", "Gömörer Comitat", "Comitat Gömör"],
+          "hu": ["Gömör", "Gömör és Kis-Hont", "Gömör vármegye", "Gömör-Kishont"]
+        },
+        {
+          "id": "pozsony",
+          "sk": ["Bratislavská župa", "Prešporská župa"],
+          "de": ["Pressburg", "Pressburger Comitat", "Comitat Pressburg"],
+          "hu": ["Pozsony", "Pozsony vármegye", "Pozsony vm."]
+        },
+        {
+          "id": "nyitra",
+          "sk": ["Nitrianska župa", "Nitra"],
+          "de": ["Neutra", "Neutraer Comitat", "Comitat Neutra"],
+          "hu": ["Nyitra", "Nyitra vármegye", "Nyitra vm."]
+        },
+        {
+          "id": "trencsen",
+          "sk": ["Trenčianska župa", "Trenčín"],
+          "de": ["Trentschin", "Trentschiner Comitat", "Comitat Trentschin"],
+          "hu": ["Trencsén", "Trencsén vármegye", "Trencsen"]
+        },
+        {
+          "id": "arva",
+          "sk": ["Oravská župa", "Orava"],
+          "de": ["Arva", "Arvaer Comitat", "Árva"],
+          "hu": ["Árva", "Árva vármegye", "Arva vm."]
+        },
+        {
+          "id": "lipto",
+          "sk": ["Liptovská župa", "Liptov"],
+          "de": ["Liptau", "Liptauer Comitat", "Comitat Liptau"],
+          "hu": ["Liptó", "Liptó vármegye", "Lipto"]
+        },
+        {
+          "id": "turocz",
+          "sk": ["Turčianska župa", "Turiec"],
+          "de": ["Turz", "Turzer Comitat", "Comitat Turócz"],
+          "hu": ["Turócz", "Turóc", "Turócz vármegye", "Turocz"]
+        },
+        {
+          "id": "abauj_torna",
+          "sk": ["Abovsko-turnianska župa", "Abov", "Turňa"],
+          "de": ["Abaujwar-Torna", "Abauj-Tornaer Comitat", "Abauj"],
+          "hu": ["Abaúj-Torna", "Abauj-Torna", "Abaúj", "Torna vármegye"]
+        },
+        {
+          "id": "zemplen",
+          "sk": ["Zemplínska župa", "Zemplín"],
+          "de": ["Semplin", "Sempliner Comitat", "Comitat Zemplin"],
+          "hu": ["Zemplén", "Zemplén vármegye", "Zemplen"]
+        },
+        {
+          "id": "nograd",
+          "sk": ["Novohradská župa", "Novohrad"],
+          "de": ["Neograd", "Neograder Comitat", "Nógrád"],
+          "hu": ["Nógrád", "Nógrád vármegye", "Nograd"]
+        }
+      ]
+    },
+    "mining_towns": {
+      "name_sk": "Banské mestá a montánne strediská",
+      "description_sk": "Banské mestá, revíry a lokality historickej ťažby rúd a solí",
+      "terms": [
+        {
+          "id": "banska_stiavnica",
+          "sk": ["Banská Štiavnica", "Štiavnica"],
+          "de": ["Schemnitz", "Königlich Freie Bergstadt Schemnitz", "Schemnitzer"],
+          "hu": ["Selmecbánya", "Selmeczbánya", "Selmecz", "Selmec", "Selmeczi"]
+        },
+        {
+          "id": "kremnica",
+          "sk": ["Kremnica"],
+          "de": ["Kremnitz", "Kremnitzer", "Cremnitz"],
+          "hu": ["Körmöcbánya", "Körmöczbánya", "Körmöcz", "Körmöc", "Körmöczi"]
+        },
+        {
+          "id": "banska_bystrica",
+          "sk": ["Banská Bystrica"],
+          "de": ["Neusohl", "Neusohler"],
+          "hu": ["Besztercebánya", "Beszterczebánya", "Besztercze", "Beszterce"]
+        },
+        {
+          "id": "banska_bela",
+          "sk": ["Banská Belá"],
+          "de": ["Dilln", "Dillner"],
+          "hu": ["Bélabánya", "Béla-Bánya", "Belabánya"]
+        },
+        {
+          "id": "hodrusa_hamre",
+          "sk": ["Hodruša", "Banská Hodruša", "Hodruša-Hámre"],
+          "de": ["Hodritsch", "Kerling-Hodritsch"],
+          "hu": ["Hodrusbánya", "Hodrus", "Hodrus-Hámor"]
+        },
+        {
+          "id": "stiavnicke_bane",
+          "sk": ["Štiavnické Bane", "Vindšachta"],
+          "de": ["Windschacht", "Siegelsberg"],
+          "hu": ["Szélakna", "Hegybánya", "Sziglisberg"]
+        },
+        {
+          "id": "vyhne",
+          "sk": ["Vyhne"],
+          "de": ["Eisenbach"],
+          "hu": ["Vihnye", "Vihnyefürdő"]
+        },
+        {
+          "id": "sklene_teplice",
+          "sk": ["Sklené Teplice"],
+          "de": ["Glashütte", "Glaserhau"],
+          "hu": ["Szklenó", "Szklenófürdő", "Szkleno"]
+        },
+        {
+          "id": "spania_dolina",
+          "sk": ["Špania Dolina"],
+          "de": ["Herrengrund", "Herrengrunder"],
+          "hu": ["Urvölgy", "Úrvölgy"]
+        },
+        {
+          "id": "stare_hory",
+          "sk": ["Staré Hory"],
+          "de": ["Altgebirg"],
+          "hu": ["Óhegy"]
+        },
+        {
+          "id": "smolnik",
+          "sk": ["Smolník"],
+          "de": ["Schmölnitz", "Schmöllnitz"],
+          "hu": ["Szomolnok", "Szomolnokhuta"]
+        },
+        {
+          "id": "gelnica",
+          "sk": ["Gelnica"],
+          "de": ["Göllnitz", "Göllnitzbánya"],
+          "hu": ["Gölnicbánya", "Gölniczbánya", "Gölnic"]
+        },
+        {
+          "id": "dobsina",
+          "sk": ["Dobšiná"],
+          "de": ["Dobschau", "Dobscha"],
+          "hu": ["Dobsina"]
+        },
+        {
+          "id": "roznava",
+          "sk": ["Rožňava"],
+          "de": ["Rosenau"],
+          "hu": ["Rozsnyó", "Rozsnyobánya"]
+        },
+        {
+          "id": "rudnany",
+          "sk": ["Rudňany", "Koterbachy"],
+          "de": ["Kotterbach"],
+          "hu": ["Ötösbánya", "Koterbach"]
+        },
+        {
+          "id": "nizna_slana",
+          "sk": ["Nižná Slaná"],
+          "de": ["Niedersalz"],
+          "hu": ["Alsósajó"]
+        },
+        {
+          "id": "solivar",
+          "sk": ["Solivar", "Soľnohrad"],
+          "de": ["Salzbrunn", "Sovár", "Soóvár"],
+          "hu": ["Soóvár", "Sóvár", "Sovár"]
+        },
+        {
+          "id": "magurka",
+          "sk": ["Magurka"],
+          "de": ["Magurka"],
+          "hu": ["Magurka"]
+        },
+        {
+          "id": "lubietova",
+          "sk": ["Ľubietová"],
+          "de": ["Libethen"],
+          "hu": ["Libetbánya"]
+        },
+        {
+          "id": "pukanec",
+          "sk": ["Pukanec"],
+          "de": ["Puggantz"],
+          "hu": ["Bakabánya"]
+        },
+        {
+          "id": "novabana",
+          "sk": ["Nová Baňa"],
+          "de": ["Bergstadt Königsberg", "Königsberg i. U."],
+          "hu": ["Újbánya", "Ujbánya"]
+        }
+      ]
+    },
+    "mining_terms": {
+      "name_sk": "Banícke výrazy a montanistika",
+      "description_sk": "Odborná banská terminológia, typy diel, funkcie a postupy",
+      "terms": [
+        {
+          "id": "erbstollen",
+          "sk": ["dedičná štôlňa", "odvodňovacia štôlňa"],
+          "de": ["Erbstollen", "Erbstolln", "Erbstollens"],
+          "hu": ["öröktárna", "főtárna", "örök-tárna"]
+        },
+        {
+          "id": "stollen",
+          "sk": ["štôlňa"],
+          "de": ["Stollen", "Stolln", "Laufstollen"],
+          "hu": ["tárna", "táró", "altárna"]
+        },
+        {
+          "id": "schacht",
+          "sk": ["šachta", "jama"],
+          "de": ["Schacht", "Schächte", "Tiefbauschacht"],
+          "hu": ["akna", "aknafúrás", "bányaakna"]
+        },
+        {
+          "id": "gang",
+          "sk": ["rudná žila", "žila"],
+          "de": ["Erzgang", "Gänge", "Hauptgang", "Quergang", "Gangzug"],
+          "hu": ["telér", "érctelér", "főtelér", "haránttelér"]
+        },
+        {
+          "id": "pochwerk",
+          "sk": ["stupa", "drvička rúd"],
+          "de": ["Pochwerk", "Pochwerke", "Poche"],
+          "hu": ["zúzó", "zúzómű", "érczúzó"]
+        },
+        {
+          "id": "huette",
+          "sk": ["huta", "tavizeň"],
+          "de": ["Hütte", "Schmelzhütte", "Silberhütte", "Kupferhütte"],
+          "hu": ["kohó", "olvasztó", "ezüstkohó"]
+        },
+        {
+          "id": "halde",
+          "sk": ["halda", "odval"],
+          "de": ["Halde", "Halden", "Berghalde"],
+          "hu": ["meddőhányó", "meddő", "halda"]
+        },
+        {
+          "id": "grube",
+          "sk": ["baňa", "banská jama"],
+          "de": ["Grube", "Gruben", "Bergwerk", "Erzgrube"],
+          "hu": ["bánya", "bányatelep", "ércbánya"]
+        },
+        {
+          "id": "erzdistrict",
+          "sk": ["rudný revír", "banský obvod"],
+          "de": ["Erzdistrict", "Erzdistrikt", "Erzrevier", "Bergrevier"],
+          "hu": ["ércvidék", "ércbányavidék", "bányakerület"]
+        },
+        {
+          "id": "goldstufe",
+          "sk": ["zlatá ruda", "ukážka rudy"],
+          "de": ["Goldstufe", "Erzstufe", "Silberstufe"],
+          "hu": ["aranyérc", "ércpéldány", "aranypéldány"]
+        },
+        {
+          "id": "schurf",
+          "sk": ["kutka", "kutací zásek", "prieskumná ryha"],
+          "de": ["Schurf", "Schurfbau", "Schurfgraben"],
+          "hu": ["kutatóárok", "kutatás", "bányakutatás"]
+        },
+        {
+          "id": "marksneider",
+          "sk": ["banský merač"],
+          "de": ["Markscheider", "Markscheidekunst"],
+          "hu": ["bányamérő", "bányaföldmérő"]
+        },
+        {
+          "id": "bergrath",
+          "sk": ["banský rada"],
+          "de": ["Bergrath", "Oberbergrath"],
+          "hu": ["bányatanácsos", "főbányatanácsos"]
+        },
+        {
+          "id": "berghauptmannschaft",
+          "sk": ["banský kapitanát", "banský úrad"],
+          "de": ["Berghauptmannschaft", "Bergamt", "Bergverwaltung"],
+          "hu": ["főbányahivatal", "bányakapitányság", "bányahivatal"]
+        },
+        {
+          "id": "bergakademie",
+          "sk": ["banícka akadémia"],
+          "de": ["Bergakademie", "Berg- und Forstakademie"],
+          "hu": ["Bányászati Akadémia", "Bányászati és Erdészeti Akadémia"]
+        }
+      ]
+    },
+    "cities_and_towns": {
+      "name_sk": "Významné mestá a sídla",
+      "description_sk": "Mestá a sídla s výskytom v historických a správnych správach",
+      "terms": [
+        {
+          "id": "bratislava",
+          "sk": ["Bratislava", "Prešporok"],
+          "de": ["Pressburg", "Preßburg"],
+          "hu": ["Pozsony"]
+        },
+        {
+          "id": "kosice",
+          "sk": ["Košice"],
+          "de": ["Kaschau"],
+          "hu": ["Kassa"]
+        },
+        {
+          "id": "presov",
+          "sk": ["Prešov"],
+          "de": ["Eperies", "Eperjes"],
+          "hu": ["Eperjes"]
+        },
+        {
+          "id": "trnava",
+          "sk": ["Trnava"],
+          "de": ["Tyrnau"],
+          "hu": ["Nagyszombat"]
+        },
+        {
+          "id": "nitra",
+          "sk": ["Nitra"],
+          "de": ["Neutra"],
+          "hu": ["Nyitra"]
+        },
+        {
+          "id": "trencin",
+          "sk": ["Trenčín"],
+          "de": ["Trentschin"],
+          "hu": ["Trencsén"]
+        },
+        {
+          "id": "levoca",
+          "sk": ["Levoča"],
+          "de": ["Leutschau"],
+          "hu": ["Lőcse", "Locse"]
+        },
+        {
+          "id": "kezmarok",
+          "sk": ["Kežmarok"],
+          "de": ["Käsmark", "Kesmark"],
+          "hu": ["Késmárk"]
+        },
+        {
+          "id": "poprad",
+          "sk": ["Poprad"],
+          "de": ["Deutschendorf"],
+          "hu": ["Poprád", "Poprad"]
+        },
+        {
+          "id": "zilina",
+          "sk": ["Žilina"],
+          "de": ["Sillein"],
+          "hu": ["Zsolna"]
+        },
+        {
+          "id": "ruzomberok",
+          "sk": ["Ružomberok"],
+          "de": ["Rosenberg"],
+          "hu": ["Rózsahegy"]
+        },
+        {
+          "id": "lucenec",
+          "sk": ["Lučenec"],
+          "de": ["Lizenz"],
+          "hu": ["Losonc", "Losoncz"]
+        },
+        {
+          "id": "rimavska_sobota",
+          "sk": ["Rimavská Sobota"],
+          "de": ["Großsteffelsdorf"],
+          "hu": ["Rimaszombat"]
+        },
+        {
+          "id": "komarno",
+          "sk": ["Komárno"],
+          "de": ["Komorn"],
+          "hu": ["Komárom", "Révkomárom"]
+        },
+        {
+          "id": "sturovo",
+          "sk": ["Štúrovo", "Parkan"],
+          "de": ["Parkan"],
+          "hu": ["Párkány"]
+        },
+        {
+          "id": "zvolen_mesto",
+          "sk": ["Zvolen (mesto)"],
+          "de": ["Altsohl"],
+          "hu": ["Zólyom városa", "Ó-Zólyom"]
+        }
+      ]
+    },
+    "spas_and_springs": {
+      "name_sk": "Kúpele, minerálne a termálne pramene",
+      "description_sk": "Kúpeľné centrá a žriedla s hydrogeologickým výskumom",
+      "terms": [
+        {
+          "id": "sliac",
+          "sk": ["Sliač", "Kúpele Sliač"],
+          "de": ["Szliács", "Bad Szliács", "Sliatsch"],
+          "hu": ["Szliács", "Szliácsfürdő"]
+        },
+        {
+          "id": "korytnica",
+          "sk": ["Korytnica"],
+          "de": ["Koritnitza", "Koritnicza"],
+          "hu": ["Koritnyica", "Koritnicza"]
+        },
+        {
+          "id": "santovka",
+          "sk": ["Santovka"],
+          "de": ["Szántó", "Hont-Szántó", "Santovka"],
+          "hu": ["Szántó", "Hontszántó", "Hont-Szántó"]
+        },
+        {
+          "id": "madarovce",
+          "sk": ["Maďarovce", "Santovka-Maďarovce"],
+          "de": ["Magyarád", "Magyarad"],
+          "hu": ["Magyarád", "Magyarádi"]
+        },
+        {
+          "id": "piestany",
+          "sk": ["Piešťany"],
+          "de": ["Pistyan", "Pöstény"],
+          "hu": ["Pöstyén", "Pöstény"]
+        },
+        {
+          "id": "trencianske_teplice",
+          "sk": ["Trenčianske Teplice"],
+          "de": ["Trentschinteplitz", "Trentschin-Teplitz"],
+          "hu": ["Trencsénteplic", "Trencsén-Teplicz"]
+        },
+        {
+          "id": "bardejovske_kupele",
+          "sk": ["Bardejovské Kúpele", "Bardejov"],
+          "de": ["Bartfeld", "Bad Bartfeld"],
+          "hu": ["Bártfafürdő", "Bártfa"]
+        },
+        {
+          "id": "dudince",
+          "sk": ["Dudince"],
+          "de": ["Dudintze"],
+          "hu": ["Gyűgy"]
+        },
+        {
+          "id": "herlany",
+          "sk": ["Herľany", "Herliansky gejzír"],
+          "de": ["Herlein", "Rank-Herlein"],
+          "hu": ["Herlány", "Ránkherlány"]
+        },
+        {
+          "id": "ciz",
+          "sk": ["Číž", "Kúpele Číž"],
+          "de": ["Csíz", "Bad Csíz"],
+          "hu": ["Csíz", "Csízfürdő", "Gsiz"]
+        },
+        {
+          "id": "brusno",
+          "sk": ["Brusno", "Kúpele Brusno"],
+          "de": ["Brusno"],
+          "hu": ["Borosznó", "Brusznó"]
+        },
+        {
+          "id": "lucky",
+          "sk": ["Lúčky"],
+          "de": ["Lucsky"],
+          "hu": ["Lucski", "Lucskifürdő"]
+        }
+      ]
+    },
+    "geological_and_paleontological_sites": {
+      "name_sk": "Geologické a paleontologické lokality",
+      "description_sk": "Typové lokality, náleziská skamenelín, travertínov a nerastných surovín",
+      "terms": [
+        {
+          "id": "drevenik",
+          "sk": ["Dreveník", "Spišské Podhradie"],
+          "de": ["Drevenyik", "Drevenyik-Berg", "Drevenik"],
+          "hu": ["Drevenyik", "Drevenyik-hegy"]
+        },
+        {
+          "id": "ganovce",
+          "sk": ["Gánovce", "Gánovské travertíny"],
+          "de": ["Gánócz", "Gansdorf", "Gánocz"],
+          "hu": ["Gánóc", "Gánócz"]
+        },
+        {
+          "id": "devinska_nova_ves",
+          "sk": ["Devínska Nová Ves", "Sandberg"],
+          "de": ["Theben-Neudorf", "Devény-Ujfalu", "Theben Neudorf"],
+          "hu": ["Dévényújfalu", "Dévény-Újfalu"]
+        },
+        {
+          "id": "devin",
+          "sk": ["Devín", "Devínska hradná skala"],
+          "de": ["Theben", "Thebner"],
+          "hu": ["Dévény"]
+        },
+        {
+          "id": "dubravica",
+          "sk": ["Dúbravica (diatomit)"],
+          "de": ["Dubravicza", "Dubravica"],
+          "hu": ["Dubravica", "Dubravicza"]
+        },
+        {
+          "id": "malachov",
+          "sk": ["Malachov (zosuv pôdy)", "Ortúty"],
+          "de": ["Malakö", "Malachov"],
+          "hu": ["Malakő", "Malachó"]
+        },
+        {
+          "id": "odorin",
+          "sk": ["Odorín"],
+          "de": ["Odorin"],
+          "hu": ["Odorin", "Szepesodorin"]
+        },
+        {
+          "id": "markusovce",
+          "sk": ["Markušovce"],
+          "de": ["Marksdorf"],
+          "hu": ["Márkusfalva", "Markusfalva"]
+        },
+        {
+          "id": "spisske_vlachy",
+          "sk": ["Spišské Vlachy", "vrch Verpich"],
+          "de": ["Wallendorf", "Szepes-Olaszi", "Verpics"],
+          "hu": ["Szepesolaszi", "Verpics-hegy"]
+        },
+        {
+          "id": "spisske_podhradie",
+          "sk": ["Spišské Podhradie"],
+          "de": ["Kirchdrauf", "Szepes-Váralja"],
+          "hu": ["Szepesváralja", "Szepes-Váralja"]
+        },
+        {
+          "id": "turova",
+          "sk": ["Turová (tufy, skameneliny)"],
+          "de": ["Turova"],
+          "hu": ["Turova", "Túróc"]
+        },
+        {
+          "id": "vernar",
+          "sk": ["Vernár"],
+          "de": ["Vernár", "Vernar"],
+          "hu": ["Vernár"]
+        },
+        {
+          "id": "svedlar_remete",
+          "sk": ["Mníšek nad Hnilcom", "Švedlár", "Švedlárska Remeta"],
+          "de": ["Einsiedel", "Szepes-Remete", "Schwedler"],
+          "hu": ["Szepesremete", "Svedlér"]
+        },
+        {
+          "id": "silicka_brezova",
+          "sk": ["Silická Brezová", "Silica"],
+          "de": ["Szilisztye"],
+          "hu": ["Szilice", "Szilisztye"]
+        },
+        {
+          "id": "zavada_sadok",
+          "sk": ["Závada a Sádok (mastodon)"],
+          "de": ["Závada", "Szádok", "Zavada"],
+          "hu": ["Závada", "Szádok"]
+        },
+        {
+          "id": "bertotovce_peklany",
+          "sk": ["Bertotovce", "Pekľany", "Ľubovec (flyš)"],
+          "de": ["Bertót", "Peklen", "Lubócz"],
+          "hu": ["Bertót", "Peklén", "Lubóc"]
+        }
+      ]
+    },
+    "hydronyms": {
+      "name_sk": "Rieky a vodné toky",
+      "description_sk": "Rieky a hlavné vodné toky na území Slovenska",
+      "terms": [
+        {
+          "id": "hron",
+          "sk": ["Hron"],
+          "de": ["Gran", "Granfluss"],
+          "hu": ["Garam"]
+        },
+        {
+          "id": "vah",
+          "sk": ["Váh"],
+          "de": ["Waag", "Waagfluss"],
+          "hu": ["Vág"]
+        },
+        {
+          "id": "dunaj",
+          "sk": ["Dunaj"],
+          "de": ["Donau"],
+          "hu": ["Duna"]
+        },
+        {
+          "id": "hornad",
+          "sk": ["Hornád"],
+          "de": ["Hernad", "Hernadfluss"],
+          "hu": ["Hernád"]
+        },
+        {
+          "id": "ipel",
+          "sk": ["Ipeľ"],
+          "de": ["Eipel"],
+          "hu": ["Ipoly"]
+        },
+        {
+          "id": "nitra_rieka",
+          "sk": ["Nitra (rieka)"],
+          "de": ["Neutrafluss"],
+          "hu": ["Nyitra folyó"]
+        },
+        {
+          "id": "slana",
+          "sk": ["Slaná"],
+          "de": ["Salza"],
+          "hu": ["Sajó"]
+        },
+        {
+          "id": "poprad_rieka",
+          "sk": ["Poprad (rieka)"],
+          "de": ["Popradfluss"],
+          "hu": ["Poprád folyó"]
+        },
+        {
+          "id": "orava_rieka",
+          "sk": ["Orava (rieka)"],
+          "de": ["Arvafluss"],
+          "hu": ["Árva folyó"]
+        },
+        {
+          "id": "hnilec",
+          "sk": ["Hnilec"],
+          "de": ["Göllnitzfluss"],
+          "hu": ["Gölnic folyó"]
+        },
+        {
+          "id": "bodrog",
+          "sk": ["Bodrog"],
+          "de": ["Bodrog"],
+          "hu": ["Bodrog"]
+        },
+        {
+          "id": "torysa",
+          "sk": ["Torysa"],
+          "de": ["Törz"],
+          "hu": ["Tarca"]
+        }
+      ]
+    },
+    "oronyms": {
+      "name_sk": "Pohoria a geomorfologické celky",
+      "description_sk": "Pohoria, horské masívy a chrbty",
+      "terms": [
+        {
+          "id": "karpaty",
+          "sk": ["Karpaty", "Západné Karpaty"],
+          "de": ["Karpathen", "Karpaten", "Karpathenkette"],
+          "hu": ["Kárpátok", "Északkeleti Kárpátok"]
+        },
+        {
+          "id": "tatry",
+          "sk": ["Tatry", "Vysoké Tatry", "Nízke Tatry"],
+          "de": ["Tatra", "Hohe Tatra", "Niedere Tatra"],
+          "hu": ["Tátra", "Magas Tátra", "Alacsony Tátra"]
+        },
+        {
+          "id": "male_karpaty",
+          "sk": ["Malé Karpaty"],
+          "de": ["Kleine Karpathen", "Hainburger Gebirge"],
+          "hu": ["Kis-Kárpátok"]
+        },
+        {
+          "id": "stiavnicke_vrchy",
+          "sk": ["Štiavnické vrchy", "Štiavnické pohorie"],
+          "de": ["Schemnitzer Gebirge"],
+          "hu": ["Selmeci-hegység", "Selmeczi hegység"]
+        },
+        {
+          "id": "kremnicke_vrchy",
+          "sk": ["Kremnické vrchy"],
+          "de": ["Kremnitzer Gebirge"],
+          "hu": ["Körmöci-hegység", "Körmöczi hegység"]
+        },
+        {
+          "id": "slovenske_rudohorie",
+          "sk": ["Slovenské rudohorie"],
+          "de": ["Ungarisches Erzgebirge", "Zips-Gömörer Erzgebirge"],
+          "hu": ["Gömör-Szepesi Érchegység", "Magyar Érchegység"]
+        },
+        {
+          "id": "fatra",
+          "sk": ["Veľká Fatra", "Malá Fatra"],
+          "de": ["Fatra", "Grosse Fatra", "Kleine Fatra"],
+          "hu": ["Nagy Fátra", "Kis Fátra"]
+        },
+        {
+          "id": "burda",
+          "sk": ["Burda", "Kováčovské kopce"],
+          "de": ["Burda-Gebirge", "Wachtberge"],
+          "hu": ["Burda", "Kovácspataki-hegyek"]
+        },
+        {
+          "id": "litavske_vrchy",
+          "sk": ["Litavské vrchy"],
+          "de": ["Leithagebirge", "Leitha-Gebirge"],
+          "hu": ["Lajta-hegység"]
+        }
+      ]
+    }
+  }
+}

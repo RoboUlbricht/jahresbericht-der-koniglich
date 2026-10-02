@@ -62,6 +62,7 @@ Tools and web viewer for processing, indexing, OCR cleanup, AI translation, and 
 | **Translate** | `npm run de-sk-translator <path-to-txt> [options]` | Translates German text to Slovak via Gemini AI |
 | **Normalize Authors** | `npm run normalize-authors [path-to-articles.json]` | Formats and cleans author names in `articles.json` |
 | **Generate Index** | `npm run md-index <path-to-articles.json>` | Generates a Markdown index file |
+| **Search Toponyms** | `npm run search-toponyms [options]` | Fast category-based search for Slovak toponyms & mining terms |
 
 ---
 
@@ -71,6 +72,7 @@ Tools and web viewer for processing, indexing, OCR cleanup, AI translation, and 
 jahresbericht-der-koniglich/
 ├── data/
 │   ├── index.json                     # Registry of magazines and digitized volumes
+│   ├── slovak-toponyms.json           # Categorized Slovak, German, Hungarian toponyms & terms
 │   ├── jahresbericht/                 # German edition articles and volume data
 │   │   ├── articles.json              # Catalogued articles metadata
 │   │   └── <year>/                    # PDFs, extracted TXT, generated scans & thumbnails
@@ -85,7 +87,8 @@ jahresbericht-der-koniglich/
 │   ├── normalize-de-text.js           # OCR cleanup and normalization
 │   ├── prepare-images.js              # High-res scan renderer
 │   ├── prepare-text.js                # PDF-to-text extractor
-│   └── prepare-thumbnails.js          # PDF-to-thumbnail renderer
+│   ├── prepare-thumbnails.js          # PDF-to-thumbnail renderer
+│   └── search-toponyms.js             # High-performance toponym and term search engine
 └── viewer/
     ├── server.js                      # Express backend & API endpoints
     └── public/                        # Web frontend (cataloger and scan viewer)
@@ -162,6 +165,7 @@ Nástroje a webový prehliadač na spracovanie, indexovanie, čistenie OCR, AI p
 | **Preklad DE -> SK** | `npm run de-sk-translator <cesta-k-txt> [moznosti]` | Preloží nemecký text do slovenčiny pomocou Gemini AI |
 | **Normalizácia autorov** | `npm run normalize-authors [cesta-k-articles.json]` | Normalizuje mená autorov v súbore `articles.json` |
 | **Generovanie indexu** | `npm run md-index <cesta-k-articles.json>` | Vygeneruje Markdown prehľad článkov |
+| **Vyhľadávanie toponým** | `npm run search-toponyms [moznosti]` | Rýchle vyhľadávanie toponým a montánnych výrazov podľa tém |
 
 ---
 
@@ -171,6 +175,7 @@ Nástroje a webový prehliadač na spracovanie, indexovanie, čistenie OCR, AI p
 jahresbericht-der-koniglich/
 ├── data/
 │   ├── index.json                     # Zoznam časopisov a digitalizovaných ročníkov
+│   ├── slovak-toponyms.json           # Tematický slovník toponým a montánnych termínov (SK/DE/HU)
 │   ├── jahresbericht/                 # Nemecké vydanie - články a ročníkové dáta
 │   │   ├── articles.json              # Metadáta spracovaných článkov
 │   │   └── <rok>/                     # PDF, extrahovaný TXT, skeny a náhľady
@@ -185,7 +190,8 @@ jahresbericht-der-koniglich/
 │   ├── normalize-de-text.js           # Čistenie a oprava OCR textov
 │   ├── prepare-images.js              # Generovanie obrázkov strán vo vysokom rozlíšení
 │   ├── prepare-text.js                # Extrakcia textu z PDF
-│   └── prepare-thumbnails.js          # Generovanie miniatúr z PDF
+│   ├── prepare-thumbnails.js          # Generovanie miniatúr z PDF
+│   └── search-toponyms.js             # Prúdový vyhľadávač toponým a montánnych výrazov
 └── viewer/
     ├── server.js                      # Express backend a API endpointy
     └── public/                        # Webový frontend (katalogizácia a prehliadač)
