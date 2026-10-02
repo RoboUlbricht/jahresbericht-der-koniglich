@@ -1035,6 +1035,143 @@
           "pdf_page": 159
         }
       ]
+    },
+    {
+      "year": 1891,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": null,
+          "title_sk": null,
+          "title_en": null,
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1891",
+          "pdf_page": 7
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "Bericht über die im Jahre 1891 vollführten speciellen geologischen Aufnahmen",
+          "title_hu": "Jelentés az 1891. évben végzett részletes földtani felvételekről",
+          "title_sk": "Správa o podrobnom geologickom mapovaní vykonanom v roku 1891",
+          "title_en": "Report on the Detailed Geological Surveys Carried Out in the Year 1891",
+          "language": "de",
+          "page": 38,
+          "pdf_id": "jb1891",
+          "pdf_page": 40
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Zur Charakteristik der Hauptmasse des Kodru-Gebirges",
+          "title_hu": "A Kodru-hegység főtömegének jellemzéséhez",
+          "title_sk": "K charakteristike hlavného masívu pohoria Kodru",
+          "title_en": "On the Characteristics of the Main Massif of the Kodru Mountains",
+          "language": "de",
+          "page": 49,
+          "pdf_id": "jb1891",
+          "pdf_page": 51
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Geologische Studien am rechten Ufer des Marosflusses bei Tótvárad-Govosdia (Com. Arad), so wie an der linken Seite der Maros in der Umgebung von Batta-Belotincz-Dorog-Zabalcz (Com. Krassó-Szörény und Temes)",
+          "title_hu": "Földtani tanulmányok a Maros jobb partján Tótvárad-Govosdia mellett (Arad vm.), valamint a Maros bal partján Batta, Belotincz, Dorog és Zabalcz környékén (Krassó-Szörény és Temes vm.)",
+          "title_sk": "Geologické štúdie na pravom brehu rieky Mureš pri Tótvárade-Govosdii (Aradská župa), ako aj na ľavej strane Mureša v okolí obcí Batta, Belotincz, Dorog a Zabalcz (Krašovsko-severínska a Temešská župa)",
+          "title_en": "Geological Studies on the Right Bank of the Maros River near Tótvárad-Govosdia (Arad County), as well as on the Left Side of the Maros in the Vicinity of Batta-Belotincz-Dorog-Zabalcz (Krassó-Szörény and Temes Counties)",
+          "language": "de",
+          "page": 60,
+          "pdf_id": "jb1891",
+          "pdf_page": 62
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Der westliche Theil des Krassó-Szörényer Gebirges in der Umgebung von Csudanovecz, Gerlistye und Klokotics",
+          "title_hu": "A Krassó-Szörényi-hegység nyugati része Csudanovecz, Gerlistye és Klokotics környékén",
+          "title_sk": "Západná časť Krašovsko-severínskeho pohoria v okolí obcí Csudanovecz, Gerlistye a Klokotics",
+          "title_en": "The Western Part of the Krassó-Szörény Mountains in the Vicinity of Csudanovecz, Gerlistye, and Klokotics",
+          "language": "de",
+          "page": 73,
+          "pdf_id": "jb1891",
+          "pdf_page": 75
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Die Umgebung von Lupák, Kölnik, Szócsán und Nagy-Zorlenc",
+          "title_hu": "Lupák, Kölnik, Szócsán és Nagy-Zorlencz környéke",
+          "title_sk": "Okolie lokalít Lupák, Kölnik, Szócsán a Nagy-Zorlenc",
+          "title_en": "The Surroundings of Lupák, Kölnik, Szócsán and Nagy-Zorlenc",
+          "language": "de",
+          "page": 102,
+          "pdf_id": "jb1891",
+          "pdf_page": 104
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Über die geologischen Verhältnisse der Kasan-Enge an der unteren Donau",
+          "title_hu": "Az alsó-dunai Kazán-szoros földtani viszonyairól",
+          "title_sk": "O geologických pomeroch Kazanskej tiesňavy na dolnom Dunaji",
+          "title_en": "On the Geological Conditions of the Kazan Gorge on the Lower Danube",
+          "language": "de",
+          "page": 112,
+          "pdf_id": "jb1891",
+          "pdf_page": 114
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Geologische Verhältnisse des Felsőbányaer Erzbergbau-Gebietes",
+          "title_hu": "A felsőbányai ércbányavidék földtani viszonyai",
+          "title_sk": "Geologické pomery felsőbánskej rudnej banskej oblasti",
+          "title_en": "Geological Conditions of the Felsőbánya Ore Mining District",
+          "language": "de",
+          "page": 124,
+          "pdf_id": "jb1891",
+          "pdf_page": 126
+        },
+        {
+          "author": "Sándor Kalecsinszky",
+          "title_de": "Mittheilungen aus dem chemischen Laboratorium der kgl. ung. geologischen Anstalt",
+          "title_hu": "Közlemények a m. kir. Földtani Intézet vegytani laboratóriumából",
+          "title_sk": "Správy z chemického laboratória Kráľovského uhorského geologického ústavu",
+          "title_en": "Reports from the Chemical Laboratory of the Royal Hungarian Geological Institute",
+          "language": "de",
+          "page": 146,
+          "pdf_id": "jb1891",
+          "pdf_page": 148
+        },
+        {
+          "author": "Móricz Staub",
+          "title_de": "Zuwachs der phytopaläontologischen Sammlung der kgl. ung. geolog. Anstalt während der Jahre 1889 und 1890",
+          "title_hu": "A Magyar Királyi Földtani Intézet növényőslénytani gyűjteményének gyarapodása az 1889. és 1890. években",
+          "title_sk": "Prírastok fytopaleontologickej zbierky Kráľovského uhorského geologického ústavu v rokoch 1889 a 1890",
+          "title_en": "Accessions to the Phytopalaeontological Collection of the Royal Hungarian Geological Institute during the Years 1889 and 1890",
+          "language": "de",
+          "page": 152,
+          "pdf_id": "jb1891",
+          "pdf_page": 154
+        },
+        {
+          "author": "Béla Inkey",
+          "title_de": "Die agronom-geologischen Aufnahmen in Deutschland",
+          "title_hu": "Az agronóm-geológiai felvételek Németországban",
+          "title_sk": "Agronomicko-geologické mapovania v Nemecku",
+          "title_en": "The Agronomic-Geological Surveys in Germany",
+          "language": "de",
+          "page": 167,
+          "pdf_id": "jb1891",
+          "pdf_page": 169
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Über die Steinindustrie Schwedens und Norwegens",
+          "title_hu": "Svéd- és Norvégország kőiparáról",
+          "title_sk": "O kamenárskom priemysle Švédska a Nórska",
+          "title_en": "On the Stone Industry of Sweden and Norway",
+          "language": "de",
+          "page": 194,
+          "pdf_id": "jb1891",
+          "pdf_page": 196
+        }
+      ]
     }
   ]
 }
