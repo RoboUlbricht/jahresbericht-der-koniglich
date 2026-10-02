@@ -931,6 +931,110 @@
           "pdf_page": 182
         }
       ]
+    },
+    {
+      "year": 1890,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Karl Hofmann 1839–1891",
+          "title_hu": "Hofmann Károly 1839–1891",
+          "title_sk": "Karl Hofmann 1839 – 1891",
+          "title_en": "Karl Hofmann (1839–1891)",
+          "language": "de",
+          "page": 3,
+          "pdf_id": "jb1890",
+          "pdf_page": 5
+        },
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 13,
+          "pdf_id": "jb1890",
+          "pdf_page": 13
+        },
+        {
+          "author": "György Primics",
+          "title_de": "Skizzenhafter Bericht über die im nördlichen Theile des Bihar-Gebirges im Jahre 1890 bewerkstelligte geologische Detailaufnahme",
+          "title_hu": "Vázlatos jelentés a Bihar-hegység északi részében az 1890. évben eszközölt részletes földtani felvételről",
+          "title_sk": "Náčrtná správa o podrobnom geologickom mapovaní vykonanom v severnej časti pohoria Bihor v roku 1890",
+          "title_en": "Outline Report on the Detailed Geological Survey Carried out in the Northern Part of the Bihor Mountains in 1890",
+          "language": "de",
+          "page": 44,
+          "pdf_id": "jb1890",
+          "pdf_page": 44
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Geologische Studien an der rechten Seite der Maros, in der Gegend von Soborsin und Baja",
+          "title_hu": "Földtani tanulmányok a Maros jobb partján, Szoborsin és Baja vidékén",
+          "title_sk": "Geologické štúdie na pravej strane Mureša v oblasti Soboršína a Baje",
+          "title_en": "Geological Studies on the Right Bank of the Maros, in the Vicinity of Soborsin and Baja",
+          "language": "de",
+          "page": 63,
+          "pdf_id": "jb1890",
+          "pdf_page": 63
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "Die Theissgegend von Usterike bis Chmiele",
+          "title_hu": "A Tisza-vidék Uszterikitől Chmieléig",
+          "title_sk": "Oblasť Tisy od Usterike po Chmiele",
+          "title_en": "The Tisza Region from Usterike to Chmiele",
+          "language": "de",
+          "page": 76,
+          "pdf_id": "jb1890",
+          "pdf_page": 76
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Die unmittelbare Umgebung von Steierdorf-Anina",
+          "title_hu": "Stájerlak-Anina közvetlen környéke",
+          "title_sk": "Bezprostredné okolie Steierdorfu-Aniny",
+          "title_en": "The Immediate Vicinity of Steierdorf-Anina",
+          "language": "de",
+          "page": 94,
+          "pdf_id": "jb1890",
+          "pdf_page": 94
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Der nordöstliche Theil des Aranyos-(Arinyes-)Gebirges",
+          "title_hu": "Az Aranyos- (Arinyes-) hegység északkeleti része",
+          "title_sk": "Severovýchodná časť pohoria Aranyos (Arinyeș)",
+          "title_en": "The North-Eastern Part of the Aranyos (Arinyeș) Mountains",
+          "language": "de",
+          "page": 130,
+          "pdf_id": "jb1890",
+          "pdf_page": 130
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Über die geologischen Verhältnisse der Umgebungen von Orsova, Jesselnitza und Ogradina",
+          "title_hu": "Orsova, Jeselnica és Ogradina környékének földtani viszonyairól",
+          "title_sk": "O geologických pomeroch okolia Oršovy, Jeselnice a Ogradiny",
+          "title_en": "On the Geological Conditions of the Surroundings of Orsova, Jesselnitza and Ogradina",
+          "language": "de",
+          "page": 141,
+          "pdf_id": "jb1890",
+          "pdf_page": 141
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Montangeologische Aufnahme des Nagybányaer Erzdistrictes",
+          "title_hu": "A nagybányai ércvidék bányaföldtani felvétele",
+          "title_sk": "Banskogeologické mapovanie nagybánskeho rudného revíru (Veľká Baňa / Baia Mare)",
+          "title_en": "Mining Geological Survey of the Nagybánya Ore District",
+          "language": "de",
+          "page": 159,
+          "pdf_id": "jb1890",
+          "pdf_page": 159
+        }
+      ]
     }
   ]
 }
