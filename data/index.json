@@ -117,6 +117,12 @@
       "directory": "geologische-reichsanstalt",
       "published": [
         {
+          "year": 1850,
+          "bsb": true,
+          "id": "bsb10226080",
+          "origin": "https://www.digitale-sammlungen.de/en/view/bsb10226080"
+        },
+        {
           "year": 1867,
           "bsb": true,
           "id": "bsb10226096",

@@ -229,19 +229,49 @@ async function fetchPageHocr(bsbId, pageNum, maxRetries = 3) {
 
 async function main() {
   const rawArgs = process.argv.slice(2);
-  const isOverwrite = rawArgs.includes('--overwrite') || rawArgs.includes('--clean');
-  const args = rawArgs.filter((a) => !a.startsWith('--'));
+  let isOverwrite = false;
+  let isSlow = false;
+  let maxDelaySec = 5;
+  const positionalArgs = [];
 
-  if (args.length < 3) {
-    console.error('Použitie: node src/fetch-bsb-text.js <cesta-k-pdf-alebo-bsbId> <od-strany-pdf> <do-strany-pdf> [--overwrite]');
+  for (let i = 0; i < rawArgs.length; i++) {
+    const arg = rawArgs[i];
+    if (arg === '--overwrite' || arg === '--clean') {
+      isOverwrite = true;
+    } else if (arg === '--slow' || arg === '--delay' || arg === '--throttle') {
+      isSlow = true;
+      const nextArg = rawArgs[i + 1];
+      if (nextArg && /^\d+(\.\d+)?$/.test(nextArg)) {
+        const remainingNonFlags = rawArgs.filter((a, idx) => idx !== i + 1 && !a.startsWith('--')).length;
+        if (remainingNonFlags >= 3) {
+          maxDelaySec = parseFloat(nextArg);
+          i++;
+        }
+      }
+    } else if (arg.startsWith('--slow=') || arg.startsWith('--delay=') || arg.startsWith('--throttle=')) {
+      isSlow = true;
+      const val = parseFloat(arg.split('=')[1]);
+      if (!isNaN(val) && val > 0) {
+        maxDelaySec = val;
+      }
+    } else if (!arg.startsWith('--')) {
+      positionalArgs.push(arg);
+    }
+  }
+
+  if (positionalArgs.length < 3) {
+    console.error('Použitie: node src/fetch-bsb-text.js <cesta-k-pdf-alebo-bsbId> <od-strany-pdf> <do-strany-pdf> [--overwrite] [--slow]');
     console.error('Príklad: node src/fetch-bsb-text.js data/geologische-reichsanstalt/1867/bsb10226096.pdf 345 355');
-    console.error('Príklad: node src/fetch-bsb-text.js bsb10226096 345 355');
+    console.error('Príklad: node src/fetch-bsb-text.js bsb10226096 345 355 --slow');
+    console.error('\nVoľby:');
+    console.error('  --overwrite, --clean   Prepísať existujúci súbor namiesto doplnenia strán');
+    console.error('  --slow, --delay        Spomaliť sťahovanie náhodným intervalom do 5 sekúnd medzi požiadavkami');
     process.exit(1);
   }
 
-  const input = args[0];
-  const fromPdfPage = parseInt(args[1], 10);
-  const toPdfPage = parseInt(args[2], 10);
+  const input = positionalArgs[0];
+  const fromPdfPage = parseInt(positionalArgs[1], 10);
+  const toPdfPage = parseInt(positionalArgs[2], 10);
 
   if (isNaN(fromPdfPage) || isNaN(toPdfPage) || fromPdfPage < 1 || toPdfPage < fromPdfPage) {
     console.error('Chyba: Neplatný rozsah strán (musí platiť 1 <= od-strany <= do-strany).');
@@ -255,6 +285,9 @@ async function main() {
   console.log(`Rozsah strán PDF: ${fromPdfPage} - ${toPdfPage} (spolu ${toPdfPage - fromPdfPage + 1} strán)`);
   console.log(`Zodpovedajúce MDZ skeny (offset -1): ${Math.max(1, fromPdfPage - 1)} - ${toPdfPage - 1}`);
   console.log(`Cieľový TXT súbor: ${relTxtPath}`);
+  if (isSlow) {
+    console.log(`Spomalenie: zapnuté (náhodný interval do ${maxDelaySec} s medzi požiadavkami)`);
+  }
 
   const pagesMap = isOverwrite ? new Map() : loadExistingPages(target.txtPath);
   if (!isOverwrite && pagesMap.size > 0) {
@@ -293,8 +326,16 @@ async function main() {
       console.error(`\nChyba pri sťahovaní scanu ${scanPage} (PDF strana ${pdfPage}):`, err.message);
     }
 
-    // Gentle delay to avoid hammering the MDZ API
-    await sleep(150);
+    // Delay between downloads to avoid hammering or getting blocked by MDZ API
+    if (pdfPage < toPdfPage) {
+      if (isSlow) {
+        const delayMs = Math.floor(Math.random() * (maxDelaySec * 1000));
+        process.stdout.write(`\r[${pdfPage}/${toPdfPage}] Stiahnutá PDF strana ${pdfPage}. Čakám ${(delayMs / 1000).toFixed(1)} s pred ďalšou stranou...    `);
+        await sleep(delayMs);
+      } else {
+        await sleep(150);
+      }
+    }
   }
 
   writePagesToFile(target.txtPath, pagesMap);
