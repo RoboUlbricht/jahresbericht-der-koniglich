@@ -665,4 +665,26 @@ body.portal-body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Kompaktné tlačidlá v hlavičke editora */
+.custom-card-header .btn-sm {
+  min-width: 30px;
+  height: 28px;
+  padding: 2px 7px;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.custom-card-header .btn-sm i {
+  font-size: 0.95rem;
+}
+
+.custom-card-header .dropdown-toggle::after {
+  margin-left: 0.25em;
+  vertical-align: 0.15em;
+}
+
+
 

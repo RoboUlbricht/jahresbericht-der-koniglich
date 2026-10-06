@@ -15,6 +15,11 @@
     "fetch-bsb-text": "node src/fetch-bsb-text.js",
     "search-toponyms": "node src/search-toponyms.js",
     "md-index": "node src/md-index.js",
+    "batch": "node src/batch-cli.js",
+    "batch:submit": "node src/batch-cli.js submit",
+    "batch:status": "node src/batch-cli.js status",
+    "batch:collect": "node src/batch-cli.js collect",
+    "batch:list": "node src/batch-cli.js list",
     "viewer": "node viewer/server.js"
   },
   "bin": {

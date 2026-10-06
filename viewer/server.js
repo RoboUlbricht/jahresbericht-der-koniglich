@@ -3,6 +3,18 @@ import path from 'node:path';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { cleanTitleText, normalizeAndTranslateTitle } from '../src/ai-translator.js';
+import {
+  getBatchState,
+  addBatchTask,
+  addBatchTaskRange,
+  removeBatchTask,
+  clearCompletedBatchTasks
+} from '../src/batch/batch-manager.js';
+import {
+  submitBatch,
+  checkBatchStatus,
+  collectBatchResults
+} from '../src/batch/gemini-batch.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -597,6 +609,91 @@ app.put('/api/magazines/:magazine/:pdfIdOrYear/pages/:page/text', (req, res) => 
   } catch (err) {
     console.error('Error saving page text:', err);
     res.status(500).json({ error: 'Failed to save page text', details: err.message });
+  }
+});
+
+// 7. GET /api/batch - Získanie stavu nočnej dávky a zoznamu úloh
+app.get('/api/batch', (req, res) => {
+  try {
+    const state = getBatchState();
+    res.json(state);
+  } catch (err) {
+    console.error('Error fetching batch state:', err);
+    res.status(500).json({ error: 'Failed to fetch batch state', details: err.message });
+  }
+});
+
+// 7b. POST /api/batch/task - Pridanie strany alebo rozsahu strán do dávky
+app.post('/api/batch/task', (req, res) => {
+  try {
+    const { magazine, year, pdfId, page, toPage, type = 'normalize' } = req.body;
+    if (!magazine || !year || !page) {
+      return res.status(400).json({ error: 'Chýbajú povinné polia: magazine, year, page' });
+    }
+
+    if (toPage && parseInt(toPage, 10) !== parseInt(page, 10)) {
+      const results = addBatchTaskRange({
+        magazine,
+        year,
+        pdfId,
+        fromPage: parseInt(page, 10),
+        toPage: parseInt(toPage, 10),
+        type
+      });
+      return res.json({ success: true, count: results.length, results });
+    }
+
+    const result = addBatchTask({
+      magazine,
+      year,
+      pdfId,
+      page: parseInt(page, 10),
+      type
+    });
+    res.json({ success: true, task: result });
+  } catch (err) {
+    console.error('Error adding batch task:', err);
+    res.status(500).json({ error: 'Failed to add batch task', details: err.message });
+  }
+});
+
+// 7c. DELETE /api/batch/task/:id - Odstránenie úlohy z dávky
+app.delete('/api/batch/task/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    const removed = removeBatchTask(id);
+    if (!removed) {
+      return res.status(404).json({ error: `Úloha ${id} sa nenašla v dávke.` });
+    }
+    res.json({ success: true, message: `Úloha ${id} bola odstránená.` });
+  } catch (err) {
+    console.error('Error removing batch task:', err);
+    res.status(500).json({ error: 'Failed to remove batch task', details: err.message });
+  }
+});
+
+// 7d. POST /api/batch/action - Vykonanie akcie (submit, status, collect, clear)
+app.post('/api/batch/action', async (req, res) => {
+  try {
+    const { action } = req.body;
+    if (action === 'submit') {
+      const result = await submitBatch();
+      return res.json(result);
+    } else if (action === 'status') {
+      const result = await checkBatchStatus();
+      return res.json(result);
+    } else if (action === 'collect') {
+      const result = await collectBatchResults();
+      return res.json(result);
+    } else if (action === 'clear') {
+      const cleared = clearCompletedBatchTasks();
+      return res.json({ success: true, clearedCount: cleared });
+    } else {
+      return res.status(400).json({ error: `Neznáma akcia "${action}". Podporované: submit, status, collect, clear` });
+    }
+  } catch (err) {
+    console.error('Error running batch action:', err);
+    res.status(500).json({ error: 'Failed to execute batch action', details: err.message });
   }
 });
 

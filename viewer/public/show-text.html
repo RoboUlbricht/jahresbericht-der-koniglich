@@ -57,6 +57,13 @@
         </button>
       </div>
 
+      <!-- Nočná dávka -->
+      <button type="button" class="btn btn-sm btn-outline-warning px-2 d-flex align-items-center gap-1" ng-click="openBatchModal()" title="Správa nočných dávok (Gemini Batch)">
+        <i class="bi bi-moon-stars-fill"></i>
+        <span class="d-none d-md-inline">Nočná dávka</span>
+        <span class="badge bg-warning text-dark ms-1" ng-if="batchState.tasks.length > 0">{{batchState.tasks.length}}</span>
+      </button>
+
       <!-- Odkaz na katalogizáciu -->
       <a href="/create-index" class="btn btn-sm btn-outline-primary px-2" title="Prejsť na Katalogizáciu článkov">
         <i class="bi bi-journal-bookmark-fill me-1"></i>
@@ -256,17 +263,20 @@
               <span class="badge bg-warning text-dark small" ng-if="isTextDirty">
                 <i class="bi bi-pencil me-1"></i> Neuložené
               </span>
+              <span class="badge bg-warning text-dark small" ng-if="getCurrentPageBatchTask()" title="Zaradené v nočnej dávke: {{getCurrentPageBatchTask().type}} ({{getCurrentPageBatchTask().status}})">
+                <i class="bi bi-moon-stars-fill me-1"></i>{{getCurrentPageBatchTask().type === 'normalize' ? 'Batch DE' : 'Batch SK'}}
+              </span>
             </div>
 
-            <!-- Akcie s textom -->
+            <!-- Akcie s textom - kompaktná lišta -->
             <div class="d-flex align-items-center gap-1" ng-if="currentPage">
-              <!-- Tlačidlo Uložiť -->
-              <button class="btn btn-sm btn-success py-1 px-3 fw-semibold shadow-sm" 
+              <!-- Tlačidlo Uložiť (Kompaktná ikona) -->
+              <button class="btn btn-sm btn-success py-1 px-2 shadow-sm" 
                       ng-click="savePageText()" 
                       ng-disabled="!isTextDirty || isSavingText" 
                       title="Uložiť zmeny v {{getActiveLabel()}} (Ctrl+S)">
-                <span ng-if="!isSavingText"><i class="bi bi-floppy me-1"></i> Uložiť</span>
-                <span ng-if="isSavingText"><span class="spinner-border spinner-border-sm me-1"></span> Ukladám...</span>
+                <span ng-if="!isSavingText"><i class="bi bi-floppy"></i></span>
+                <span ng-if="isSavingText"><span class="spinner-border spinner-border-sm" style="width: 0.85rem; height: 0.85rem;"></span></span>
               </button>
 
               <!-- Vrátiť zmeny -->
@@ -290,9 +300,9 @@
                       ng-click="fixSelectedText()" 
                       onmousedown="event.preventDefault()" 
                       ng-disabled="!pageText" 
-                      title="Opraviť medzery pred bodkami, dvojbodkami a zdvojené medzery (v označenom alebo celom texte)" 
+                      title="Opraviť medzery pred bodkami a dvojbodkami" 
                       id="btnFixText">
-                <i class="bi bi-spellcheck me-1"></i> Opraviť medzery
+                <i class="bi bi-spellcheck"></i>
               </button>
 
               <!-- Spojenie označeného textu do jedného riadku -->
@@ -300,23 +310,49 @@
                       ng-click="joinSelectedLines()" 
                       onmousedown="event.preventDefault()" 
                       ng-disabled="!pageText" 
-                      title="Spojiť označený text do jedného riadku (odstráni zalomenia každého slova na nový riadok)" 
+                      title="Spojiť označený text do jedného riadku" 
                       id="btnJoinLines">
-                <i class="bi bi-text-wrap me-1"></i> Spojiť do riadku
+                <i class="bi bi-text-wrap"></i>
               </button>
+
+              <!-- Nočná dávka: Dropdown rýchlych akcií -->
+              <div class="dropdown d-inline-block">
+                <button class="btn btn-sm btn-outline-warning py-1 px-2 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Nočná dávka (Gemini Batch)...">
+                  <i class="bi bi-moon-stars-fill"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark shadow py-1 small">
+                  <li><h6 class="dropdown-header text-uppercase py-1 text-muted" style="font-size: 0.7rem;">Nočná dávka (s. {{currentPage}})</h6></li>
+                  <li>
+                    <button class="dropdown-item py-1 d-flex align-items-center gap-2" type="button" ng-click="quickAddCurrentPageToBatch('normalize')">
+                      <i class="bi bi-check2-circle text-info"></i> Pridať: Normalizácia (DE)
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item py-1 d-flex align-items-center gap-2" type="button" ng-click="quickAddCurrentPageToBatch('translate')">
+                      <i class="bi bi-translate text-primary"></i> Pridať: Preklad (SK)
+                    </button>
+                  </li>
+                  <li><hr class="dropdown-divider my-1"></li>
+                  <li>
+                    <button class="dropdown-item py-1 d-flex align-items-center gap-2" type="button" ng-click="openBatchModal()">
+                      <i class="bi bi-stack text-warning"></i> Otvoriť správcu dávok...
+                    </button>
+                  </li>
+                </ul>
+              </div>
 
               <!-- Veľkosť písma -->
               <div class="btn-group btn-group-sm ms-1" role="group" aria-label="Font size">
-                <button type="button" class="btn btn-outline-secondary py-0 px-2" ng-click="decreaseFontSize()" title="Zmenšiť písmo" ng-disabled="textFontSize <= 11">
+                <button type="button" class="btn btn-outline-secondary py-1 px-2" ng-click="decreaseFontSize()" title="Zmenšiť písmo" ng-disabled="textFontSize <= 11">
                   A-
                 </button>
-                <button type="button" class="btn btn-outline-secondary py-0 px-2" ng-click="increaseFontSize()" title="Zväčšiť písmo" ng-disabled="textFontSize >= 24">
+                <button type="button" class="btn btn-outline-secondary py-1 px-2" ng-click="increaseFontSize()" title="Zväčšiť písmo" ng-disabled="textFontSize >= 24">
                   A+
                 </button>
               </div>
 
               <!-- Kopírovať -->
-              <button class="btn btn-sm btn-outline-light py-0 px-2 ms-1" ng-click="copyText()" ng-disabled="!pageText" title="Skopírovať celý text do schránky">
+              <button class="btn btn-sm btn-outline-light py-1 px-2 ms-1" ng-click="copyText()" ng-disabled="!pageText" title="Skopírovať celý text do schránky">
                 <i class="bi bi-clipboard"></i>
               </button>
             </div>
@@ -454,6 +490,226 @@
         </div>
       </section>
 
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: Správa nočnej dávky (Gemini Batch)
+       ======================================================== -->
+  <div class="modal fade show d-block" tabindex="-1" style="background: rgba(0, 0, 0, 0.7);" ng-if="batchModalOpen">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-dark border-secondary text-white shadow-lg">
+        
+        <!-- Modal Header -->
+        <div class="modal-header border-secondary py-2 px-3">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-moon-stars-fill text-warning fs-5"></i>
+            <h5 class="modal-title h6 mb-0 fw-bold">Správa nočných dávok (Gemini Batch API)</h5>
+            <span class="badge" ng-class="{
+              'bg-secondary': batchState.status === 'idle',
+              'bg-warning text-dark': batchState.status === 'pending',
+              'bg-info text-dark': batchState.status === 'submitted',
+              'bg-success': batchState.status === 'completed',
+              'bg-danger': batchState.status === 'failed'
+            }">
+              {{batchState.status.toUpperCase()}}
+            </span>
+            <span class="badge bg-dark border border-secondary text-muted small" ng-if="batchState.model">
+              {{batchState.model}}
+            </span>
+          </div>
+          <button type="button" class="btn-close btn-close-white" ng-click="closeBatchModal()" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body p-3">
+          
+          <!-- Hlásenie o priebehu akcie -->
+          <div class="alert alert-{{batchActionMessage.type}} py-2 px-3 small mb-3 animate-fade" ng-if="batchActionMessage">
+            <i class="bi bi-info-circle me-1"></i> {{batchActionMessage.text}}
+          </div>
+
+          <!-- Karta 1: Pridanie úloh do dávky -->
+          <div class="card bg-black border-secondary mb-3">
+            <div class="card-header bg-dark border-secondary py-2 px-3 d-flex justify-content-between align-items-center">
+              <span class="fw-semibold small text-uppercase text-muted">
+                <i class="bi bi-plus-circle me-1"></i> Pridať strany do nočnej dávky
+              </span>
+              <span class="small text-muted" ng-if="selectedMagazine">
+                {{selectedMagazine.title}} ({{selectedYear}})
+              </span>
+            </div>
+            <div class="card-body p-3">
+              <div class="row g-2 align-items-end">
+                
+                <!-- Typ úlohy -->
+                <div class="col-sm-4">
+                  <label class="form-label small text-muted mb-1">Typ úlohy</label>
+                  <select class="form-select form-select-sm bg-dark text-white border-secondary" ng-model="batchForm.type">
+                    <option value="normalize">Normalizácia (DE - OCR oprava)</option>
+                    <option value="translate">Preklad do slovenčiny (SK)</option>
+                  </select>
+                </div>
+
+                <!-- Režim: Aktuálna strana vs Rozsah -->
+                <div class="col-sm-3">
+                  <label class="form-label small text-muted mb-1">Výber strán</label>
+                  <select class="form-select form-select-sm bg-dark text-white border-secondary" ng-model="batchForm.mode">
+                    <option value="current">Iba aktuálna (s. {{currentPage || 1}})</option>
+                    <option value="range">Rozsah strán (od - do)</option>
+                  </select>
+                </div>
+
+                <!-- Čísla strán pri rozsahu -->
+                <div class="col-sm-3" ng-if="batchForm.mode === 'range'">
+                  <label class="form-label small text-muted mb-1">Od – Do</label>
+                  <div class="input-group input-group-sm">
+                    <input type="number" class="form-control bg-dark text-white border-secondary text-center" 
+                           ng-model="batchForm.fromPage" min="1" max="{{thumbnails.length || 9999}}" placeholder="Od">
+                    <span class="input-group-text bg-secondary border-secondary text-white">-</span>
+                    <input type="number" class="form-control bg-dark text-white border-secondary text-center" 
+                           ng-model="batchForm.toPage" min="1" max="{{thumbnails.length || 9999}}" placeholder="Do">
+                  </div>
+                </div>
+
+                <!-- Tlačidlo Pridať -->
+                <div class="col-sm-2" ng-class="{'col-sm-5': batchForm.mode !== 'range'}">
+                  <button type="button" class="btn btn-sm btn-primary w-100 py-1" 
+                          ng-click="submitBatchFormTask()" 
+                          ng-disabled="isBatchActionRunning">
+                    <i class="bi bi-plus-lg me-1"></i> Pridať
+                  </button>
+                </div>
+
+              </div>
+              <div class="form-text text-muted small mt-2">
+                <i class="bi bi-info-circle me-1"></i> Každá strana sa spracúva samostatne s automatickým načítaním kontextu okolitých strán pre spojenie rozdelených slov na hraniciach strán.
+              </div>
+            </div>
+          </div>
+
+          <!-- Karta 2: Ovládací panel dávky -->
+          <div class="card bg-black border-secondary mb-3">
+            <div class="card-header bg-dark border-secondary py-2 px-3 d-flex justify-content-between align-items-center">
+              <span class="fw-semibold small text-uppercase text-muted">
+                <i class="bi bi-gear-fill me-1"></i> Ovládanie dávky (Nočný cyklus)
+              </span>
+              <span class="badge bg-secondary" ng-if="batchState.batchId" title="{{batchState.batchId}}">
+                ID: {{batchState.batchId.slice(0, 18)}}...
+              </span>
+            </div>
+            <div class="card-body p-3">
+              <div class="d-flex flex-wrap gap-2">
+                <!-- 1. Odoslať dávku (Submit) -->
+                <button type="button" class="btn btn-sm btn-success px-3 d-flex align-items-center gap-1 shadow-sm" 
+                        ng-click="runBatchAction('submit')" 
+                        ng-disabled="isBatchActionRunning || batchState.tasks.length === 0" 
+                        title="Odoslať pripravené úlohy do Gemini Batch API">
+                  <i class="bi bi-cloud-arrow-up-fill"></i>
+                  <span>Odoslať dávku (Večer)</span>
+                </button>
+
+                <!-- 2. Zistiť stav (Status) -->
+                <button type="button" class="btn btn-sm btn-outline-info px-3 d-flex align-items-center gap-1" 
+                        ng-click="runBatchAction('status')" 
+                        ng-disabled="isBatchActionRunning || !batchState.batchId" 
+                        title="Zistiť aktuálny stav u Google Cloud">
+                  <i class="bi bi-arrow-repeat"></i>
+                  <span>Skontrolovať stav</span>
+                </button>
+
+                <!-- 3. Stiahnuť výsledky (Collect) -->
+                <button type="button" class="btn btn-sm btn-warning px-3 d-flex align-items-center gap-1 shadow-sm" 
+                        ng-click="runBatchAction('collect')" 
+                        ng-disabled="isBatchActionRunning || !batchState.batchId" 
+                        title="Stiahnuť hotové výsledky a zapísať ich do textových súborov">
+                  <i class="bi bi-download"></i>
+                  <span>Prevziať a zapísať (Ráno)</span>
+                </button>
+
+                <!-- 4. Vyčistiť hotové (Clear) -->
+                <button type="button" class="btn btn-sm btn-outline-secondary px-2 ms-auto" 
+                        ng-click="runBatchAction('clear')" 
+                        ng-disabled="isBatchActionRunning" 
+                        title="Vyčistiť dokončené úlohy z fronty">
+                  <i class="bi bi-trash"></i> Vyčistiť hotové
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Karta 3: Tabuľka naplánovaných úloh -->
+          <div class="card bg-black border-secondary">
+            <div class="card-header bg-dark border-secondary py-2 px-3 d-flex justify-content-between align-items-center">
+              <span class="fw-semibold small text-uppercase text-muted">
+                <i class="bi bi-list-task me-1"></i> Fronta úloh v dávke ({{batchState.tasks.length || 0}})
+              </span>
+              <button class="btn btn-sm btn-outline-secondary py-0 px-2" ng-click="loadBatchState()" title="Obnoviť zoznam">
+                <i class="bi bi-arrow-clockwise"></i>
+              </button>
+            </div>
+            <div class="card-body p-0 overflow-auto" style="max-height: 260px;">
+              <table class="table table-dark table-hover table-sm mb-0 small align-middle">
+                <thead>
+                  <tr class="text-muted border-secondary">
+                    <th class="ps-3">ID Úlohy</th>
+                    <th>Typ</th>
+                    <th>Ročník</th>
+                    <th>Strana</th>
+                    <th>Stav</th>
+                    <th>Cieľový súbor</th>
+                    <th class="text-end pe-3">Akcia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="task in batchState.tasks track by task.id" class="border-secondary">
+                    <td class="ps-3 font-monospace text-warning">{{task.id}}</td>
+                    <td>
+                      <span class="badge" ng-class="task.type === 'normalize' ? 'bg-info text-dark' : 'bg-primary'">
+                        {{task.type === 'normalize' ? 'DE normalizácia' : 'SK preklad'}}
+                      </span>
+                    </td>
+                    <td>{{task.year}}</td>
+                    <td class="fw-bold">s. {{task.page}}</td>
+                    <td>
+                      <span class="badge" ng-class="{
+                        'bg-secondary': task.status === 'pending',
+                        'bg-info text-dark': task.status === 'submitted',
+                        'bg-success': task.status === 'completed',
+                        'bg-danger': task.status === 'failed'
+                      }">
+                        {{task.status}}
+                      </span>
+                    </td>
+                    <td class="text-muted text-truncate" style="max-width: 180px;" title="{{task.targetFile}}">
+                      {{task.targetFile}}
+                    </td>
+                    <td class="text-end pe-3">
+                      <button type="button" class="btn btn-sm btn-outline-danger py-0 px-1" 
+                              ng-click="removeBatchTask(task.id)" title="Odstrániť úlohu z dávky">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr ng-if="!batchState.tasks || batchState.tasks.length === 0">
+                    <td colspan="7" class="text-center text-muted py-4">
+                      <i class="bi bi-inbox fs-4 d-block mb-1 opacity-50"></i>
+                      Fronta je prázdna. Pridajte strany vyššie alebo priamo z editora.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer border-secondary py-2 px-3">
+          <button type="button" class="btn btn-sm btn-secondary" ng-click="closeBatchModal()">Zavrieť</button>
+        </div>
+
+      </div>
     </div>
   </div>
 

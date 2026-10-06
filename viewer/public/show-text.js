@@ -624,6 +624,192 @@ app.controller('ShowTextCtrl', ['$scope', '$http', '$timeout', function($scope, 
     }
   });
 
+  // 17. Správa nočných dávok (Gemini Batch)
+  $scope.batchState = {
+    batchId: null,
+    status: 'idle',
+    model: 'gemini-3.8-flash',
+    tasks: []
+  };
+  $scope.batchModalOpen = false;
+  $scope.batchForm = {
+    type: 'normalize',
+    mode: 'current', // 'current' | 'range'
+    fromPage: 1,
+    toPage: 1
+  };
+  $scope.isBatchActionRunning = false;
+  $scope.batchActionMessage = null;
+
+  $scope.loadBatchState = function() {
+    $http.get('/api/batch')
+      .then(function(res) {
+        $scope.batchState = res.data || { status: 'idle', tasks: [] };
+      })
+      .catch(function(err) {
+        console.warn('Nepodarilo sa načítať stav dávky:', err);
+      });
+  };
+
+  $scope.openBatchModal = function() {
+    $scope.batchModalOpen = true;
+    if ($scope.currentPage) {
+      $scope.batchForm.fromPage = $scope.currentPage;
+      $scope.batchForm.toPage = $scope.currentPage;
+    }
+    $scope.batchActionMessage = null;
+    $scope.loadBatchState();
+  };
+
+  $scope.closeBatchModal = function() {
+    $scope.batchModalOpen = false;
+    $scope.batchActionMessage = null;
+  };
+
+  $scope.getCurrentPageBatchTask = function() {
+    if (!$scope.currentPage || !$scope.batchState || !$scope.batchState.tasks) return null;
+    const yearNum = Number($scope.selectedYear);
+    return $scope.batchState.tasks.find(t => 
+      t.magazine === $scope.selectedMagazine?.directory && 
+      (t.year === yearNum || String(t.year) === String($scope.selectedYear)) && 
+      t.page === $scope.currentPage
+    );
+  };
+
+  $scope.quickAddCurrentPageToBatch = function(type) {
+    if (!$scope.currentPage || !$scope.selectedMagazine) {
+      showNotification('Najprv vyberte stranu.', 'warning');
+      return;
+    }
+
+    const payload = {
+      magazine: $scope.selectedMagazine.directory,
+      year: $scope.selectedYear,
+      pdfId: $scope.activePdfId || $scope.selectedYear,
+      page: $scope.currentPage,
+      type: type || 'normalize'
+    };
+
+    $scope.isBatchActionRunning = true;
+    $http.post('/api/batch/task', payload)
+      .then(function(res) {
+        $scope.isBatchActionRunning = false;
+        const typeLabel = (type === 'translate') ? 'Preklad (SK)' : 'Normalizácia (DE)';
+        showNotification(`Strana ${$scope.currentPage} bola zaradená do dávky (${typeLabel}).`, 'success');
+        $scope.loadBatchState();
+      })
+      .catch(function(err) {
+        $scope.isBatchActionRunning = false;
+        showNotification('Chyba pri zaradení do dávky: ' + (err.data?.error || err.statusText), 'danger');
+      });
+  };
+
+  $scope.submitBatchFormTask = function() {
+    if (!$scope.selectedMagazine || !$scope.selectedYear) {
+      showNotification('Vyberte časopis a ročník.', 'warning');
+      return;
+    }
+
+    const isRange = $scope.batchForm.mode === 'range';
+    const fromP = parseInt(isRange ? $scope.batchForm.fromPage : $scope.currentPage, 10);
+    const toP = isRange ? parseInt($scope.batchForm.toPage, 10) : fromP;
+
+    if (isNaN(fromP) || (isRange && isNaN(toP))) {
+      showNotification('Zadajte platné číslo strany.', 'warning');
+      return;
+    }
+
+    const payload = {
+      magazine: $scope.selectedMagazine.directory,
+      year: $scope.selectedYear,
+      pdfId: $scope.activePdfId || $scope.selectedYear,
+      page: fromP,
+      toPage: isRange ? toP : undefined,
+      type: $scope.batchForm.type
+    };
+
+    $scope.isBatchActionRunning = true;
+    $http.post('/api/batch/task', payload)
+      .then(function(res) {
+        $scope.isBatchActionRunning = false;
+        const msg = isRange 
+          ? `Rozsah strán ${fromP}–${toP} bol úspešne zaradený do dávky.`
+          : `Strana ${fromP} bola zaradená do dávky.`;
+        showNotification(msg, 'success');
+        $scope.loadBatchState();
+      })
+      .catch(function(err) {
+        $scope.isBatchActionRunning = false;
+        showNotification('Chyba: ' + (err.data?.error || err.statusText), 'danger');
+      });
+  };
+
+  $scope.removeBatchTask = function(taskId) {
+    if (!confirm(`Naozaj chcete odstrániť úlohu ${taskId} z dávky?`)) return;
+
+    $http.delete('/api/batch/task/' + encodeURIComponent(taskId))
+      .then(function() {
+        showNotification(`Úloha ${taskId} bola odstránená.`, 'info');
+        $scope.loadBatchState();
+      })
+      .catch(function(err) {
+        showNotification('Chyba pri odstraňovaní úlohy: ' + (err.data?.error || err.statusText), 'danger');
+      });
+  };
+
+  $scope.runBatchAction = function(action) {
+    $scope.isBatchActionRunning = true;
+    $scope.batchActionMessage = null;
+
+    $http.post('/api/batch/action', { action: action })
+      .then(function(res) {
+        $scope.isBatchActionRunning = false;
+        const data = res.data;
+        if (action === 'submit') {
+          if (data.success) {
+            $scope.batchActionMessage = { type: 'success', text: `Dávka úspešne odoslaná! (ID: ${data.batchId}, úloh: ${data.taskCount})` };
+            showNotification('Dávka odoslaná do Google Cloud.', 'success');
+          } else {
+            $scope.batchActionMessage = { type: 'warning', text: data.message };
+          }
+        } else if (action === 'status') {
+          if (!data.hasBatch) {
+            $scope.batchActionMessage = { type: 'info', text: data.message };
+          } else {
+            const countInfo = data.stats ? ` (Spracovaných: ${data.stats.requestCount || 0}, čaká: ${data.stats.pendingRequestCount || 0})` : '';
+            $scope.batchActionMessage = {
+              type: data.isSuccess ? 'success' : (data.isFailed ? 'danger' : 'info'),
+              text: `Stav dávky: ${data.state}${countInfo}`
+            };
+          }
+        } else if (action === 'collect') {
+          if (data.success) {
+            $scope.batchActionMessage = {
+              type: 'success',
+              text: `Výsledky zapísané! Úspešne spracovaných: ${data.processedCount}/${data.total}.`
+            };
+            showNotification(`Zapísaných ${data.processedCount} strán z dávky!`, 'success');
+            // Znovu načítať aktuálnu stranu, ak bola aktualizovaná
+            if ($scope.currentPage) {
+              $scope.loadPageText($scope.currentPage);
+            }
+          } else {
+            $scope.batchActionMessage = { type: 'warning', text: data.message };
+          }
+        } else if (action === 'clear') {
+          $scope.batchActionMessage = { type: 'info', text: `Vyčistených ${data.clearedCount} dokončených úloh.` };
+          showNotification(`Vyčistených ${data.clearedCount} úloh.`, 'info');
+        }
+        $scope.loadBatchState();
+      })
+      .catch(function(err) {
+        $scope.isBatchActionRunning = false;
+        const errText = err.data?.error || err.statusText || 'Neznáma chyba';
+        $scope.batchActionMessage = { type: 'danger', text: 'Chyba: ' + errText };
+      });
+  };
+
   // Inicializácia
   $scope.loadMagazines();
+  $scope.loadBatchState();
 }]);
