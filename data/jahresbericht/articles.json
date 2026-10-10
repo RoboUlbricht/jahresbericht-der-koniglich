@@ -1042,9 +1042,9 @@
         {
           "author": "János Böckh",
           "title_de": "Directions-Bericht",
-          "title_hu": null,
-          "title_sk": null,
-          "title_en": null,
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
           "language": "de",
           "page": 5,
           "pdf_id": "jb1891",
@@ -1170,6 +1170,176 @@
           "page": 194,
           "pdf_id": "jb1891",
           "pdf_page": 196
+        }
+      ]
+    },
+    {
+      "year": 1892,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1892",
+          "pdf_page": 8
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "ie Umgebung von Kabola-Polyana",
+          "title_hu": null,
+          "title_sk": null,
+          "title_en": null,
+          "language": "de",
+          "page": 45,
+          "pdf_id": "jb1892",
+          "pdf_page": 47
+        },
+        {
+          "author": "Gyula Peth",
+          "title_de": "Geologische Studien in dem nordwestlichen Theile des Biharer Királyerdő-Gebirges",
+          "title_hu": "Földtani tanulmányok a bihari Királyerdő északnyugati részében",
+          "title_sk": "Geologické štúdie v severozápadnej časti biharského pohoria Királyerdő",
+          "title_en": "Geological Studies in the Northwestern Part of the Királyerdő Mountains in Bihar",
+          "language": "de",
+          "page": 60,
+          "pdf_id": "jb1892",
+          "pdf_page": 62
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Die geologischen Verhältnisse der Umgebung von Vaskóh",
+          "title_hu": "Vaskóh környékének földtani viszonyai",
+          "title_sk": "Geologické pomery okolia Vaskóhu",
+          "title_en": "Geological Conditions of the Environs of Vaskóh",
+          "language": "de",
+          "page": 69,
+          "pdf_id": "jb1892",
+          "pdf_page": 71
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Die Szócsán-Tirnovaer Neogen-Bucht im Comitate Krassó-Szörény",
+          "title_hu": "A szocsán-tirnovai neogén öböl Krassó-Szörény vármegyében",
+          "title_sk": "Szócsánsko-tirnovský neogénny záliv v Krašovsko-severínskej župe",
+          "title_en": "The Szócsán–Tirnova Neogene Embayment in Krassó-Szörény County",
+          "language": "de",
+          "page": 108,
+          "pdf_id": "jb1892",
+          "pdf_page": 110
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Der Abschnitt des Krassó-Szörényer Gebirges längs der Donau in der Umgebung des Jeliseva- und Staristye-Thales",
+          "title_hu": "A Krassó-Szörényi-hegység Duna menti szakasza a Jeliseva- és Staristye-völgy környékén",
+          "title_sk": "Úsek Krašovsko-severínskeho pohoria pozdĺž Dunaja v okolí doliny Jeliseva a Staristye",
+          "title_en": "The Section of the Krassó-Szörény Mountains along the Danube in the Vicinity of the Jeliseva and Staristye Valleys",
+          "language": "de",
+          "page": 119,
+          "pdf_id": "jb1892",
+          "pdf_page": 121
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Die geologischen Verhältnisse der Umgebungen von Eibenthal-Ujbánya, Tiszovicza und Svinyicza",
+          "title_hu": "Eibenthal-Újbánya, Tiszovica és Szvinica környékének földtani viszonyai",
+          "title_sk": "Geologické pomery okolia Eibenthalu-Újbánye, Tisovice a Svinice",
+          "title_en": "Geological Conditions of the Surroundings of Eibenthal-Ujbánya, Tiszovicza and Svinyicza",
+          "language": "de",
+          "page": 140,
+          "pdf_id": "jb1892",
+          "pdf_page": 142
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Die montangeologischen Verhältnisse von Kapnikbánya",
+          "title_hu": "Kapnikbánya bányaföldtani viszonyai",
+          "title_sk": "Bansko-geologické pomery Kapnikbáne",
+          "title_en": "The Mining-Geological Conditions of Kapnikbánya",
+          "language": "de",
+          "page": 160,
+          "pdf_id": "jb1892",
+          "pdf_page": 162
+        },
+        {
+          "author": "Béla Inkey",
+          "title_de": "Zur Orientirung in den geologischen und pedologischen Verhältnissen der ungarischen Tiefebene",
+          "title_hu": "Tájékozódás a magyar Alföld földtani és talajtani viszonyaiban",
+          "title_sk": "K orientácii v geologických a pedologických pomeroch Uhorskej nížiny",
+          "title_en": "Orientation in the Geological and Pedological Conditions of the Hungarian Plain",
+          "language": "de",
+          "page": 187,
+          "pdf_id": "jb1892",
+          "pdf_page": 189
+        },
+        {
+          "author": "Péter Treitz",
+          "title_de": "Bericht über die im Sommer d. J. 1892 vollführte Aufnahme",
+          "title_hu": "Jelentés az 1892. év nyarán végzett felvételről",
+          "title_sk": "Správa o mapovaní vykonanom v lete roku 1892",
+          "title_en": "Report on the Survey Carried Out in the Summer of 1892",
+          "language": "de",
+          "page": 195,
+          "pdf_id": "jb1892",
+          "pdf_page": 197
+        },
+        {
+          "author": "Sándor Kalecsinszky",
+          "title_de": "Mitteilungen aus dem chemischen Laboratorium der kön. ung. geologischen Anstalt",
+          "title_hu": "Közlemények a m. kir. földtani intézet chemiai laboratoriumából",
+          "title_sk": "Správy z chemického laboratória Kráľovského uhorského geologického ústavu",
+          "title_en": "Communications from the Chemical Laboratory of the Royal Hungarian Geological Institute",
+          "language": "de",
+          "page": 197,
+          "pdf_id": "jb1892",
+          "pdf_page": 199
+        },
+        {
+          "author": "Sándor Kalecsinszky",
+          "title_de": "Über die untersuchten ungarischen Thone, sowie über die bei der Thonindustrie verwendbaren sonstigen Materialen",
+          "title_hu": "A megvizsgált magyarországi agyagokról, valamint az agyagiparban felhasználható egyéb anyagokról",
+          "title_sk": "O skúmaných uhorských íloch, ako aj o ostatných materiáloch využiteľných v keramickom priemysle",
+          "title_en": "On the Investigated Hungarian Clays and Other Materials Usable in the Clay Industry",
+          "language": "de",
+          "page": 202,
+          "pdf_id": "jb1892",
+          "pdf_page": 204
+        },
+        {
+          "author": "Péter Treitz",
+          "title_de": "Reisebericht",
+          "title_hu": "Utazási jelentés",
+          "title_sk": "Cestovná správa",
+          "title_en": "Travel report",
+          "language": "de",
+          "page": 233,
+          "pdf_id": "jb1892",
+          "pdf_page": 235
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Über die namhafteren Steinbrüche Istriens und Ober-Italiens",
+          "title_hu": "Isztria és Felső-Olaszország nevezetesebb kőbányáiról",
+          "title_sk": "O významnejších kameňolomoch Istrie a Horného Talianska",
+          "title_en": "On the More Notable Quarries of Istria and Upper Italy",
+          "language": "de",
+          "page": 243,
+          "pdf_id": "jb1892",
+          "pdf_page": 245
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Reise-Notizen aus Oesterreich und dem östlichen Baiern",
+          "title_hu": "Úti jegyzetek Ausztriából és Kelet-Bajorországból",
+          "title_sk": "Cestovné poznámky z Rakúska a východného Bavorska",
+          "title_en": "Travel Notes from Austria and Eastern Bavaria",
+          "language": "de",
+          "page": 274,
+          "pdf_id": "jb1892",
+          "pdf_page": 276
         }
       ]
     }

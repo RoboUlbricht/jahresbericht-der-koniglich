@@ -1,6 +1,6 @@
 # Jahresbericht der Königlich ungarischen Geologischen Reichsanstalt – Zoznam ročníkov
 
-Celkový počet spracovaných ročníkov: **10**
+Celkový počet spracovaných ročníkov: **11**
 
 | Ročník | Počet článkov | Odkaz na obsah |
 |--------|---------------|----------------|
@@ -14,3 +14,4 @@ Celkový počet spracovaných ročníkov: **10**
 | 1889 | 10 | [1889.md](./1889.md) |
 | 1890 | 9 | [1890.md](./1890.md) |
 | 1891 | 12 | [1891.md](./1891.md) |
+| 1892 | 15 | [1892.md](./1892.md) |
