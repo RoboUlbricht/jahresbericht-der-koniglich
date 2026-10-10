@@ -1342,6 +1342,417 @@
           "pdf_page": 276
         }
       ]
+    },
+    {
+      "year": 1893,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Report of the Directorate",
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1893",
+          "pdf_page": 7
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "Die Umgebung von Alsó-Apsa und Dombó",
+          "title_hu": "Alsó-Apsa és Dombó környéke",
+          "title_sk": "Okolie Nižnej Apše a Dubového",
+          "title_en": "The Vicinity of Alsó-Apsa and Dombó",
+          "language": "de",
+          "page": 42,
+          "pdf_id": "jb1893",
+          "pdf_page": 44
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Geologische Studien in den Vorbergen des Biharer „Királyerdő“, in der Umgebung von Dobrest-Szombatság und Hollód",
+          "title_hu": "Földtani tanulmányok a bihari Királyerdő előhegyeiben, Dobrest-Szombatság és Hollód környékén",
+          "title_sk": "Geologické štúdie v predhorí biharského pohoria Királyerdő, v okolí obcí Dobrest-Szombatság a Hollód",
+          "title_en": "Geological Studies in the Foothills of the Bihar “Királyerdő”, in the Surroundings of Dobrest-Szombatság and Hollód",
+          "language": "de",
+          "page": 50,
+          "pdf_id": "jb1893",
+          "pdf_page": 52
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Das östliche Zusammentreffen des Kodru-Móma und Hegyes-Drócsa-Gebirges im Comitate Arad",
+          "title_hu": "A Kodru-Móma és Hegyes-Drócsa-hegység keleti összetalálkozása Arad vármegyében",
+          "title_sk": "Východný styk pohorí Kodru-Móma a Hegyes-Drócsa v Aradskej župe",
+          "title_en": "The Eastern Junction of the Codru-Moma and Hegyes-Drocea Mountains in Arad County",
+          "language": "de",
+          "page": 55,
+          "pdf_id": "jb1893",
+          "pdf_page": 57
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Der nördliche Theil des Krassó-Szörényer „Kalkgebirges“ in der Umgebung von Krassova",
+          "title_hu": "A Krassó-Szörényi „mészkőhegység” északi része Krassova környékén",
+          "title_sk": "Severná časť krašovsko-severínskeho „vápencového pohoria“ v okolí Krassova",
+          "title_en": "The Northern Part of the Krassó-Szörény “Limestone Mountains” in the Vicinity of Krassova",
+          "language": "de",
+          "page": 84,
+          "pdf_id": "jb1893",
+          "pdf_page": 86
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Die östliche Umgebung von Resicza",
+          "title_hu": "Resicza keleti környéke",
+          "title_sk": "Východné okolie Rešice",
+          "title_en": "The Eastern Surroundings of Resicza",
+          "language": "de",
+          "page": 111,
+          "pdf_id": "jb1893",
+          "pdf_page": 113
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Ueber die geologischen Verhältnisse von Bogoltin, sowie des oberen, rechten Cserna-Ufers",
+          "title_hu": "Bogoltin, valamint a felső Cserna jobb partjának földtani viszonyairól",
+          "title_sk": "O geologických pomeroch Bogoltina a pravého brehu hornej Černej",
+          "title_en": "On the Geological Conditions of Bogoltin and the Upper Right Bank of the Cerna River",
+          "language": "de",
+          "page": 126,
+          "pdf_id": "jb1893",
+          "pdf_page": 128
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Montangeologische Aufnahme der Gegend von Oláhláposbánya",
+          "title_hu": "Oláhláposbánya környékének bányaföldtani felvétele",
+          "title_sk": "Banskogeologické mapovanie okolia Oláhláposbánye",
+          "title_en": "Mining Geological Survey of the Surroundings of Oláhláposbánya",
+          "language": "de",
+          "page": 135,
+          "pdf_id": "jb1893",
+          "pdf_page": 137
+        },
+        {
+          "author": "Béla Inkey",
+          "title_de": "Pedologisches aus der Tiefebene",
+          "title_hu": "Talajtani észleletek az Alföldről",
+          "title_sk": "Pedologické poznatky z Alföldu",
+          "title_en": "Pedological Notes from the Great Plain",
+          "language": "de",
+          "page": 150,
+          "pdf_id": "jb1893",
+          "pdf_page": 153
+        },
+        {
+          "author": "Péter Treitz",
+          "title_de": "Bericht über die i. J. 1893 vollführte agronom-geologische Aufnahme",
+          "title_hu": "Jelentés az 1893. évben végzett agronóm-geológiai felvételről",
+          "title_sk": "Správa o agronomicko-geologickom mapovaní vykonanom v roku 1893",
+          "title_en": "Report on the Agronomic-Geological Survey Carried Out in 1893",
+          "language": "de",
+          "page": 159,
+          "pdf_id": "jb1893",
+          "pdf_page": 161
+        },
+        {
+          "author": "Sándor Kalecsinszky",
+          "title_de": "Mittheilungen aus dem chemischen Laboratorium der kgl. ung. geolog. Anstalt",
+          "title_hu": "Közlemények a Magyar Királyi Földtani Intézet chemiai laboratóriumából",
+          "title_sk": "Správy z chemického laboratória Kráľovského uhorského geologického ústavu",
+          "title_en": "Communications from the Chemical Laboratory of the Royal Hungarian Geological Institute",
+          "language": "de",
+          "page": 170,
+          "pdf_id": "jb1893",
+          "pdf_page": 172
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Geologische Notizen aus Griechenland",
+          "title_hu": "Földtani jegyzetek Görögországból",
+          "title_sk": "Geologické poznámky z Grécka",
+          "title_en": "Geological Notes from Greece",
+          "language": "de",
+          "page": 177,
+          "pdf_id": "jb1893",
+          "pdf_page": 179
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Reisenotizen aus Bayern und Sachsen",
+          "title_hu": "Utazási jegyzetek Bajor- és Szászországból",
+          "title_sk": "Cestovné poznámky z Bavorska a Saska",
+          "title_en": "Travel Notes from Bavaria and Saxony",
+          "language": "de",
+          "page": 193,
+          "pdf_id": "jb1893",
+          "pdf_page": 195
+        }
+      ]
+    },
+    {
+      "year": 1894,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": "Igazgatósági jelentés",
+          "title_sk": "Správa riaditeľstva",
+          "title_en": "Director's Report",
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1894",
+          "pdf_page": 5
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "Umgebung der Turbat-Klause",
+          "title_hu": "A Turbát-klauza környéke",
+          "title_sk": "Okolie klauzy Turbat",
+          "title_en": "Vicinity of the Turbat Splash Dam",
+          "language": "de",
+          "page": 41,
+          "pdf_id": "jb1894",
+          "pdf_page": 41
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Geologische Studien in den südlichen Vorbergen des Biharer „Királyerdő“, in der Gegend von Lunkasprie, Szitány-Turburest, Papmező-Kimpány, Kostyán, Hollód und Jancsesd, sowie in der südlichen Umgebung der im nordwestlichen Teile gelegenen Dörfer Szaránd und Kopacsel",
+          "title_hu": "Földtani tanulmányok a bihari Királyerdő déli előhegyeiben, Lunkasprie, Szitány-Turburest, Papmező-Kimpány, Kostyán, Hollód és Jancsesd vidékén, valamint az északnyugati részen fekvő Szaránd és Kopacsel községek déli környékén",
+          "title_sk": "Geologické štúdie v južnom predhorí biharského pohoria Királyerdő v oblasti obcí Lunkasprie, Szitány-Turburest, Papmező-Kimpány, Kostyán, Hollód a Jancsesd, ako aj v južnom okolí dedín Szaránd a Kopacsel ležiacich v severozápadnej časti",
+          "title_en": "Geological Studies in the Southern Foothills of the Bihar “Királyerdő” (Pădurea Craiului), in the Area of Lunkasprie, Szitány-Turburest, Papmező-Kimpány, Kostyán, Hollód, and Jancsesd, as well as in the Southern Vicinity of the Villages Szaránd and Kopacsel Situated in the Northwestern Part",
+          "language": "de",
+          "page": 44,
+          "pdf_id": "jb1894",
+          "pdf_page": 44
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Die geologischen Verhältnisse der Umgebung von Nagy-Halmágy",
+          "title_hu": "Nagy-Halmágy környékének földtani viszonyai",
+          "title_sk": "Geologické pomery okolia Nagy-Halmágyu",
+          "title_en": "Geological Conditions of the Surroundings of Nagy-Halmágy",
+          "language": "de",
+          "page": 49,
+          "pdf_id": "jb1894",
+          "pdf_page": 49
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Die westliche Umgebung von Karánsebes",
+          "title_hu": "Karánsebes nyugati környéke",
+          "title_sk": "Západné okolie Karansebeša",
+          "title_en": "The Western Surroundings of Karánsebes",
+          "language": "de",
+          "page": 86,
+          "pdf_id": "jb1894",
+          "pdf_page": 86
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Die geologischen Verhältnisse der Umgebung von Korniareva",
+          "title_hu": "Kornyaréva környékének földtani viszonyai",
+          "title_sk": "Geologické pomery okolia Korniarevy",
+          "title_en": "Geological Conditions of the Vicinity of Korniareva",
+          "language": "de",
+          "page": 94,
+          "pdf_id": "jb1894",
+          "pdf_page": 94
+        },
+        {
+          "author": "Kálmán Adda",
+          "title_de": "Geologische Verhältnisse von Kornia, Mehadika und Pervova im Krassó-Szörényer Comitate",
+          "title_hu": "Kornia, Mehadika és Pervova földtani viszonyai Krassó-Szörény vármegyében",
+          "title_sk": "Geologické pomery v oblasti Kornia, Mehadika a Pervova v Krašovsko-severínskej župe",
+          "title_en": "Geological Conditions of Kornia, Mehadika, and Pervova in Krassó-Szörény County",
+          "language": "de",
+          "page": 105,
+          "pdf_id": "jb1894",
+          "pdf_page": 105
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Die montan-geologischen Verhältnisse von Zalatna und Umgebung",
+          "title_hu": "Zalatna és környékének bányaföldtani viszonyai",
+          "title_sk": "Bansko-geologické pomery Zlatny a okolia",
+          "title_en": "Mining-geological conditions of Zalatna and its surroundings",
+          "language": "de",
+          "page": 129,
+          "pdf_id": "jb1894",
+          "pdf_page": 129
+        },
+        {
+          "author": "Béla Inkey",
+          "title_de": "Bericht über die geologische Aufnahme in den Comitaten Békés und Csanád, im Sommer 1894",
+          "title_hu": "Jelentés az 1894. év nyarán Békés és Csanád vármegyékben végzett földtani felvételről",
+          "title_sk": "Správa o geologickom mapovaní v Békešskej a Čanádskej župe v lete 1894",
+          "title_en": "Report on the Geological Survey in the Counties of Békés and Csanád, in the Summer of 1894",
+          "language": "de",
+          "page": 153,
+          "pdf_id": "jb1894",
+          "pdf_page": 153
+        },
+        {
+          "author": "Péter Treitz",
+          "title_de": "Aufnahms-Bericht",
+          "title_hu": "Felvételi jelentés",
+          "title_sk": "Správa o mapovaní",
+          "title_en": "Survey Report",
+          "language": "de",
+          "page": 158,
+          "pdf_id": "jb1894",
+          "pdf_page": 158
+        },
+        {
+          "author": "Sándor Kalecsinszky",
+          "title_de": "Mitteilungen aus dem chemischen Laboratorium der königl. ung. geologischen Anstalt",
+          "title_hu": "Közlemények a m. kir. földtani intézet vegytani laboratóriumából",
+          "title_sk": "Správy z chemického laboratória Kráľovského uhorského geologického ústavu",
+          "title_en": "Communications from the Chemical Laboratory of the Royal Hungarian Geological Institute",
+          "language": "de",
+          "page": 162,
+          "pdf_id": "jb1894",
+          "pdf_page": 162
+        }
+      ]
+    },
+    {
+      "year": 1895,
+      "articles": [
+        {
+          "author": "János Böckh",
+          "title_de": "Directions-Bericht",
+          "title_hu": null,
+          "title_sk": null,
+          "title_en": null,
+          "language": "de",
+          "page": 5,
+          "pdf_id": "jb1895",
+          "pdf_page": 7
+        },
+        {
+          "author": "Tivadar Posewitz",
+          "title_de": "Das Gebiet zwischen dem unteren Laufe der Flüsse Taracz und Talabor",
+          "title_hu": "A Taracz és Talabor folyók alsó folyása közötti terület",
+          "title_sk": "Územie medzi dolným tokom riek Tarac a Talabor",
+          "title_en": "The Area between the Lower Reaches of the Rivers Taracz and Talabor",
+          "language": "de",
+          "page": 30,
+          "pdf_id": "jb1895",
+          "pdf_page": 32
+        },
+        {
+          "author": "Tamás Szontagh",
+          "title_de": "Geologische Studien im Gebiete der Gemeinden Hollód, Dekanyesd, Rózsafalva und Tenke des Comitates Bihar",
+          "title_hu": "Földtani tanulmányok Hollód, Dekanyesd, Rózsafalva és Tenke községek területén Bihar vármegyében",
+          "title_sk": "Geologické štúdie na území obcí Hollód, Dekanyesd, Rózsafalva a Tenke v Bihárskej župe",
+          "title_en": "Geological Studies in the Area of the Municipalities of Hollód, Dekanyesd, Rózsafalva, and Tenke in Bihar County",
+          "language": "de",
+          "page": 41,
+          "pdf_id": "jb1895",
+          "pdf_page": 43
+        },
+        {
+          "author": "Gyula Pethő",
+          "title_de": "Der Westabfall des Kodru-Gebirges im Comitate Bihar",
+          "title_hu": "A Kodru-hegység nyugati lejtője Bihar vármegyében",
+          "title_sk": "Západný svah pohoria Kodru v Biharskej župe",
+          "title_en": "The Western Slope of the Kodru Mountains in Bihar County",
+          "language": "de",
+          "page": 45,
+          "pdf_id": "jb1895",
+          "pdf_page": 47
+        },
+        {
+          "author": "Gyula Halaváts",
+          "title_de": "Die Umgebung von Buziás und Lugos",
+          "title_hu": "Buziás és Lugos környéke",
+          "title_sk": "Okolie Buziáša a Luguša",
+          "title_en": "The Surroundings of Buziás and Lugos",
+          "language": "de",
+          "page": 58,
+          "pdf_id": "jb1895",
+          "pdf_page": 60
+        },
+        {
+          "author": "Lajos Telegdi-Róth",
+          "title_de": "Der nördliche Abschnitt des Semenik-Gebirges in der Gegend von Franzdorf, Wolfsberg und Weidenthal",
+          "title_hu": "A Szemenik-hegység északi része Ferenczfalva, Wolfsberg és Weidenthal vidékén",
+          "title_sk": "Severný úsek pohoria Semenic v okolí obcí Franzdorf, Wolfsberg a Weidenthal",
+          "title_en": "The Northern Section of the Semenic Mountains in the Vicinity of Franzdorf, Wolfsberg, and Weidenthal",
+          "language": "de",
+          "page": 64,
+          "pdf_id": "jb1895",
+          "pdf_page": 66
+        },
+        {
+          "author": "Ferenc Schafarzik",
+          "title_de": "Die geologischen Verhältnisse der nördlichen und östlichen Umgebung von Teregova",
+          "title_hu": "Teregova északi és keleti környékének földtani viszonyai",
+          "title_sk": "Geologické pomery severného a východného okolia Teregovej",
+          "title_en": "Geological conditions of the northern and eastern surroundings of Teregova",
+          "language": "de",
+          "page": 77,
+          "pdf_id": "jb1895",
+          "pdf_page": 79
+        },
+        {
+          "author": "Kálmán Adda",
+          "title_de": "Die geologischen Verhältnisse der südwestlichen Gegend von Teregova und der Umgebung von Temes-Kövesd",
+          "title_hu": "Teregova délnyugati vidékének és Temes-Kövesd környékének földtani viszonyai",
+          "title_sk": "Geologické pomery juhozápadnej oblasti Teregovy a okolia Temes-Kövesdu",
+          "title_en": "The Geological Conditions of the South-Western Region of Teregova and the Surroundings of Temes-Kövesd",
+          "language": "de",
+          "page": 85,
+          "pdf_id": "jb1895",
+          "pdf_page": 87
+        },
+        {
+          "author": "Sándor Gesell",
+          "title_de": "Die montangeologischen Verhältnisse der Zinnobererz-Bergbaue von Dumbrava und Baboja bei Zalatna",
+          "title_hu": "A Zalatna melletti Dumbrava és Baboja cinóberércbányáinak bányaföldtani viszonyai",
+          "title_sk": "Banskogeologické pomery cinabaritových baní Dumbrava a Baboja pri Zlatne",
+          "title_en": "Mining Geological Conditions of the Cinnabar Ore Mines of Dumbrava and Baboja near Zalatna",
+          "language": "de",
+          "page": 101,
+          "pdf_id": "jb1895",
+          "pdf_page": 103
+        },
+        {
+          "author": "Béla Inkey",
+          "title_de": "Bericht über die im Jahre 1895 in den Comitaten Csongrád und Csanád durchgeführten geologischen Aufnahmen",
+          "title_hu": "Jelentés az 1895. évben Csongrád és Csanád vármegyékben végzett földtani felvételekről",
+          "title_sk": "Správa o geologickom mapovaní vykonanom v roku 1895 v Čongrádskej a Čanádskej župe",
+          "title_en": "Report on the Geological Surveys Carried Out in the Counties of Csongrád and Csanád in 1895",
+          "language": "de",
+          "page": 113,
+          "pdf_id": "jb1895",
+          "pdf_page": 115
+        },
+        {
+          "author": "Péter Treitz",
+          "title_de": "Aufnamsbericht des Jahres 1895",
+          "title_hu": "Felvételi jelentés az 1895. évről",
+          "title_sk": "Správa o mapovaní za rok 1895",
+          "title_en": "Survey Report for the Year 1895",
+          "language": "de",
+          "page": 124,
+          "pdf_id": "jb1895",
+          "pdf_page": 126
+        },
+        {
+          "author": "",
+          "title_de": "Vermögensstand der Stiftung Dr. Franz Schafarzik’s am 1. Juli 1896",
+          "title_hu": "A Dr. Schafarzik Ferenc-alapítvány vagyonállása 1896. július 1-jén",
+          "title_sk": "Stav majetku Nadácie Dr. Františka Schafarzika k 1. júlu 1896",
+          "title_en": "Financial Status of the Dr. Franz Schafarzik Foundation as of July 1, 1896",
+          "language": "de",
+          "page": 128,
+          "pdf_id": "jb1895",
+          "pdf_page": 130
+        }
+      ]
     }
   ]
 }
