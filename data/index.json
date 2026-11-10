@@ -123,6 +123,12 @@
           "origin": "https://www.digitale-sammlungen.de/en/view/bsb10226080"
         },
         {
+          "year": 1851,
+          "bsb": true,
+          "id": "bsb10226081",
+          "origin": "https://www.digitale-sammlungen.de/en/view/bsb10226081"
+        },
+        {
           "year": 1867,
           "bsb": true,
           "id": "bsb10226096",
@@ -139,6 +145,12 @@
           "bsb": true,
           "id": "bsb11647945",
           "origin": "https://www.digitale-sammlungen.de/en/view/bsb11647945"
+        },
+        {
+          "year": 1890,
+          "bsb": true,
+          "id": "bsb11647948",
+          "origin": "https://www.digitale-sammlungen.de/en/view/bsb11647948"
         }
       ]
     },
@@ -172,6 +184,17 @@
           "year": 1886,
           "id": "EPA03681",
           "origin": "https://epa.oszk.hu/03600/03681/00031/pdf/EPA03681_mittheilungen_1886_1_196-220.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Abhandlungen einer Privatgesellschaft in Böhmen zur Aufnahme der Mathematik, der Vaterländische Geschichte und der Naturgeschichte",
+      "directory": "abhandlungen",
+      "published": [
+        {
+          "year": 1775,
+          "id": "EPA03681",
+          "origin": "https://www.google.sk/books/edition/_/oP1dAAAAcAAJ"
         }
       ]
     }

@@ -1,0 +1,345 @@
+{
+  "title": "geologische-reichsanstalt",
+  "volumes": [
+    {
+      "year": 1850,
+      "articles": [
+        {
+          "author": "",
+          "title_de": "Inhalt",
+          "title_hu": "Tartalom",
+          "title_sk": "Obsah",
+          "title_en": "Contents",
+          "language": "de",
+          "page": 1,
+          "pdf_id": "bsb10226080",
+          "pdf_page": 11
+        },
+        {
+          "author": "",
+          "title_de": "Vorwort",
+          "title_hu": "Előszó",
+          "title_sk": "Predhovor",
+          "title_en": "Foreword",
+          "language": "de",
+          "page": 1,
+          "pdf_id": "bsb10226080",
+          "pdf_page": 18
+        },
+        {
+          "author": "Ferdinand Edlen v. Thinnfeld",
+          "title_de": "Allerunterthänigster Vortrag des treugehorsamsten Ministers für Landescultur und Bergwesen",
+          "title_hu": "A leghívebb földmívelési és bányászati miniszter legalázatosabb előterjesztése",
+          "title_sk": "Najponíženejšie prednesenie najoddanejšieho ministra poľnohospodárstva a baníctva",
+          "title_en": "Most humble submission of the most dutiful Minister of Agriculture and Mining",
+          "language": "de",
+          "page": 1,
+          "pdf_id": "bsb10226080",
+          "pdf_page": 32
+        },
+        {
+          "author": "",
+          "title_de": "Ernennungen des Personals an der k. k. geologischen Reichsanstalt",
+          "title_hu": "Személyzeti kinevezések a cs. kir. Földtani Birodalmi Intézetnél",
+          "title_sk": "Menovania personálu v c. k. ríšskom geologickom ústave",
+          "title_en": "Staff Appointments at the Imperial-Royal Geological Institute",
+          "language": "de",
+          "page": 6,
+          "pdf_id": "bsb10226080",
+          "pdf_page": 37
+        },
+        {
+          "author": "W. Haidinger",
+          "title_de": "Die Aufgabe des Sommers 1850 für die k. k. geologische Reichsanstalt in der geologischen Durchforschung des Landes",
+          "title_hu": "A cs. kir. Földtani Birodalmi Intézet feladata 1850 nyarán az ország földtani kutatásában",
+          "title_sk": "Úloha c. k. ríšskeho geologického ústavu na leto 1850 pri geologickom výskume krajiny",
+          "title_en": "The Task of the Summer of 1850 for the Imperial-Royal Geological Institute in the Geological Exploration of the Country",
+          "language": "de",
+          "page": 6,
+          "pdf_id": "bsb10226080",
+          "pdf_page": 37
+        },
+        {
+          "author": "Fr. Ritter v. Hauer",
+          "title_de": "Ueber die geognostischen Verhältnisse des Nordabhanges der nordöstlichen Alpen zwischen Wien und Salzburg.",
+          "title_hu": "Az Északkeleti-Alpok Bécs és Salzburg közötti északi lejtőjének geognóziai viszonyairól.",
+          "title_sk": "O geognostických pomeroch severného svahu severovýchodných Álp medzi Viedňou a Salzburgom.",
+          "title_en": "On the Geognostic Conditions of the Northern Slope of the North-Eastern Alps between Vienna and Salzburg.",
+          "language": "de",
+          "page": 17,
+          "pdf_id": "bsb10226080",
+          "pdf_page": 48
+        }
+      ]
+    },
+    {
+      "year": 1867,
+      "articles": [
+        {
+          "author": "Franz Ritter v. Hauer",
+          "title_de": "I. Geologische Uebersichtskarte der österreichischen Monarchie",
+          "title_hu": "I. Az Osztrák Monarchia földtani átnézeti térképe",
+          "title_sk": "I. Geologická prehľadná mapa rakúskej monarchie",
+          "title_en": "I. Geological Overview Map of the Austrian Monarchy",
+          "language": "de",
+          "page": 1,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 8
+        },
+        {
+          "author": "V. Ritter v. Zepharovich",
+          "title_de": "Fluorit aus der Gams bei Hieflau in Steiermark",
+          "title_hu": "Fluorit a stájerországi Hieflau melletti Gamsból",
+          "title_sk": "Fluorit z Gamsu pri Hieflau v Štajersku",
+          "title_en": "Fluorite from Gams near Hieflau in Styria",
+          "language": "de",
+          "page": 21,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 28
+        },
+        {
+          "author": "Franz Rauen",
+          "title_de": "Notizen über den gegenwärtigen Stand der Oberbiberstollner nassen Aufbereitung zu Schemnitz",
+          "title_hu": "Jegyzetek a selmecbányai Felső-Biber-tárnai nedves ércelőkészítés jelenlegi állásáról",
+          "title_sk": "Poznámky o súčasnom stave mokrej úpravne pri Hornej Bieberovej štôlni v Banskej Štiavnici",
+          "title_en": "Notes on the Current State of the Wet Ore Dressing at the Upper Biber Adit in Schemnitz",
+          "language": "de",
+          "page": 25,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 32
+        },
+        {
+          "author": "Dr. Gustav L. Mayr",
+          "title_de": "Vorläufige Studien über die Radoboj-Formiciden in der Sammlung der k. k. geologischen Reichsanstalt",
+          "title_hu": "Előzetes tanulmányok a cs. kir. Földtani Birodalmi Intézet gyűjteményében lévő radoboji hangyafélékről (Formicidae)",
+          "title_sk": "Predbežné štúdie o radobojských mravcovitých (Formicidae) v zbierkach c. k. ríšskeho geologického ústavu",
+          "title_en": "Preliminary Studies on the Radoboj Ants (Formicidae) in the Collection of the Imperial-Royal Geological Institute",
+          "language": "de",
+          "page": 47,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 54
+        },
+        {
+          "author": "Herrn Benedikt Roha",
+          "title_de": "Der Kohlen- und Eisenwerkscomplex Anina-Steierdorf im Banat",
+          "title_hu": "Az anina-stájerlaki szén- és vasmű-komplexum a Bánságban",
+          "title_sk": "Uhoľný a železiarsky komplex Anina-Steierdorf v Banáte",
+          "title_en": "The Anina-Steierdorf Coal and Ironworks Complex in the Banat",
+          "language": "de",
+          "page": 63,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 72
+        },
+        {
+          "author": "D. Stur",
+          "title_de": "Beiträge zur Kenntniss der Flora, der Süsswasserquarze, der Congerien- und Cerithien-Schichten im Wiener und ungarischen Becken",
+          "title_hu": "Adalékok a bécsi és magyarországi medence édesvízi kvarcai, kongéria- és cerithium-rétegei flórájának ismeretéhez",
+          "title_sk": "Príspevky k poznaniu flóry sladkovodných kremencov, kongériových a cerítiových vrstiev vo Viedenskej a uhorskej panve",
+          "title_en": "Contributions to the Knowledge of the Flora, Freshwater Quartzites, Congeria and Cerithium Beds in the Vienna and Hungarian Basins",
+          "language": "de",
+          "page": 77,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 88
+        },
+        {
+          "author": "",
+          "title_de": "VIII. Verzeichniss der an die k. k. geologische Reichsanstalt eingelangten Bücher, Karten u. s. w.",
+          "title_hu": "VIII. A cs. kir. Földtani Birodalmi Intézethez beérkezett könyvek, térképek stb. jegyzéke",
+          "title_sk": "VIII. Zoznam kníh, máp atď. došlých c. k. ríšskemu geologickému ústavu",
+          "title_en": "VIII. List of books, maps, etc. received by the Imperial-Royal Geological Institute",
+          "language": "de",
+          "page": 191,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 212
+        },
+        {
+          "author": "W. Helmhacker",
+          "title_de": "Mineralspecies, welche in der Rossitz-Oslawaner Steinkohlenformation vorkommen",
+          "title_hu": "A rossitz–oslawani kőszénformációban előforduló ásványfajok",
+          "title_sk": "Minerálne druhy vyskytujúce sa v rosicko-oslavanskej kamenouhoľnej formácii",
+          "title_en": "Mineral species occurring in the Rossitz-Oslawan coal formation",
+          "language": "de",
+          "page": 195,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 218
+        },
+        {
+          "author": "Anton Rücker",
+          "title_de": "Die Mieser Bergbauverhältnisse im Allgemeinen, nebst specieller Beschreibung der Frischglückzeche",
+          "title_hu": "A miesi bányászati viszonyok általában, a Frischglück-bányamű részletes leírásával",
+          "title_sk": "Stříbrské banské pomery vo všeobecnosti, spolu s podrobným opisom bane Frischglück",
+          "title_en": "The Mining Conditions of Mies in General, Together with a Detailed Description of the Frischglück Mine",
+          "language": "de",
+          "page": 211,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 234
+        },
+        {
+          "author": "Johann Böckh",
+          "title_de": "Die geologischen Verhältnisse des Bück-Gebirges und der angrenzenden Vorberge",
+          "title_hu": "A Bükk-hegység és a szomszédos előhegyek földtani viszonyai",
+          "title_sk": "Geologické pomery Bukových vrchov a priľahlých predhorí",
+          "title_en": "Geological Conditions of the Bükk Mountains and the Adjacent Foothills",
+          "language": "de",
+          "page": 225,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 248
+        },
+        {
+          "author": "Guido Stache",
+          "title_de": "Die Eocen-Gebiete in Inner-Krain und Istrien.",
+          "title_hu": "Az eocén területek Belső-Krajnában és Isztriában.",
+          "title_sk": "Eocénne oblasti vo Vnútornom Krajsku a na Istrii.",
+          "title_en": "The Eocene Areas in Inner Carniola and Istria.",
+          "language": "de",
+          "page": 243,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 266
+        },
+        {
+          "author": "Dr. J. G. Ellenberger",
+          "title_de": "Das Petroleum-Terrain Westgaliziens",
+          "title_hu": "Nyugat-Galícia kőolajterülete",
+          "title_sk": "Naftonosný terén západnej Haliče",
+          "title_en": "The Petroleum Terrain of Western Galicia",
+          "language": "de",
+          "page": 293,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 316
+        },
+        {
+          "author": "Karl F. Peters",
+          "title_de": "Das Halitheriumskelet von Hainburg",
+          "title_hu": "A hainburgi Halitherium-csontváz",
+          "title_sk": "Kostra halitéria z Hainburgu",
+          "title_en": "The Halitherium Skeleton from Hainburg",
+          "language": "de",
+          "page": 309,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 334
+        },
+        {
+          "author": "Bergrath Karl Ritter v. Hauer",
+          "title_de": "Arbeiten in dem chemischen Laboratorium der k. k. geologischen Reichsanstalt",
+          "title_hu": "Munkálatok a cs. kir. Földtani Birodalmi Intézet vegytani laboratóriumában",
+          "title_sk": "Práce v chemickom laboratóriu c. k. Ríšskeho geologického ústavu",
+          "title_en": "Works in the Chemical Laboratory of the Imperial-Royal Geological Institute",
+          "language": "de",
+          "page": 315,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 342
+        },
+        {
+          "author": "Marc. Vinc. Lipold",
+          "title_de": "Der Bergbau von Schemnitz in Ungarn",
+          "title_hu": "Selmecbánya bányászata Magyarországon",
+          "title_sk": "Baníctvo Banskej Štiavnice v Uhorsku",
+          "title_en": "The Mining of Schemnitz in Hungary",
+          "language": "de",
+          "page": 317,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 346
+        },
+        {
+          "author": "Karl Reissacher",
+          "title_de": "Der Johannisbrunnen bei Gleichenberg.",
+          "title_hu": "A Gleichenberg melletti János-forrás.",
+          "title_sk": "Jánsky prameň pri Gleichenbergu.",
+          "title_en": "The Johannisbrunnen Near Gleichenberg.",
+          "language": "de",
+          "page": 461,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 496
+        },
+        {
+          "author": "A. Kenngott",
+          "title_de": "Ueber die Eruptivgesteine der Santorin-Inseln",
+          "title_hu": "A Santorin-szigetek eruptív kőzeteiről",
+          "title_sk": "O eruptívnych horninách ostrovov Santorín",
+          "title_en": "On the Eruptive Rocks of the Santorini Islands",
+          "language": "de",
+          "page": 465,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 510
+        },
+        {
+          "author": "Fr. Pošepny",
+          "title_de": "Studien aus dem Salinengebiet Siebenbürgens.",
+          "title_hu": "Tanulmányok Erdély sóvidékéről.",
+          "title_sk": "Štúdie zo soľnej oblasti Sedmohradska.",
+          "title_en": "Studies from the Salt Mining District of Transylvania.",
+          "language": "de",
+          "page": 477,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 520
+        },
+        {
+          "author": "Heinrich Wolf",
+          "title_de": "Geologisch-geographische Skizze der niederungarischen Ebene",
+          "title_hu": "Az alsó-magyarországi síkság földtani-földrajzi vázlata",
+          "title_sk": "Geologicko-geografický náčrt dolnouhorskej nížiny",
+          "title_en": "Geological-Geographical Sketch of the Lower Hungarian Plain",
+          "language": "de",
+          "page": 517,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 560
+        },
+        {
+          "author": "Eduard Suess und Edmund von Mojsisovics",
+          "title_de": "Studien über die Gliederung der Trias- und Jurabildungen in den östlichen Alpen.",
+          "title_hu": "Tanulmányok a Keleti-Alpok triász és jura képződményeinek tagolódásáról.",
+          "title_sk": "Štúdie o členení triasových a jurských útvarov vo Východných Alpách.",
+          "title_en": "Studies on the Division of the Triassic and Jurassic Formations in the Eastern Alps.",
+          "language": "de",
+          "page": 553,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 598
+        },
+        {
+          "author": "Dr. M. Hörnes",
+          "title_de": "Die fossilen Mollusken des Tertiär-Beckens von Wien",
+          "title_hu": "A bécsi harmadkori medence fosszilis puhatestűi",
+          "title_sk": "Fosílne mäkkýše viedenskej treťohornej panvy",
+          "title_en": "The Fossil Molluscs of the Vienna Tertiary Basin",
+          "language": "de",
+          "page": 583,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 628
+        },
+        {
+          "author": "Dr. U. Schloenbach",
+          "title_de": "Kleine paläontologische Mittheilungen",
+          "title_hu": "Kisebb őslénytani közlemények",
+          "title_sk": "Drobné paleontologické správy",
+          "title_en": "Short Paleontological Communications",
+          "language": "de",
+          "page": 589,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 634
+        },
+        {
+          "author": "Adolph Daufalik",
+          "title_de": "Der Stand der vulcanischen Thätigkeit im Hafen von Santorin am 24. und 25. September 1867",
+          "title_hu": "A vulkáni működés állapota Santorin kikötőjében 1867. szeptember 24-én és 25-én",
+          "title_sk": "Stav vulkanickej činnosti v prístave na Santoríne 24. a 25. septembra 1867",
+          "title_en": "The State of Volcanic Activity in the Port of Santorini on September 24 and 25, 1867",
+          "language": "de",
+          "page": 595,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 640
+        },
+        {
+          "author": "",
+          "title_de": "Verzeichniss der an die k. k. geologische Reichsanstalt eingelangten Bücher, Karten u. s. w.",
+          "title_hu": "A cs. kir. Földtani Birodalmi Intézethez beérkezett könyvek, térképek stb. jegyzéke",
+          "title_sk": "Zoznam kníh, máp atď. došlých c. k. Ríšskemu geologickému ústavu",
+          "title_en": "List of books, maps, etc. received by the Imperial-Royal Geological Survey",
+          "language": "hu",
+          "page": 599,
+          "pdf_id": "bsb10226096",
+          "pdf_page": 644
+        }
+      ]
+    }
+  ]
+}
